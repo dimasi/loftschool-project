@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack",
-    "serv": "static build",
+    "start": "webpack --watch",
+    "serv": "static build --cache=0",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Dmitri Sivachenko",
