@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack",
+    "serv": "static build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Dmitri Sivachenko",
   "license": "ISC",
   "devDependencies": {
     "html-webpack-plugin": "^2.28.0",
+    "node-static": "^0.7.9",
     "webpack": "^2.2.1"
   }
 }
