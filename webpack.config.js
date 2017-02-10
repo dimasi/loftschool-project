@@ -16,7 +16,7 @@ module.exports = {
   },
   output: {
     path: PATHS.build,
-    filename: '[name].js'
+    filename: './js/[name].js'
   },
   plugins: [
     new HtmlWebpackPlugin({
