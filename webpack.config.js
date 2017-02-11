@@ -7,46 +7,48 @@ const sass = require('./webpack/sass');
 const extractCSS = require('./webpack/css.extract');
 const css = require('./webpack/css');
 const uglifyJS = require('./webpack/js.uglify');
+const lintJS = require('./webpack/js.lint');
 const devserver = require('./webpack/devserver');
 
 const PATHS = {
-  source: path.join(__dirname, 'source'),
-  build: path.join(__dirname, 'build')
+    source: path.join(__dirname, 'source'),
+    build: path.join(__dirname, 'build')
 };
 
 const common = merge([
-  {
-    entry: {},
-    output: {
-      path: PATHS.build,
-      filename: './js/[name].js'
+    {
+        entry: {},
+        output: {
+            path: PATHS.build,
+            filename: './js/[name].js'
+        },
+        plugins: [
+            new webpack.ProvidePlugin({
+                $: 'jquery',
+                jQuery: 'jquery'
+            })
+        ]
     },
-    plugins: [
-      new webpack.ProvidePlugin({
-          $: 'jquery',
-          jQuery: 'jquery'
-      })
-    ],
-  },
-  pages({ 
-    pathTo: `${PATHS.source}/pages`,
-    aliases: [
-      'index', 
-      'about',
-      'blog', 
-      'portfolio', 
-    ]
-  }),
-  pug()
+    pages({ 
+        pathTo: `${PATHS.source}/pages`,
+        aliases: [
+            'index', 
+            'about',
+            'blog', 
+            'portfolio' 
+        ]
+    }),
+    pug(),
+    lintJS({ paths: PATHS.sources })
 ]);
 
 
 module.exports = (env) => {
     if (env === 'production') {
         return merge([
-          common,
-          extractCSS(),
-          uglifyJS({ useSourceMap: true })
+            common,
+            extractCSS(),
+            uglifyJS({ useSourceMap: true })
         ]);
     }
     if (env === 'development') {

@@ -7,12 +7,14 @@
     "build": "webpack --env production",
     "start": "webpack-dev-server --env development",
     "serv": "static build --cache=false",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:lint": "eslint . --cache"
   },
   "author": "Dmitri Sivachenko",
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^0.26.1",
+    "eslint": "^3.15.0",
+    "eslint-loader": "^1.6.1",
     "extract-text-webpack-plugin": "^2.0.0-beta",
     "html-webpack-plugin": "^2.28.0",
     "node-sass": "^4.5.0",

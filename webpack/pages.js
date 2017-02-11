@@ -10,7 +10,7 @@ function getEntries(pathTo, aliases) {
 function getPlugins(pathTo, aliases) {
     return aliases.map((alias) => {
         return getPlugin(pathTo, alias);
-    })
+    });
 }
 
 function getPlugin(pathTo, alias) {
@@ -18,7 +18,7 @@ function getPlugin(pathTo, alias) {
         chunks: [alias, 'common'],
         template: `${pathTo}/${alias}/index.pug`,
         filename: `${alias}.html`
-    })
+    });
 }
 
 module.exports = function({pathTo, aliases}) {
@@ -27,7 +27,7 @@ module.exports = function({pathTo, aliases}) {
         plugins: [
             ...getPlugins(pathTo, aliases),
             new webpack.optimize.CommonsChunkPlugin({
-                name: 'common',
+                name: 'common'
             })
         ]
     };
