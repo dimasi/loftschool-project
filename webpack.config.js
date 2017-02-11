@@ -12,6 +12,7 @@ const lintCSS = require('./webpack/sass.lint');
 const images = require('./webpack/images');
 const favicon = require('./webpack/favicon');
 const devserver = require('./webpack/devserver');
+const clean = require('./webpack/clean');
 
 const PATHS = {
     source: path.join(__dirname, 'source'),
@@ -29,7 +30,8 @@ const common = merge([
             new webpack.ProvidePlugin({
                 $: 'jquery',
                 jQuery: 'jquery'
-            })
+            }),
+            new webpack.NoEmitOnErrorsPlugin()
         ]
     },
     pages({ 
@@ -54,7 +56,13 @@ module.exports = (env) => {
             common,
             extractCSS(),
             uglifyJS({ useSourceMap: true }),
-            favicon()
+            favicon(),
+            clean({ 
+                paths: PATHS.build,
+                options: {
+                    root: __dirname
+                }
+            })
         ]);
     }
     if (env === 'development') {
