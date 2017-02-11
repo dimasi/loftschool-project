@@ -2,6 +2,8 @@ const path = require('path');
 const merge = require('webpack-merge');
 const pages = require('./webpack/pages');
 const pug = require('./webpack/pug');
+const sass = require('./webpack/sass');
+const extractCSS = require('./webpack/css.extract');
 const devserver = require('./webpack/devserver');
 
 const PATHS = {
@@ -32,11 +34,15 @@ const common = merge([
 
 module.exports = (env) => {
     if (env === 'production') {
-        return common;
+        return merge([
+          common,
+          extractCSS()
+        ]);
     }
     if (env === 'development') {
         return merge([
             common,
+            sass(),
             devserver()
         ]);
     }
