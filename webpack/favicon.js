@@ -1,9 +1,11 @@
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
-module.exports = function() {
+module.exports = () => {
   return {
     plugins: [
-      new FaviconsWebpackPlugin('./source/favicon.png')
+      new FaviconsWebpackPlugin({
+        logo: './source/favicon.png'
+      })
     ]
   };
 };

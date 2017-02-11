@@ -1,6 +1,6 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-module.exports = function(paths) {
+module.exports = (paths) => {
     return {
         module: {
             rules: [

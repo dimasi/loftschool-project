@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 
-module.exports = function(useSourceMap) {
+module.exports = (useSourceMap) => {
     return {
         plugins: [
             new webpack.optimize.UglifyJsPlugin({

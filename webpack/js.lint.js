@@ -1,4 +1,4 @@
-module.exports = function({ paths, options }) {
+module.exports = ({ paths, options }) => {
     return {
         module: {
             rules: [
