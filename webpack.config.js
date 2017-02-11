@@ -8,6 +8,7 @@ const extractCSS = require('./webpack/css.extract');
 const css = require('./webpack/css');
 const uglifyJS = require('./webpack/js.uglify');
 const lintJS = require('./webpack/js.lint');
+const lintCSS = require('./webpack/sass.lint');
 const devserver = require('./webpack/devserver');
 
 const PATHS = {
@@ -39,7 +40,8 @@ const common = merge([
         ]
     }),
     pug(),
-    lintJS({ paths: PATHS.sources })
+    lintJS({ paths: PATHS.sources }),
+    lintCSS()
 ]);
 
 
