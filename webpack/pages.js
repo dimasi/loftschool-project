@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 function getEntries(pathTo, aliases) {
@@ -14,7 +15,7 @@ function getPlugins(pathTo, aliases) {
 
 function getPlugin(pathTo, alias) {
     return new HtmlWebpackPlugin({
-        chunks: [alias],
+        chunks: [alias, 'common'],
         template: `${pathTo}/${alias}/index.pug`,
         filename: `${alias}.html`
     })
@@ -23,6 +24,11 @@ function getPlugin(pathTo, alias) {
 module.exports = function({pathTo, aliases}) {
     return {
         entry: getEntries(pathTo, aliases),
-        plugins: getPlugins(pathTo, aliases)
+        plugins: [
+            ...getPlugins(pathTo, aliases),
+            new webpack.optimize.CommonsChunkPlugin({
+                name: 'common',
+            })
+        ]
     };
 };
