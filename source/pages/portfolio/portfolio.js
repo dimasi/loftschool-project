@@ -1,5 +1,3 @@
-console.log('in portfolio.js');
-
 import 'normalize.css';
 import './portfolio.scss';
 

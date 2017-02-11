@@ -1,5 +1,3 @@
-console.log('in about.js');
-
 import 'normalize.css';
 import './about.scss';
 

@@ -1,5 +1,3 @@
-console.log('in index.js');
-
 import 'normalize.css';
 import './index.scss';
 

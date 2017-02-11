@@ -1,5 +1,3 @@
-console.log('in blog.js');
-
 import 'normalize.css';
 import './blog.scss';
 

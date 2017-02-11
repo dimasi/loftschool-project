@@ -1,10 +1,12 @@
 const path = require('path');
+const webpack = require('webpack');
 const merge = require('webpack-merge');
 const pages = require('./webpack/pages');
 const pug = require('./webpack/pug');
 const sass = require('./webpack/sass');
 const extractCSS = require('./webpack/css.extract');
 const css = require('./webpack/css');
+const uglifyJS = require('./webpack/js.uglify');
 const devserver = require('./webpack/devserver');
 
 const PATHS = {
@@ -19,6 +21,12 @@ const common = merge([
       path: PATHS.build,
       filename: './js/[name].js'
     },
+    plugins: [
+      new webpack.ProvidePlugin({
+          $: 'jquery',
+          jQuery: 'jquery'
+      })
+    ],
   },
   pages({ 
     pathTo: `${PATHS.source}/pages`,
@@ -37,7 +45,8 @@ module.exports = (env) => {
     if (env === 'production') {
         return merge([
           common,
-          extractCSS()
+          extractCSS(),
+          uglifyJS({ useSourceMap: true })
         ]);
     }
     if (env === 'development') {
