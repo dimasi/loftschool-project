@@ -10,6 +10,7 @@ const uglifyJS = require('./webpack/js.uglify');
 const lintJS = require('./webpack/js.lint');
 const lintCSS = require('./webpack/sass.lint');
 const images = require('./webpack/images');
+const favicon = require('./webpack/favicon');
 const devserver = require('./webpack/devserver');
 
 const PATHS = {
@@ -52,7 +53,8 @@ module.exports = (env) => {
         return merge([
             common,
             extractCSS(),
-            uglifyJS({ useSourceMap: true })
+            uglifyJS({ useSourceMap: true }),
+            favicon()
         ]);
     }
     if (env === 'development') {
