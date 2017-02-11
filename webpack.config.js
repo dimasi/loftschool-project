@@ -4,6 +4,7 @@ const pages = require('./webpack/pages');
 const pug = require('./webpack/pug');
 const sass = require('./webpack/sass');
 const extractCSS = require('./webpack/css.extract');
+const css = require('./webpack/css');
 const devserver = require('./webpack/devserver');
 
 const PATHS = {
@@ -43,6 +44,7 @@ module.exports = (env) => {
         return merge([
             common,
             sass(),
+            css(),
             devserver()
         ]);
     }
