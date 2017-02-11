@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack",
+    "build": "webpack --env production",
+    "start": "webpack-dev-server --env development",
     "serv": "static build --cache=false",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,6 +16,7 @@
     "node-static": "^0.7.9",
     "pug": "^2.0.0-beta11",
     "pug-loader": "^2.3.0",
-    "webpack": "^2.2.1"
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.3.0"
   }
 }

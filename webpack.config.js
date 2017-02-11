@@ -7,7 +7,7 @@ const PATHS = {
   pages: path.join(__dirname, 'source/pages')
 };
 
-module.exports = {
+const common = {
   entry: {
     index: PATHS.pages + '/index/index.js',
     portfolio: PATHS.pages + '/portfolio/index.js',
@@ -51,4 +51,24 @@ module.exports = {
       }
     ]
   }
+};
+
+const developmentConfig  = {
+    devServer: {
+        stats: 'errors-only'
+    }
+};
+
+
+module.exports = function(env) {
+    if (env === 'production') {
+        return common;
+    }
+    if (env === 'development') {
+        return Object.assign(
+            {},
+            common,
+            developmentConfig
+        );
+    }
 };
