@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'Sansus Webissimo';
+  src: url('fonts/SansusWebissimo.woff') format('woff'),
+    url('fonts/SansusWebissimo.ttf') format('truetype');
+}
+
+body {
+    background: url(images/bg-top.jpg) no-repeat center;
+    background-size: cover;
+    font-family: 'Sansus Webissimo';
+}

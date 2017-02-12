@@ -13,6 +13,8 @@ const images = require('./webpack/images');
 const favicon = require('./webpack/favicon');
 const devserver = require('./webpack/devserver');
 const clean = require('./webpack/clean');
+const fonts = require('./webpack/fonts');
+const parts = require('./webpack/parts');
 
 const PATHS = {
     source: path.join(__dirname, 'source'),
@@ -46,7 +48,13 @@ const common = merge([
     pug(),
     lintJS({ paths: PATHS.sources }),
     lintCSS(),
-    images()
+    fonts({paths: `${PATHS.source}/fonts`}),
+    images(),
+    parts.loadFonts({
+        options: {
+        name: '[name].[ext]',
+        },
+    })
 ]);
 
 
