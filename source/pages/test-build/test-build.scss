@@ -1,0 +1,35 @@
+body {
+    padding: 0 15px;
+    color: wheat;
+    text-align: center;
+}
+
+h4 {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.test-svg {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+
+    &__item {
+        flex-grow: 1;
+        max-width: 160px;
+        padding: 0 5px;
+
+        &-css {
+            height: 0;
+            padding-bottom: 92%;
+            background-image: url('../../images/icons/in.svg');
+        }
+
+        &:first-child {
+            .test-svg__item-css {
+                padding-bottom: 72%;
+                background-image: url('../../images/icons/check.svg');
+            }
+        }
+    }
+}

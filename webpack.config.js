@@ -6,6 +6,7 @@ const pug = require('./webpack/pug');
 const sass = require('./webpack/sass');
 const extractCSS = require('./webpack/css.extract');
 const css = require('./webpack/css');
+const babel = require('./webpack/babel');
 const uglifyJS = require('./webpack/js.uglify');
 const lintJS = require('./webpack/js.lint');
 const lintCSS = require('./webpack/sass.lint');
@@ -25,6 +26,7 @@ const common = merge([
         entry: {},
         output: {
             path: PATHS.build,
+            publicPath: '/',
             filename: './js/[name].js'
         },
         plugins: [
@@ -38,14 +40,16 @@ const common = merge([
     pages({ 
         pathTo: `${PATHS.source}/pages`,
         aliases: [
+            'test-build',
             'index', 
             'about',
             'blog', 
-            'portfolio' 
+            'portfolio'
         ]
     }),
     pug(),
     lintJS({ paths: PATHS.sources }),
+    babel(),
     lintCSS(),
     copyImages(),
     fonts()

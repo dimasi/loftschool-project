@@ -1,25 +1,24 @@
-const IconPlugin = require('svg-sprite-webpack-plugin').plugin;
-const iconPlugin = new IconPlugin('icons-[hash].svg');
+const SvgStorePlugin = require('external-svg-sprite-loader/lib/SvgStorePlugin');
 
 module.exports = () => {
   return {
     module: {
       rules: [
         {
-          test: /\.(jpg|png|svg)$/,
+          test: /\.(jpg|png)$/,
           loader: 'file-loader',
           options: {
             name: 'images/[name].[ext]'
           }
         },
         {
-          test: /\.svg$/,
-          loader: iconPlugin.extract()
+            loader: 'external-svg-sprite-loader',
+            test: /\.svg$/,
         }
       ]
     },
     plugins: [
-      iconPlugin,
+        new SvgStorePlugin(),
     ]
   };
 };
