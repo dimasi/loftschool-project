@@ -9,7 +9,7 @@ const css = require('./webpack/css');
 const uglifyJS = require('./webpack/js.uglify');
 const lintJS = require('./webpack/js.lint');
 const lintCSS = require('./webpack/sass.lint');
-const images = require('./webpack/images');
+const copyImages = require('./webpack/images.copy');
 const favicon = require('./webpack/favicon');
 const devserver = require('./webpack/devserver');
 const clean = require('./webpack/clean');
@@ -47,7 +47,7 @@ const common = merge([
     pug(),
     lintJS({ paths: PATHS.sources }),
     lintCSS(),
-    images(),
+    copyImages(),
     fonts()
 ]);
 
