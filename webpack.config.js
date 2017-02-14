@@ -51,7 +51,10 @@ const common = merge([
     lintJS({ paths: PATHS.sources }),
     babel(),
     lintCSS(),
-    copyImages(),
+    copyImages({
+        pathSource: PATHS.source,
+        pathBuild: PATHS.build
+    }),
     fonts()
 ]);
 

@@ -1,7 +1,10 @@
+@import '../../spritesmith-generated/sprite.scss';
+
 body {
     padding: 0 15px;
     color: wheat;
     text-align: center;
+    background-color: #223b64;
 }
 
 h4 {
@@ -32,4 +35,14 @@ h4 {
             }
         }
     }
+}
+
+.icon {
+    @include sprite($icon);
+    display: inline-block;
+}
+
+.icon2 {
+    @include sprite($icon2);
+    display: inline-block;
 }

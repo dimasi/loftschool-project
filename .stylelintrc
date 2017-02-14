@@ -20,5 +20,6 @@
       }
     ],
     "indentation": 4
-  }
+  },
+  "ignoreFiles": ['**/sprite.scss']
 }

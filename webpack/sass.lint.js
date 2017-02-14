@@ -4,8 +4,8 @@ module.exports = () => {
   return {
     plugins: [
       new StyleLintPlugin({
-        configFile: './.stylelintrc',
-      }),
+        configFile: './.stylelintrc'
+      })
     ],
   };
 };
