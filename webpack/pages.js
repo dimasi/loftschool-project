@@ -1,31 +1,32 @@
+const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-function getEntries(pathTo, aliases) {
+function getEntries(aliases) {
     let r = {};
-    aliases.forEach((alias) => r[alias] = `${pathTo}/${alias}/${alias}.js`);
+    aliases.forEach((alias) => r[alias] = path.join($.PATHS.source, 'pages', alias, `${alias}.js`));
     return r;
 }
 
-function getPlugins(pathTo, aliases) {
+function getPlugins(aliases) {
     return aliases.map((alias) => {
-        return getPlugin(pathTo, alias);
+        return getPlugin(alias);
     });
 }
 
-function getPlugin(pathTo, alias) {
+function getPlugin(alias) {
     return new HtmlWebpackPlugin({
         chunks: [alias, 'common'],
-        template: `${pathTo}/${alias}/index.pug`,
+        template: path.join($.PATHS.source, 'pages', alias, 'index.pug'),
         filename: `${alias}.html`
     });
 }
 
-module.exports = function({pathTo, aliases}) {
+module.exports = function(aliases) {
     return {
-        entry: getEntries(pathTo, aliases),
+        entry: getEntries(aliases),
         plugins: [
-            ...getPlugins(pathTo, aliases),
+            ...getPlugins(aliases),
             new webpack.optimize.CommonsChunkPlugin({
                 name: 'common'
             })

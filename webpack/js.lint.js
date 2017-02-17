@@ -1,10 +1,10 @@
-module.exports = ({ paths, options }) => {
+module.exports = (options) => {
     return {
         module: {
             rules: [
                 {
                     test: /\.js$/,
-                    include: paths,
+                    include: $.PATHS.source,
                     enforce: 'pre',
                     loader: 'eslint-loader',
                     options: options

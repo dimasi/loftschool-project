@@ -1,9 +1,11 @@
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 
-module.exports = ({ paths, options }) => {
+module.exports = () => {
     return {
         plugins: [
-            new CleanWebpackPlugin(paths, options)
+            new CleanWebpackPlugin([$.PATHS.build], {
+                root: $.PATHS.root
+            })
         ]
     }
 }

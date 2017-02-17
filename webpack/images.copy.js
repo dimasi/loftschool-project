@@ -3,7 +3,7 @@ const path = require('path');
 const SvgStorePlugin = require('external-svg-sprite-loader/lib/SvgStorePlugin');
 const SpritesmithPlugin = require('webpack-spritesmith');
 
-module.exports = ({pathSource, pathBuild}) => {
+module.exports = () => {
   return {
     module: {
       rules: [
@@ -16,6 +16,7 @@ module.exports = ({pathSource, pathBuild}) => {
         },
         {
           test: /\.svg$/,
+          exclude: [/node_modules/],
           loader: 'external-svg-sprite-loader',
           options: {
             name: 'images/sprite.svg'
@@ -30,12 +31,12 @@ module.exports = ({pathSource, pathBuild}) => {
       new SvgStorePlugin(),
       new SpritesmithPlugin({
             src: {
-                cwd: path.resolve(pathSource, 'images'),
+                cwd: path.resolve($.PATHS.source, 'images'),
                 glob: '*.png'
             },
             target: {
-                image: path.resolve(pathSource, 'spritesmith-generated', 'sprite.png'),
-                css: path.resolve(pathSource, 'spritesmith-generated', 'sprite.scss')
+                image: path.resolve($.PATHS.source, 'spritesmith-generated', 'sprite.png'),
+                css: path.resolve($.PATHS.source, 'spritesmith-generated', 'sprite.scss')
             },
             apiOptions: {
                 cssImageRef: "~sprite.png"

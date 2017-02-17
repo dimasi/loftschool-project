@@ -16,16 +16,19 @@ const devserver = require('./webpack/devserver');
 const clean = require('./webpack/clean');
 const fonts = require('./webpack/fonts');
 
-const PATHS = {
-    source: path.join(__dirname, 'source'),
-    build: path.join(__dirname, 'build')
-};
+global.$ = {
+    PATHS: {
+        root: __dirname,
+        source: path.join(__dirname, 'source'),
+        build: path.join(__dirname, 'build')
+    }
+}
 
 const common = merge([
     {
-        entry: {},
+        entry: {}, // -> pages();
         output: {
-            path: PATHS.build,
+            path: $.PATHS.build,
             publicPath: '/',
             filename: './js/[name].js'
         },
@@ -37,25 +40,20 @@ const common = merge([
             new webpack.NoEmitOnErrorsPlugin()
         ]
     },
-    pages({ 
-        pathTo: `${PATHS.source}/pages`,
-        aliases: [
-            'test-build',
-            'index', 
-            'about',
-            'blog', 
-            'portfolio'
-        ]
-    }),
+    
+    pages([
+        'test-build',
+        'index', 
+        'about',
+        'blog', 
+        'portfolio'
+    ]),
     pug(),
-    lintJS({ paths: PATHS.sources }),
+    lintJS(),
     babel(),
     lintCSS(),
-    copyImages({
-        pathSource: PATHS.source,
-        pathBuild: PATHS.build
-    }),
-    fonts()
+    fonts(),
+    copyImages()
 ]);
 
 
@@ -64,14 +62,11 @@ module.exports = (env) => {
         return merge([
             common,
             extractCSS(),
-            uglifyJS({ useSourceMap: true }),
+            uglifyJS({
+                useSourceMap: true
+            }),
             favicon(),
-            clean({ 
-                paths: PATHS.build,
-                options: {
-                    root: __dirname
-                }
-            })
+            clean()
         ]);
     }
     if (env === 'development') {

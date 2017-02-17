@@ -32,3 +32,10 @@ block main
     br
     br
     span.icon2
+
+    h4 Test font-awesome
+
+    each val in ['address-book', 'address-card', 'coffee']
+        span(class=`fa fa-${val}`)
+
+    br
