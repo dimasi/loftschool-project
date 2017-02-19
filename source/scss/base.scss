@@ -1,0 +1,34 @@
+@import 'params';
+@import 'fonts';
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-width: 320px;
+    height: 100%;
+    font-size: $fs-base;
+    font-family: 'Roboto', sans-serif;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 100%;
+
+    &__mainbody {
+        flex-grow: 1;
+        flex-shrink: 0;
+    }
+
+    &__footer {
+        flex-grow: 0;
+        flex-shrink: 0;
+    }
+}

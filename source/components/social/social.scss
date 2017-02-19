@@ -1,0 +1,74 @@
+@import '../../scss/params';
+
+.social {
+    display: flex;
+    align-items: baseline;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &__item {
+        margin-right: 27px;
+    }
+
+    &__link {
+        display: block;
+        opacity: .5;
+        fill: $social-link-color;
+
+        &:hover {
+            fill: $color-primary;
+        }
+
+        &_vk {
+            width: 31px;
+        }
+
+        &_github {
+            width: 26px;
+        }
+
+        &_in {
+            width: 24px;
+        }
+    }
+}
+
+// XS
+@media screen and (max-width: $screen-xs-max) {
+    .social_footer {
+        justify-content: center;
+
+        .social__link {
+            &:hover {
+                fill: $social-link-hover-color-xs;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+// SM
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    .social_footer {
+        .social__item {
+            margin-right: 29px;
+        }
+
+        .social__link {
+            &:hover {
+                fill: $social-link-hover-color;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+// LG
+@media screen and (min-width: $screen-lg-min) {
+    .social_footer {
+        .social__item {
+            margin-right: 29px;
+        }
+    }
+}

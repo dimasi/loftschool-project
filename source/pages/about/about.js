@@ -1,7 +1,7 @@
 import 'normalize.css';
-import './../../main.scss';
+import './../../scss/base.scss';
 import './about.scss';
-
-import createMenu from '../../components/menu/menu.js';
-var menu = createMenu(['Главная', 'Обо мне', 'Портфолио', 'Блог'], 'menu');
-document.body.appendChild(menu);
+import './../../components/footer/footer.scss';
+import './../../components/nav/nav.scss';
+import './../../components/social/social.scss';
+import './../../components/contacts/contacts.scss';

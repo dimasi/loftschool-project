@@ -1,0 +1,252 @@
+@import '../../scss/params';
+
+.footer {
+    color: $footer-color;
+
+    &__copyright {
+        font-size: 15.98px;
+        font-weight: 300;
+
+        &-b,
+        &-c {
+            &::before {
+                content: " | ";
+            }
+        }
+    }
+
+    &__text {
+        margin: 0;
+        font-weight: 300;
+    }
+}
+
+.l-footer {
+    &__top {
+        background-color: $footer-top-bg-color;
+    }
+}
+
+// XS
+@media screen and (max-width: $screen-xs-max) {
+    .footer {
+        text-align: center;
+
+        &__text {
+            font-size: 14px;
+            line-height: 23px;
+        }
+
+        &__copyright {
+            font-size: 14.08px;
+            line-height: 23px;
+
+            &-a {
+                display: block;
+            }
+
+            &-b {
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .l-footer {
+        &__top {
+            padding: 0 10px;
+        }
+
+        &__a,
+        &__b {
+            border-bottom: 1px solid $footer-border-color;
+        }
+
+        &__a {
+            padding: 14px 0;
+        }
+
+        &__b {
+            padding: 5px 0 15px;
+        }
+
+        &__c {
+            padding: 13px 0;
+        }
+
+        &__bottom {
+            padding: 7px 0 13px;
+            background-color: $footer-bottom-bg-color-xs;
+        }
+    }
+}
+
+// SM
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    .footer {
+        &__text {
+            font-size: 14px;
+            text-align: center;
+        }
+
+        &__copyright {
+            font-size: 14.2px;
+            text-align: center;
+        }
+    }
+
+    .l-footer {
+        &__top {
+            padding: 0 24px 0 23px;
+        }
+
+        &__wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        &__a {
+            width: 100%;
+            padding: 26px 0 19px;
+            border-bottom: 1px solid $footer-border-color;
+        }
+
+        &__b {
+            padding-top: 3px;
+        }
+
+        &__c {
+            padding: 12px 0 22px;
+        }
+
+        &__bottom {
+            padding: 10px 24px 8px 23px;
+            background-color: $footer-bottom-bg-color-sm;
+        }
+    }
+}
+
+// MD
+@media screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    .footer {
+        &__text {
+            line-height: 23px;
+        }
+
+        &__copyright {
+            font-size: 15.98px;
+            line-height: 23px;
+            text-align: center;
+        }
+    }
+
+    .l-footer {
+        &__top {
+            padding-bottom: 21px;
+        }
+
+        &__wrapper {
+            display: flex;
+        }
+
+        &__a {
+            width: percentage(418px/1200px);
+            padding: 24px 30px 0px;
+        }
+
+        &__b,
+        &__c {
+            position: relative;
+
+            &::before {
+                content: "";
+                display: block;
+                width: 1px;
+                height: 87px;
+                background-color: $footer-border-color;
+                position: absolute;
+                top: 30px;
+                left: 0;
+            }
+        }
+
+        &__b {
+            width: percentage(467px/1200px);
+            padding: 28px 31px 0 32px;
+        }
+
+        &__c {
+            width: percentage(315px/1200px);
+            padding: 26px 0 0 31px;
+        }
+
+        &__bottom {
+            padding: 6px 0 9px;
+            background-color: $footer-bottom-bg-color-md;
+        }
+    }
+}
+
+// LG
+@media screen and (min-width: $screen-lg-min) {
+    .footer {
+        &__text {
+            line-height: 23px;
+        }
+
+        &__copyright {
+            font-size: 15.98px;
+            line-height: 23px;
+            text-align: center;
+        }
+    }
+
+    .l-footer {
+        &__top {
+            padding-bottom: 21px;
+        }
+
+        &__wrapper {
+            display: flex;
+            width: 1800px;
+        }
+
+        &__a {
+            width: percentage(600px/1800px);
+            padding: 24px 30px 0px;
+        }
+
+        &__b,
+        &__c {
+            position: relative;
+
+            &::before {
+                content: "";
+                display: block;
+                width: 1px;
+                height: 87px;
+                background-color: $footer-border-color;
+                position: absolute;
+                top: 30px;
+                left: 0;
+            }
+        }
+
+        &__b {
+            width: percentage(599px/1800px);
+            padding: 28px 31px 0 31px;
+        }
+
+        &__c {
+            width: percentage(601px/1800px);
+            padding: 26px 0 0 30px;
+        }
+
+        &__bottom {
+            padding: 6px 0 9px;
+            background-color: $footer-bottom-bg-color-lg;
+        }
+    }
+}
