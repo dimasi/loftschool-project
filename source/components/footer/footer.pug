@@ -1,6 +1,7 @@
 include ./../nav/nav
 include ./../social/social
 include ./../contacts/contacts
+include ./../copyright/copyright
 
 .footer
     .l-footer__top
@@ -9,45 +10,22 @@ include ./../contacts/contacts
                 p.footer__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool 
             .l-footer__b
                 +nav('nav_footer', [
-                    {
-                        text: 'Мои работы',
-                        link: '#works'
-                    },
-                    {
-                        text: 'Обо мне',
-                        link: '#about'
-                    },
-                    {
-                        text: 'Блог',
-                        link: '#blog'
-                    },
-                    {
-                        text: 'Авторизация',
-                        link: '#auth'
-                    }
+                    { text: 'Мои работы', link: '#works' },
+                    { text: 'Обо мне', link: '#about' },
+                    { text: 'Блог', link: '#blog' },
+                    { text: 'Авторизация', link: '#auth' }
                 ])
                 +social('social_footer', [
-                    {
-                        icon: 'vk',
-                        link: '#vk'
-                    }, 
-                    {
-                        icon: 'github',
-                        link: '#github'
-                    }, 
-                    {
-                        icon: 'in',
-                        link: '#in'
-                    }
+                    { icon: 'vk', link: '#vk' }, 
+                    { icon: 'github', link: '#github' }, 
+                    { icon: 'in', link: '#in' }
                 ])
             .l-footer__c
-                +contacts('contacts_footer', {
-                    skype: 'skype_kdn',
-                    email: 'astahov@gmail.com',
-                    tel: '+7 931 200 93 24',
-                    address: 'г. Новосибирск, ул. Инская, д.4'
-                })
-    .l-footer__bottom.footer__copyright
-        span.footer__copyright-a © Владимир Астахов 
-        span.footer__copyright-b Создано с любовью в LoftSchool 
-        span.footer__copyright-c 2016
+                +contacts('contacts_footer', [
+                    { text: 'skype_kdn', link: '#skype_kdn' },
+                    { text: 'astahov@gmail.com', link: '#astahov@gmail.com' },
+                    { text: '+7 931 200 93 24', link: '#+79312009324' },
+                    { text: 'г. Новосибирск, ул. Инская, д.4' }
+                ])
+    .l-footer__bottom.copyright
+        +copyright('copyright')

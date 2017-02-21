@@ -1,4 +1,5 @@
-@import '../../scss/params';
+@import '../params';
+@import '../mixins';
 
 .social {
     display: flex;
@@ -9,17 +10,53 @@
 
     &__item {
         margin-right: 27px;
+
+        &:last-child {
+            margin-right: 0;
+        }
     }
 
     &__link {
         display: block;
-        opacity: .5;
         fill: $social-link-color;
 
         &:hover {
             fill: $color-primary;
         }
 
+        &_vk {
+            width: 31px;
+        }
+
+        &_github {
+            width: 26px;
+            position: relative;
+            top: 1px;
+        }
+
+        &_in {
+            width: 24px;
+        }
+    }
+}
+
+.social_footer {
+    .social__link {
+        opacity: .5;
+    }
+}
+
+.social_about-top {
+    position: absolute;
+    z-index: 2;
+    top: 30px;
+    left: 30px;
+
+    &:hover {
+        fill: #2d47ce;
+    }
+
+    .social__link {
         &_vk {
             width: 31px;
         }
@@ -34,6 +71,19 @@
     }
 }
 
+.social_welcome {
+    justify-content: center;
+    margin-bottom: 40px;
+
+    .social__link {
+        fill: rgba(0, 76, 209, .7);
+
+        &:hover {
+            fill: rgba(0, 76, 209, 1);
+        }
+    }
+}
+
 // XS
 @media screen and (max-width: $screen-xs-max) {
     .social_footer {
@@ -43,6 +93,25 @@
             &:hover {
                 fill: $social-link-hover-color-xs;
                 opacity: 1;
+            }
+        }
+    }
+
+    .social_about-top {
+        top: 11px;
+        left: 11px;
+
+        .social__link {
+            &_vk {
+                width: 21px;
+            }
+
+            &_github {
+                width: 21px;
+            }
+
+            &_in {
+                width: 19px;
             }
         }
     }

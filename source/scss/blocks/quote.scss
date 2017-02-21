@@ -1,0 +1,36 @@
+@import '../params';
+@import '../mixins';
+
+.quote {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+
+    &__img {
+        display: block;
+        width: 77px;
+        height: 77px;
+        margin-bottom: 15px;
+        border-radius: 100%;
+        background-size: cover;
+    }
+
+    &__text {
+        margin-bottom: 13px;
+        font-style: italic;
+        line-height: 26px;
+        text-align: left;
+    }
+
+    &__author-name {
+        font-style: italic;
+        font-weight: 700;
+    }
+
+    &__author-occupation {
+        font-style: italic;
+    }
+}

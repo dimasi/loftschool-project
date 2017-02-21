@@ -1,0 +1,63 @@
+@import '../params';
+@import '../mixins';
+
+.copyright {
+    font-size: 15.98px;
+    font-weight: 300;
+
+    &-b,
+    &-c {
+        &::before {
+            content: " | ";
+        }
+    }
+
+    &_welcome {
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #fff;
+    }
+}
+
+// XS
+@media screen and (max-width: $screen-xs-max) {
+    .copyright {
+        font-size: 14.08px;
+        line-height: 23px;
+
+        &-a {
+            display: block;
+        }
+
+        &-b {
+            &::before {
+                display: none;
+            }
+        }
+    }
+}
+
+// SM
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    .copyright {
+        font-size: 14.2px;
+    }
+}
+
+// MD
+@media screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    .copyright {
+        font-size: 15.98px;
+        line-height: 23px;
+    }
+}
+
+// LG
+@media screen and (min-width: $screen-lg-min) {
+    .copyright {
+        font-size: 15.98px;
+        line-height: 23px;
+    }
+}

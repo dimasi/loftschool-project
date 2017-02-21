@@ -1,0 +1,178 @@
+@import '../params';
+@import '../mixins';
+
+.l-top {
+    position: relative;
+
+    &__bg {
+        position: absolute;
+        top: -280px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &__social {
+        position: absolute;
+        z-index: 2;
+        top: 30px;
+        left: 30px;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        height: 100%;
+        padding-top: 156px;
+    }
+
+    &__hamburger {
+        position: absolute;
+        top: 28px;
+        right: 30px;
+        z-index: 2;
+    }
+
+    &__ribbon {
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+
+    &__arrow-button {
+        position: absolute;
+        z-index: 10;
+        top: 512px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: .7;
+    }
+}
+
+.l-top_compact {
+    .l-top__bg {
+        top: -483px;
+    }
+}
+
+// XS
+@media screen and (max-width: $screen-xs-max) {
+    .l-top {
+        height: 651px;
+
+        &__bg {
+            top: -2px;
+            width: 1130px;
+        }
+
+        &__container {
+            padding-top: 116px;
+        }
+
+        &__ribbon {
+            margin-top: -261px;
+        }
+
+        &__hamburger {
+            top: 10px;
+            right: 10px;
+        }
+
+        &__social {
+            top: 12px;
+            left: 11px;
+        }
+
+        &__arrow-button {
+            top: 490px;
+        }
+    }
+
+    .l-top_compact {
+        .l-top__bg {
+            top: -2px;
+        }
+    }
+}
+
+// SM
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    .l-top {
+        height: 640px;
+
+        &__bg {
+            width: 1200px;
+            top: -71px;
+        }
+
+        &__container {
+            padding-top: 117px;
+        }
+
+        &__ribbon {
+            margin-top: -305px;
+        }
+
+        &__arrow-button {
+            top: 440px;
+        }
+
+        &__hamburger {
+            top: 29px;
+            right: 27px;
+        }
+    }
+
+    .l-top_compact {
+        .l-top__bg {
+            top: -110px;
+        }
+    }
+}
+
+// MD
+@media screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    .l-top {
+        height: 785px;
+
+        &__ribbon {
+            margin-top: -352px;
+        }
+    }
+
+    .l-top_compact {
+        height: 500px;
+
+        .l-top__container {
+            padding-top: 82px;
+        }
+
+        .l-top__ribbon {
+            margin-top: -272px;
+        }
+    }
+}
+
+// LG
+@media screen and (min-width: $screen-lg-min) {
+    .l-top {
+        height: 786px;
+
+        &__ribbon {
+            margin-top: -355px;
+        }
+    }
+
+    .l-top_compact {
+        height: 500px;
+
+        .l-top__container {
+            padding-top: 82px;
+        }
+
+        .l-top__ribbon {
+            margin-top: -272px;
+        }
+    }
+}

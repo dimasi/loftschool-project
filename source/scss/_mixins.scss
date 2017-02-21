@@ -1,0 +1,12 @@
+@mixin drop-style-btn() {
+    background-color: transparent;
+    border: 0 none;
+    padding: 0;
+    cursor: pointer;
+}
+
+@mixin drop-style-ul() {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}

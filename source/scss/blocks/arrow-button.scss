@@ -1,0 +1,15 @@
+@import '../params';
+@import '../mixins';
+
+.arrow-button {
+    @include drop-style-btn;
+    width: 26px;
+    height: 16px;
+    z-index: 2;
+    cursor: pointer;
+    opacity: .7;
+
+    &__icon {
+        fill: #fff;
+    }
+}

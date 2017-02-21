@@ -1,0 +1,19 @@
+@import '../params';
+@import '../mixins';
+
+.l-map {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 975px;
+    padding-bottom: 185px;
+    margin-bottom: -185px;
+    background: url(../../images/map.png) center;
+    background-size: cover;
+
+    &__container {
+        width: 580px;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, .7);
+    }
+}

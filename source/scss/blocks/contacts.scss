@@ -1,10 +1,12 @@
-@import '../../scss/params';
+@import '../params';
+@import '../mixins';
+
+.contacts {
+    @include drop-style-ul;
+}
 
 .contacts_footer {
-    padding: 0;
-    margin: 0;
     line-height: 25px;
-    list-style: none;
 
     .contacts__link {
         color: $contacts-link-color;
@@ -15,6 +17,20 @@
     .contacts__text {
         color: $contacts-text-color;
         font-weight: 300;
+    }
+}
+
+.contacts_map {
+    display: flex;
+    flex-wrap: wrap;
+
+    .contacts__item {
+        width: 50%;
+    }
+
+    .contacts__link {
+        color: #474b57;
+        text-decoration: none;
     }
 }
 

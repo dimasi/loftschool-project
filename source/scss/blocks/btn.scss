@@ -1,0 +1,44 @@
+@import '../params';
+@import '../mixins';
+
+.btn {
+    @include drop-style-btn;
+    padding: 14px 15px 13px;
+    font-size: 16px;
+    text-decoration: none;
+
+    &:focus {
+        outline: 0 none;
+    }
+}
+
+.btn_primary {
+    background-color: #004cd1;
+    color: #fff;
+    font-weight: 500;
+
+    &:hover {
+        background-color: rgba(4, 62, 163, .85);
+    }
+}
+
+.btn_transparent {
+    color: rgba(255, 255, 255, .5);
+}
+
+.btn_sign-in {
+    padding: 13px 41px 12px;
+    border: 1px solid #fff;
+    color: #fff;
+
+    &:hover {
+        border-color: #083c96;
+        background-color: #083c96;
+    }
+}
+
+.btn_icon {
+    width: 27px;
+    padding: 0;
+    fill: #fff;
+}

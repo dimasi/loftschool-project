@@ -1,0 +1,13 @@
+mixin skill (title, value)
+    - var max = 282.6, progress = value * max / 100
+
+    - var extraClass = 'skill_lev1';
+    - if (value > 25) extraClass = 'skill_lev2';
+    - if (value > 50) extraClass = 'skill_lev3';
+    - if (value > 75) extraClass = 'skill_lev4';
+
+    figure(class=`skill ${extraClass}`)
+        .skill__title= title
+        svg(width="100%" height="100%" viewBox="0 0 110 110" class="skill__circle")
+            circle(r="45" cx="50%" cy="50%" fill="none" class="skill__bar")
+            circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class="skill__progress" style=`stroke-dasharray: ${progress} 282.6;`)

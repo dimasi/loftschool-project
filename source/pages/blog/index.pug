@@ -1,7 +1,89 @@
 extends ../layout
 
+include ../../components/social/social
+include ../../components/nav/nav
+
 block title
     | Blog page
     
-block main
-    | content...
+block content
+
+    //- SVG
+    - let svgHamburger = require('../../images/icons/hamburger.svg');
+    - let svgRibbonLeft = require('../../images/icons/about_bg_left.svg');
+    - let svgRibbonRight = require('../../images/icons/about_bg_right.svg');
+    - let svgStars = require(`../../images/icons/stars1.svg`);
+
+    section.l-section.l-top.l-top_compact
+        .l-top__social
+            +social('social_top', [
+                {
+                    icon: 'vk',
+                    link: '#vk'
+                },
+                {
+                    icon: 'github',
+                    link: '#github'
+                },
+                {
+                    icon: 'in',
+                    link: '#in'
+                }
+            ])
+            
+        .l-top__hamburger
+            button.hamburger
+                svg(class='hamburger__icon' viewBox=svgHamburger.viewBox): use(xlink:href=svgHamburger.symbol)
+
+        img(class='l-top__bg' src=require('../../images/about-top.jpg'))
+
+        .l-top__container
+            .user.user_page-heading
+                svg(class="user__bg" viewBox=svgStars.viewBox): use(xlink:href=svgStars.symbol)
+                span(class="user__img" style=`background-image: url(${require('../../images/user-avatar.png')})`)
+                .user__title Блог
+                .user__subtitle Статьи, которые я написал
+
+        .l-top__ribbon.ribbon
+            .ribbon__col.ribbon__col_left
+                svg(class="ribbon__triangle ribbon__triangle_left" preserveAspectRatio="none" viewBox=svgRibbonLeft.viewBox): use(xlink:href=svgRibbonLeft.symbol)
+            .ribbon__col.ribbon__col_right
+                svg(class="ribbon__triangle ribbon__triangle_right" preserveAspectRatio="none" viewBox=svgRibbonRight.viewBox): use(xlink:href=svgRibbonRight.symbol)
+
+    .l-blog
+        .l-blog__wrapper
+            .l-blog__sidebar
+                +nav('nav_blog', [
+                    {
+                        text: 'Самое важное в SASS',
+                        link: '#1',
+                        active: true
+                    },
+                    {
+                        text: 'Приёмы в вёрстке, без которых не обходится ни один сайт',
+                        link: '#2'
+                    },
+                    {
+                        text: 'Самый необходимый набор Gulp плагинов',
+                        link: '#3'
+                    },
+                    {
+                        text: 'Почему я выбрал Jade',
+                        link: '#4'
+                    }
+                ])
+            .l-blog__mainbody
+                .article
+                    h3.article__title Самое важное в SASS
+                    span.article__date 22 ноября 2016
+                    .article__content
+                    p Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.
+                    p Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
+                    img(src=require('../../images/code-snippet.png'))
+
+                .article
+                    h3.article__title Приёмы в вёрстке, без которых не обходится ни один сайт
+                    span.article__date 13 ноября 2016
+                    .article__content
+                        p Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.
+                        p Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.

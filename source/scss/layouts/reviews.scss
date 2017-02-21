@@ -1,0 +1,25 @@
+@import '../params';
+@import '../mixins';
+
+.l-reviews {
+    width: 1200px;
+    padding-top: 58px;
+    margin: 0 auto;
+
+    &__heading {
+        width: 47%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__quotes {
+        @include drop-style-ul;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    &__quote {
+        width: 395px;
+    }
+}

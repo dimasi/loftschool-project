@@ -1,0 +1,11 @@
+@import '../params';
+@import '../mixins';
+
+.section-wrapper {
+    background-size: cover;
+
+    &_works {
+        background-image: url(../../images/works-bg.jpg);
+        background-position: 63%;
+    }
+}

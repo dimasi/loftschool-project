@@ -1,0 +1,34 @@
+@import '../params';
+@import '../mixins';
+
+.l-about {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top: -150px;
+
+    &__col {
+        width: 50%;
+
+        &_a {
+            background-color: #f2f0e8;
+        }
+
+        &_b {
+            background-color: #f4f5f0;
+        }
+    }
+
+    &__col-wrapper {
+        width: 600px;
+    }
+
+    &__col-wrapper_a {
+        float: right;
+        padding: 0 80px;
+    }
+
+    &__col-wrapper_b {
+        padding-left: 38px;
+    }
+}

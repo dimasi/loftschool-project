@@ -1,15 +1,14 @@
-mixin contacts (className, params)
+mixin contact (item)
+    li(class='contacts__item')
+        if (item.icon)
+            svg(class="contacts__item-icon" viewBox=item.icon.viewBox): use(xlink:href=item.icon.symbol)
+        if (item.link)
+            a(href=`${item.link}` class=`contacts__link`)= item.text
+        else
+            span.contacts__text= item.text
+
+mixin contacts (className, items)
 
     ul(class=`contacts ${className}`)
-        if (params.skype)
-            li(class='contacts__item')
-                a(href=`${params.skype}` class=`contacts__link contacts__link_skype`)= params.skype
-        if (params.email)
-            li(class='contacts__item')
-                a(href=`mailto:${params.email}` class=`contacts__link contacts__link_email`)= params.email
-        if (params.tel)
-            li(class='contacts__item')
-                a(href=`tel:${params.tel}` class=`contacts__link contacts__link_phone`)= params.tel
-        if (params.address)
-            li(class='contacts__item')
-                span(class=`contacts__text contacts__link_address`)= params.address
+        each item in items
+            +contact(item)

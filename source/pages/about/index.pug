@@ -1,7 +1,112 @@
 extends ../layout
 
+include ./../../components/social/social
+include ./../../components/skills-group/skills-group
+include ./../../components/contacts/contacts
+
 block title
     | About page
     
-block main
-    | content...
+block content
+
+    //- SVG
+    - let svgArrowDown = require('../../images/icons/portf_arrow_down.svg');
+    - let svgHamburger = require('../../images/icons/hamburger.svg');
+    - let svgRibbonLeft = require('../../images/icons/about_bg_left.svg');
+    - let svgRibbonRight = require('../../images/icons/about_bg_right.svg');
+    - let svgStars = require(`../../images/icons/stars1.svg`);
+    - let svgStars2 = require(`../../images/icons/stars2.svg`);
+
+    .page__content-wrapper
+        section.l-section.l-top
+            .l-top__social
+                +social('social_top', [
+                    {
+                        icon: 'vk',
+                        link: '#vk'
+                    },
+                    {
+                        icon: 'github',
+                        link: '#github'
+                    },
+                    {
+                        icon: 'in',
+                        link: '#in'
+                    }
+                ])
+                
+            .l-top__hamburger
+                button.hamburger
+                    svg(class='hamburger__icon' viewBox=svgHamburger.viewBox): use(xlink:href=svgHamburger.symbol)
+
+            img(class='l-top__bg' src=require('../../images/about-top.jpg'))
+
+            .l-top__container
+                .user
+                    svg(class="user__bg" viewBox=svgStars.viewBox): use(xlink:href=svgStars.symbol)
+                    span(class="user__img" style=`background-image: url(${require('../../images/user-avatar.png')})`)
+                    .user__name Владимир Астахов
+                    .user__occupation Личный сайт веб разработчика
+
+            button(type="button" class="l-top__arrow-button btn btn_icon")
+                svg(viewBox=svgArrowDown.viewBox): use(xlink:href=svgArrowDown.symbol)
+
+            .l-top__ribbon.ribbon.ribbon_about
+                .ribbon__col.ribbon__col_left
+                    svg(class="ribbon__triangle ribbon__triangle_left" viewBox=svgRibbonLeft.viewBox): use(xlink:href=svgRibbonLeft.symbol)
+                .ribbon__col.ribbon__col_right
+                    svg(class="ribbon__triangle ribbon__triangle_right" viewBox=svgRibbonRight.viewBox): use(xlink:href=svgRibbonRight.symbol)
+
+
+        .l-about
+            .l-about__col.l-about__col_a
+                .l-about__col-wrapper.l-about__col-wrapper_a
+                    h1.heading.heading_lead.heading_lg 
+                        svg(class="heading__img" viewBox=svgStars2.viewBox): use(xlink:href=svgStars2.symbol)
+                        span.heading__text Обо мне
+                    .block
+                        img(class='block__img' src=require('../../images/about.jpg'))
+                        h4.block__title.heading.heading_lead.heading_bordered Кто я
+                        .block__text
+                            p Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                            p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+            
+            .l-about__col.l-about__col_b
+                .l-about__col-wrapper.l-about__col-wrapper_b
+                    h4.block__title.heading.heading_lead.heading_shrinked.heading_bordered Чем я могу быть вам полезен
+                    .block__text
+                        p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+
+                    +skills-group('Frontend', [
+                        { title: 'HTML', progress: 80 },
+                        { title: 'CSS3', progress: 60 },
+                        { title: 'JavaScript & jQuery', progress: 40 }
+                    ])
+
+                    +skills-group('Backend', [
+                        { title: 'PHP', progress: 80 },
+                        { title: 'mySQL', progress: 60 },
+                        { title: 'Node.js & npm', progress: 40 },
+                        { title: 'Mongo.db', progress: 20 }
+                    ])
+
+                    +skills-group('WorkFlow', [
+                        { title: 'Git', progress: 80 },
+                        { title: 'Gulp', progress: 60 },
+                        { title: 'Bower', progress: 40 }
+                    ])
+        .l-map
+            .l-map__container
+                h4.l-contacts__heading.heading.heading_lead.heading_bordered Контакты
+
+                - var svgContactsSkype = require('../../images/icons/skype_n.svg');
+                - var svgContactsEnvelope = require('../../images/icons/envelope_n.svg');
+                - var svgContactsPhone = require('../../images/icons/phone_n.svg');
+                - var svgContactsMap = require('../../images/icons/map_n.svg');
+                +contacts('contacts_map', [
+                    { text: 'skype_kdn', link: '#skype_kdn' },
+                    { text: 'astahov@gmail.com', link: '#astahov@gmail.com' },
+                    { text: '+7 931 200 93 24', link: '#+79312009324' },
+                    { text: 'г. Новосибирск, ул. Инская, д.4' }
+                ])
+                

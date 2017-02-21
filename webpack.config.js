@@ -42,7 +42,6 @@ const common = merge([
     },
     
     pages([
-        'test-build',
         'index', 
         'about',
         'blog', 

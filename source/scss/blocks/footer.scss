@@ -1,0 +1,51 @@
+@import '../params';
+@import '../mixins';
+
+.footer {
+    color: $footer-color;
+    position: relative;
+
+    &__text {
+        margin: 0;
+        font-weight: 300;
+    }
+}
+
+
+
+// XS
+@media screen and (max-width: $screen-xs-max) {
+    .footer {
+        &__text {
+            font-size: 14px;
+            line-height: 23px;
+        }
+    }
+}
+
+// SM
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    .footer {
+        &__text {
+            font-size: 14px;
+        }
+    }
+}
+
+// MD
+@media screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    .footer {
+        &__text {
+            line-height: 23px;
+        }
+    }
+}
+
+// LG
+@media screen and (min-width: $screen-lg-min) {
+    .footer {
+        &__text {
+            line-height: 23px;
+        }
+    }
+}

@@ -1,58 +1,18 @@
-@import '../../scss/params';
-
-.footer {
-    color: $footer-color;
-
-    &__copyright {
-        font-size: 15.98px;
-        font-weight: 300;
-
-        &-b,
-        &-c {
-            &::before {
-                content: " | ";
-            }
-        }
-    }
-
-    &__text {
-        margin: 0;
-        font-weight: 300;
-    }
-}
+@import '../params';
+@import '../mixins';
 
 .l-footer {
     &__top {
         background-color: $footer-top-bg-color;
     }
+
+    &__bottom {
+        text-align: center;
+    }
 }
 
 // XS
 @media screen and (max-width: $screen-xs-max) {
-    .footer {
-        text-align: center;
-
-        &__text {
-            font-size: 14px;
-            line-height: 23px;
-        }
-
-        &__copyright {
-            font-size: 14.08px;
-            line-height: 23px;
-
-            &-a {
-                display: block;
-            }
-
-            &-b {
-                &::before {
-                    display: none;
-                }
-            }
-        }
-    }
-
     .l-footer {
         &__top {
             padding: 0 10px;
@@ -65,6 +25,7 @@
 
         &__a {
             padding: 14px 0;
+            text-align: center;
         }
 
         &__b {
@@ -73,10 +34,11 @@
 
         &__c {
             padding: 13px 0;
+            text-align: center;
         }
 
         &__bottom {
-            padding: 7px 0 13px;
+            padding: 7px 10px 13px;
             background-color: $footer-bottom-bg-color-xs;
         }
     }
@@ -84,18 +46,6 @@
 
 // SM
 @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-    .footer {
-        &__text {
-            font-size: 14px;
-            text-align: center;
-        }
-
-        &__copyright {
-            font-size: 14.2px;
-            text-align: center;
-        }
-    }
-
     .l-footer {
         &__top {
             padding: 0 24px 0 23px;
@@ -111,6 +61,7 @@
             width: 100%;
             padding: 26px 0 19px;
             border-bottom: 1px solid $footer-border-color;
+            text-align: center;
         }
 
         &__b {
@@ -130,18 +81,6 @@
 
 // MD
 @media screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-    .footer {
-        &__text {
-            line-height: 23px;
-        }
-
-        &__copyright {
-            font-size: 15.98px;
-            line-height: 23px;
-            text-align: center;
-        }
-    }
-
     .l-footer {
         &__top {
             padding-bottom: 21px;
@@ -191,18 +130,6 @@
 
 // LG
 @media screen and (min-width: $screen-lg-min) {
-    .footer {
-        &__text {
-            line-height: 23px;
-        }
-
-        &__copyright {
-            font-size: 15.98px;
-            line-height: 23px;
-            text-align: center;
-        }
-    }
-
     .l-footer {
         &__top {
             padding-bottom: 21px;

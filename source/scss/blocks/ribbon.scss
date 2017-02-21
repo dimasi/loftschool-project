@@ -1,0 +1,35 @@
+@import '../params.scss';
+@import '../mixins.scss';
+
+.ribbon {
+    display: flex;
+    align-items: flex-end;
+    width: 1920px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    &__col {
+        width: 50%;
+    }
+
+    .ribbon__triangle {
+        fill: #faf8f0;
+    }
+}
+
+.ribbon_dark {
+    .ribbon__triangle {
+        position: relative;
+        fill: rgba(13, 17, 32, .85);
+    }
+}
+
+.ribbon_about {
+    .ribbon__triangle_left {
+        fill: #f2f0e8;
+    }
+
+    .ribbon__triangle_right {
+        fill: #f4f5f0;
+    }
+}

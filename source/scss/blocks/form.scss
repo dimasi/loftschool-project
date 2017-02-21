@@ -1,0 +1,31 @@
+@import '../params';
+@import '../mixins';
+
+.form {
+    &__control {
+        width: 100%;
+        padding: 14px 15px 13px;
+
+        &:focus {
+            outline: 0 none;
+        }
+
+        &_textarea {
+            resize: none;
+            min-height: 130px;
+        }
+    }
+
+    &_feedback {
+        .form__wrapper {
+            padding: 0 20px;
+        }
+
+        .form__control {
+            margin-bottom: 20px;
+            border: 0 none;
+            background-color: rgba(255, 255, 255, .07);
+            color: #fff;
+        }
+    }
+}
