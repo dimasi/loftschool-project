@@ -394,17 +394,6 @@ babel-plugin-check-es2015-constants@^6.22.0:
   dependencies:
     babel-runtime "^6.22.0"
 
-babel-plugin-dynamic-import-webpack@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/babel-plugin-dynamic-import-webpack/-/babel-plugin-dynamic-import-webpack-1.0.1.tgz#26c24a1c1c9bf49184b30d5867562a4cbfa530d1"
-  dependencies:
-    babel-plugin-syntax-dynamic-import "^6.18.0"
-    babel-template "^6.16.0"
-
-babel-plugin-syntax-dynamic-import@^6.18.0:
-  version "6.18.0"
-  resolved "https://registry.yarnpkg.com/babel-plugin-syntax-dynamic-import/-/babel-plugin-syntax-dynamic-import-6.18.0.tgz#8d6a26229c83745a9982a441051572caa179b1da"
-
 babel-plugin-transform-es2015-arrow-functions@^6.22.0:
   version "6.22.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-es2015-arrow-functions/-/babel-plugin-transform-es2015-arrow-functions-6.22.0.tgz#452692cb711d5f79dc7f85e440ce41b9f244d221"
@@ -634,7 +623,7 @@ babel-runtime@^6.18.0, babel-runtime@^6.22.0:
     core-js "^2.4.0"
     regenerator-runtime "^0.10.0"
 
-babel-template@^6.16.0, babel-template@^6.22.0:
+babel-template@^6.22.0:
   version "6.22.0"
   resolved "https://registry.yarnpkg.com/babel-template/-/babel-template-6.22.0.tgz#403d110905a4626b317a2a1fcb8f3b73204b2edb"
   dependencies:
@@ -3707,10 +3696,6 @@ normalize-url@^1.4.0:
     query-string "^4.1.0"
     sort-keys "^1.0.0"
 
-normalize.css@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/normalize.css/-/normalize.css-5.0.0.tgz#7cec875ce8178a5333c4de80b68ea9c18b9d7c37"
-
 "npmlog@0 || 1 || 2 || 3 || 4", npmlog@^4.0.0, npmlog@^4.0.1:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/npmlog/-/npmlog-4.0.2.tgz#d03950e0e78ce1527ba26d2a7592e9348ac3e75f"
@@ -4887,6 +4872,10 @@ requires-port@1.0.x, requires-port@1.x.x:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
 
+reset-css@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/reset-css/-/reset-css-2.2.0.tgz#57ce1d2e8c28cca656c59385dc484f0cb35c5a1d"
+
 resize-img@^1.1.0:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/resize-img/-/resize-img-1.1.2.tgz#fad650faf3ef2c53ea63112bc272d95e9d92550e"
@@ -5458,13 +5447,7 @@ svg2png@~3.0.1:
     pn "^1.0.0"
     yargs "^3.31.0"
 
-svgo-loader@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/svgo-loader/-/svgo-loader-1.1.2.tgz#53ec4718523b39dd21195cbe64bc4d973ab98303"
-  dependencies:
-    loader-utils "^0.2.16"
-
-svgo@^0.7.0, svgo@^0.7.2:
+svgo@^0.7.0:
   version "0.7.2"
   resolved "https://registry.yarnpkg.com/svgo/-/svgo-0.7.2.tgz#9f5772413952135c6fefbf40afe6a4faa88b4bb5"
   dependencies:
