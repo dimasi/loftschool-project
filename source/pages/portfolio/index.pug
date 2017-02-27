@@ -19,7 +19,10 @@ block content
 
     .page__content-wrapper.page-works
         .page-header.page-works__header
-            img(class=`page-header__bg` src=require(`./../../images/layout-bg.jpg`))
+            video(class=`page-header__bg-video` width=`400` height=`300` autoplay loop)
+                source(src=`${require('./../../night.mp4')}`)
+
+            img(class=`page-header__bg` src=require(`./../../images/night_no_bg.png`))
 
             .page-header__bg-user
                 svg(class=`page-header__bg-user-img` viewBox=svgStars.viewBox): use(xlink:href=svgStars.symbol)
@@ -34,7 +37,7 @@ block content
 
                 button(type=`button` class=`page-header__anchor-link btn-arrow`)
                     svg(class=`btn-arrow__icon` viewBox=svgArrowDown.viewBox): use(xlink:href=svgArrowDown.symbol)
-            
+        
         .ribbon.ribbon_theme_dark.page-works__ribbon
             .ribbon__col.ribbon__col_left
                 svg(class=`ribbon__triangle ribbon__triangle_side_left` viewBox=svgRibbonLeft.viewBox): use(xlink:href=svgRibbonLeft.symbol)

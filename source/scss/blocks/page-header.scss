@@ -7,8 +7,18 @@
 
     &__bg {
         width: 2000px;
+        margin-top: -250px;
         position: absolute;
         z-index: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__bg-video {
+        width: 2000px;
+        height: 1100px;
+        position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -47,6 +57,10 @@
     .page-header {
         height: 100vh;
 
+        &__bg {
+            margin-top: -150px;
+        }
+
         &__bg-user {
             width: 281px;
             top: (99 / 568 * 100vh);
@@ -66,6 +80,10 @@
 // xs-landscape
 @include media-xs-landscape {
     .page-header {
+        &__bg {
+            margin-top: -245px;
+        }
+
         &__bg-user {
             top: (25 / 320 * 100vh);
         }

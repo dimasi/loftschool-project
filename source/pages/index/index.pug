@@ -9,7 +9,10 @@ block title
 
 block content
     .page-welcome
-        img(class=`page-welcome__bg` src=require(`./../../images/layout-bg.jpg`))
+        video(class=`page-welcome__bg-video` width=`400` height=`300` autoplay loop)
+            source(src=`${require('./../../night.mp4')}`)
+
+        img(class=`page-welcome__bg` src=require(`./../../images/night_no_bg.png`))
 
         .page-welcome__sign-in
             button(type=`button` id=`sign-in` class=`btn btn_w_100 btn_border_white btn_hover-bg_blue btn_xs-size_small`)

@@ -37,3 +37,28 @@ $('[href="#welcome-backflip"]').on('click', e => {
     e.preventDefault();
     $flipPanel.removeClass('flip-panel_state_flipped');
 });
+
+// Parallax
+let parallaxRule = (e, divider) => {
+    let bottomPosition = (window.innerHeight / 2) * divider,
+        pageX = e.pageX,
+        pageY = e.pageY,
+        initialX = (window.innerWidth / 2) - pageX,
+        initialY = (window.innerHeight / 2) - pageY,
+        positionX = initialX * divider,
+        positionY = initialY * divider;
+
+    return {
+        'transform': `translate3d(${positionX}px, ${positionY}px, 0)`,
+        '-webkit-transform': `translate3d(${positionX}px, ${positionY}px, 0)`,
+        'bottom': `-${bottomPosition}px`
+    };
+};
+
+$(window).on('mousemove', e => {
+    let $layer = $flipPanel,
+        $layer2 = $('.page-welcome__bg');
+
+    $layer.css(parallaxRule(e, 0.05));
+    $layer2.css(parallaxRule(e, 0.1));
+});

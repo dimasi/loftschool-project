@@ -6,14 +6,26 @@
     height: 100vh;
     position: relative;
     overflow: hidden;
+    background-color: #223b65;
+
+    &__bg-video {
+        width: 120%;
+        height: 120%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 
     &__bg {
-        width: 2000px;
+        width: 2200px;
+        height: 1467px;
         position: absolute;
         z-index: 1;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        margin-top: -(1467px / 2);
+        margin-left: -(2200px / 2);
     }
 
     &__flip-panel {
