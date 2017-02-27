@@ -23,20 +23,17 @@ import './../../scss/blocks/login.scss';
 import './../../scss/blocks/form-guard.scss';
 
 // JS
-let toggleFlipPanel = (() => {
-    let i = 0;
+let $flipPanel = $('.flip-panel');
 
-    return () => {
-        if (!i) {
-            $('.flip-panel__side').first().css('display', 'none');
-            $('.flip-panel__side').last().css('display', 'block');
-            i++;
-        } else {
-            $('.flip-panel__side').first().css('display', 'block');
-            $('.flip-panel__side').last().css('display', 'none');
-            i--;
-        }
-    };
-})();
+$('#sign-in').one('click', () => {
+    $('.flip-panel__side_side_back').css('visibility', 'visible');
+});
 
-$('#sign-in').on('click', () => toggleFlipPanel());
+$('#sign-in').on('click', () => {
+    $flipPanel.addClass('flip-panel_state_flipped');
+});
+
+$('[href="#welcome-backflip"]').on('click', e => {
+    e.preventDefault();
+    $flipPanel.removeClass('flip-panel_state_flipped');
+});

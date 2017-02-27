@@ -16,7 +16,7 @@ block content
                 span.text.text_color_white.text_weight_500 Авторизоваться
 
         .page-welcome__flip-panel.flip-panel
-            .flip-panel__side
+            .flip-panel__side.flip-panel__side_side_front
                 .flip-panel__content
                     .flip-panel__body.user
                         .user__avatar.avatar
@@ -68,7 +68,7 @@ block content
                         ]
                     })
 
-            form.flip-panel__side(style=`display: none;`)
+            form.flip-panel__side.flip-panel__side_side_back
                 .flip-panel__content
                     .flip-panel__body.login
                         span.login__title.heading.heading_font_2.heading_size_35.heading_color_white.heading_transform_uppercase Авторизуйтесь
@@ -108,7 +108,7 @@ block content
                         items: [
                             { 
                                 text: `На главную`, 
-                                link: `#welcome`,
+                                link: `#welcome-backflip`,
                                 itemClass: `nav__item_width_50 nav__item_xs-width_auto btn btn_color_blue`,
                                 linkClass: `nav__link text text_color_white text_weight_500`
                             },
