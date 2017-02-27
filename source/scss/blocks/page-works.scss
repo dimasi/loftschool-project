@@ -1,0 +1,121 @@
+@import './../params';
+@import './../mixins';
+
+.page-works {
+    &__header {
+        height: 790px;
+    }
+
+    &__ribbon {
+        transform: translate(-50%, -180px);
+    }
+
+    &__content {
+        position: relative;
+        z-index: 3;
+    }
+
+    &__title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 180px;
+        margin-top: -180px;
+        position: relative;
+    }
+
+    &__title-bg {
+        width: 240px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin-left: -10px;
+    }
+
+    &__title-bg-img {
+        fill: #fff;
+        stroke: #fff;
+        transform: rotate(-170deg);
+        opacity: .15;
+    }
+
+    &__feedback {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 50px;
+    }
+
+    &__bottom {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 50px;
+        background: url(./../../images/works-bg.jpg) no-repeat 62% bottom;
+        background-size: cover;
+    }
+
+    &__anchor-to-top {
+        margin: auto;
+    }
+}
+
+// @media
+// xs
+@include media-xs {
+    .page-works {
+        &__header {
+            height: 100vh;
+            padding-bottom: 91px;
+        }
+
+        &__title {
+            height: 92px;
+            line-height: 92px;
+        }
+
+        &__title-bg {
+            width: 120px;
+            top: -5px;
+            transform: translate(-50%, 0);
+        }
+
+        &__feedback {
+            padding: 0 10px;
+            margin-bottom: 40px;
+        }
+
+        &__bottom {
+            padding-bottom: 40px;
+        }
+    }
+}
+
+// xs-landscape
+@include media-xs-landscape {
+    .page-works {
+        &__title-bg {
+            display: none;
+        }
+    }
+}
+
+// sm
+@include media-sm {
+    .page-works {
+        &__header {
+            height: 505px;
+            padding-bottom: 135px;
+        }
+
+        &__title {
+            height: 135px;
+            line-height: 135px;
+        }
+
+        &__title-bg {
+            width: 170px;
+            top: -2px;
+            transform: translate(-50%, 0);
+        }
+    }
+}

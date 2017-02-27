@@ -1,0 +1,52 @@
+@import './../params';
+@import './../mixins';
+
+.flip-panel {
+    background-color: rgba(28, 31, 41, .5);
+
+    &__side {
+        height: 100%;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    &__body {
+        flex-grow: 1;
+        padding: 35px 30px;
+    }
+
+    &__footer {
+        flex-grow: 0;
+    }
+
+    &__social {
+        margin-top: 25px;
+    }
+}
+
+// @media
+// xs
+@include media-xs {
+    .flip-panel {
+        &__body {
+            padding: 35px 20px;
+        }
+    }
+}
+
+// sm
+@include media-sm {
+    .flip-panel {
+        &__body {
+            padding: 35px 20px;
+        }
+
+        &__social {
+            margin-top: 20px;
+        }
+    }
+}

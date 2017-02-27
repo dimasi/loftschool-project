@@ -1,0 +1,20 @@
+@import './../params';
+@import './../mixins';
+
+// desktop
+@include media-desktop {
+    .page-blog-layout {
+        &__user-anchor-link {
+            display: none;
+        }
+    }
+}
+
+// xs-landscape
+@include media-xs-landscape {
+    .page-blog-layout {
+        &__user-anchor-link {
+            top: (275 / 320 * 100vh);
+        }
+    }
+}

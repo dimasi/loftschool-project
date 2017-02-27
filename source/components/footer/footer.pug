@@ -1,31 +1,62 @@
-include ./../nav/nav
-include ./../social/social
-include ./../contacts/contacts
-include ./../copyright/copyright
+include ./../../mixins/nav
+include ./../../mixins/social
+include ./../../mixins/copyright
 
-.footer
-    .l-footer__top
-        .l-footer__wrapper
-            .l-footer__a
-                p.footer__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool 
-            .l-footer__b
-                +nav('nav_footer', [
-                    { text: 'Мои работы', link: '#works' },
-                    { text: 'Обо мне', link: '#about' },
-                    { text: 'Блог', link: '#blog' },
-                    { text: 'Авторизация', link: '#auth' }
-                ])
-                +social('social_footer', [
-                    { icon: 'vk', link: '#vk' }, 
-                    { icon: 'github', link: '#github' }, 
-                    { icon: 'in', link: '#in' }
-                ])
-            .l-footer__c
-                +contacts('contacts_footer', [
-                    { text: 'skype_kdn', link: '#skype_kdn' },
-                    { text: 'astahov@gmail.com', link: '#astahov@gmail.com' },
-                    { text: '+7 931 200 93 24', link: '#+79312009324' },
-                    { text: 'г. Новосибирск, ул. Инская, д.4' }
-                ])
-    .l-footer__bottom.copyright
-        +copyright('copyright')
+footer.footer
+    .footer__main
+        .footer__wrapper
+            .footer__info
+                p.footer__text.text.text_color_white.text_weight_300 Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool
+
+            .footer__nav
+                +nav({
+                    items: [
+                        { 
+                            text: 'Мои работы', 
+                            link: '#works'
+                        },
+                        { 
+                            text: 'Обо мне', 
+                            link: '#about' 
+                        },
+                        { 
+                            text: 'Блог', 
+                            link: '#blog' 
+                        },
+                        { 
+                            text: 'Авторизация', 
+                            link: '#auth' 
+                        }
+                    ]
+                })
+
+                +social({
+                    items: [
+                        {
+                            id: 'vk',
+                            link: '#vk'
+                        },
+                        {
+                            id: 'github',
+                            link: '#github'
+                        },
+                        {
+                            id: 'in',
+                            link: '#in'
+                        }
+                    ]
+                })
+
+            .footer__contacts
+                ul.contacts
+                    li.contacts__item
+                        a(class=`contacts__link footer__text` href=`#skype_kdn`) skype_kdn
+                    li.contacts__item
+                        a(class=`contacts__link footer__text` href=`#astahov@gmail.com`) astahov@gmail.com
+                    li.contacts__item
+                        a(class=`contacts__link footer__text` href=`#+79312009324`) +7 931 200 93 24
+                    li.contacts__item
+                        span.contacts__link.footer__text г. Новосибирск, ул. Инская, д.
+
+    .footer__copyright
+        +copyright()

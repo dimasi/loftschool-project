@@ -1,0 +1,13 @@
+@import './../params';
+@import './../mixins';
+
+.btn-arrow {
+    width: 44px;
+    background-color: transparent;
+    border: 0 none;
+
+    &__icon {
+        display: block;
+        fill: rgba(255, 255, 255, .7);
+    }
+}

@@ -2,10 +2,6 @@
 @import 'mixins';
 @import 'fonts';
 
-* {
-    box-sizing: border-box;
-}
-
 ::-webkit-input-placeholder {
     color: fff;
 }
@@ -33,22 +29,4 @@ body {
     font-size: $fs-base;
     font-family: 'Roboto', sans-serif;
     line-height: 24px;
-}
-
-.page {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    min-height: 100%;
-    overflow: hidden;
-
-    &__mainbody {
-        flex-grow: 1;
-        flex-shrink: 0;
-    }
-
-    &__footer {
-        flex-grow: 0;
-        flex-shrink: 0;
-    }
 }

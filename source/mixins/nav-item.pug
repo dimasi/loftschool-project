@@ -1,0 +1,12 @@
+//- @pugdoc
+    name: nav-item
+    arguments:
+        - {string}      params.itemClass    - Дополнительный класс для элемента
+        - {string}      params.link         - Аттрибут href для ссылки
+        - {string}      params.linkClass    - Дополнительный класс для ссылки
+        - {string}      params.text         - Текст ссылки
+        - {boolean}     params.active       - Признак активной ссылки
+
+mixin nav-item (params)
+    li(class=`nav__item` + (params.active == true ? ` nav__item_active` : ``) + (params.itemClass ? ` ${params.itemClass}` : ``))
+        a(href=`${params.link}` class=`nav__link` + (params.linkClass ? ` ${params.linkClass}` : ``))= params.text

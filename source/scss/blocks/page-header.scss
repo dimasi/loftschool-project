@@ -1,0 +1,176 @@
+@import './../params';
+@import './../mixins';
+
+.page-header {
+    overflow: hidden;
+    position: relative;
+
+    &__bg {
+        width: 2000px;
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__bg-user {
+        max-width: 460px;
+        transform: translateX(-50%);
+        position: absolute;
+        z-index: 2;
+        left: 50%;
+    }
+
+    &__bg-user-img {
+        fill: #fff;
+        stroke: #fff;
+        opacity: .07;
+    }
+
+    &__user {
+        min-width: 300px;
+        position: absolute;
+        z-index: 3;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &__anchor-link {
+        position: absolute;
+    }
+}
+
+// @media
+// xs
+@include media-xs {
+    .page-header {
+        height: 100vh;
+
+        &__bg-user {
+            width: 281px;
+            top: (99 / 568 * 100vh);
+            margin-left: -5px;
+        }
+
+        &__user {
+            top: (112 / 568 * 100vh);
+        }
+
+        &__anchor-link {
+            top: (370 / 568 * 100vh);
+        }
+    }
+}
+
+// xs-landscape
+@include media-xs-landscape {
+    .page-header {
+        &__bg-user {
+            top: (25 / 320 * 100vh);
+        }
+
+        &__user {
+            top: (42 / 320 * 100vh);
+        }
+
+        &__anchor-link {
+            display: none;
+        }
+    }
+}
+
+// sm
+@include media-sm {
+    .page-header {
+        height: 505px;
+
+        &__bg-user {
+            width:  281px;
+            top: 99px;
+            margin-left: -5px;
+        }
+
+        &__user {
+            top: 116px;
+        }
+
+        &__anchor-link {
+            top: 265px;
+        }
+    }
+}
+
+// md
+@include media-md {
+    .page-header {
+        height: 605px;
+
+        &__bg-user {
+            width: 460px;
+            top: 119px;
+            margin-left: -25px;
+        }
+
+        &__user {
+            top: 153px;
+        }
+
+        &__anchor-link {
+            top: 355px;
+        }
+    }
+
+    .page-header_page_blog {
+        height: 410px;
+
+        .page-header__bg-user {
+            top: 59px;
+        }
+
+        .page-header__user {
+            top: 82px;
+        }
+
+        .page-header__anchor-link {
+            display: none;
+        }
+    }
+}
+
+// lg
+@include media-lg {
+    .page-header {
+        height: 620px;
+
+        &__bg-user {
+            width: 460px;
+            top: 119px;
+            margin-left: -25px;
+        }
+
+        &__user {
+            top: 153px;
+        }
+
+        &__anchor-link {
+            top: 355px;
+        }
+    }
+
+    .page-header_page_blog {
+        height: 410px;
+
+        .page-header__bg-user {
+            top: 59px;
+        }
+
+        .page-header__user {
+            top: 82px;
+        }
+
+        .page-header__anchor-link {
+            display: none;
+        }
+    }
+}

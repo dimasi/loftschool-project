@@ -1,0 +1,51 @@
+@import './../params';
+@import './../mixins';
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+        margin-bottom: 5px;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    &__wrapper {
+        display: flex;
+    }
+
+    &__item {
+        margin-right: 30px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+// Align title
+.radio-group__title_align {
+    &_center {
+        align-self: center;
+    }
+}
+
+// @media
+// xs
+@include media-xs {
+    .radio-group {
+        &__title {
+            margin-bottom: 5px;
+        }
+    }
+}
+
+// sm
+@include media-sm {
+    .radio-group {
+        &__title {
+            margin-bottom: 5px;
+        }
+    }
+}

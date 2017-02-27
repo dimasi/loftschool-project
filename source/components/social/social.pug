@@ -1,8 +1,0 @@
-mixin social (className, socials)
-
-    ul(class=`social ${className}`)
-        each social in socials
-            li(class=`social__item`)
-                a(href=`${social.link}` class=`social__link social__link_${social.icon}`)
-                    - let icon = require(`../../images/icons/${social.icon}.svg`);
-                    svg(viewBox=icon.viewBox): use(xlink:href=icon.symbol)

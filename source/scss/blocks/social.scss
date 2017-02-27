@@ -1,15 +1,14 @@
-@import '../params';
-@import '../mixins';
+@import './../params';
+@import './../mixins';
 
 .social {
     display: flex;
     align-items: baseline;
-    margin: 0;
     padding: 0;
     list-style: none;
 
     &__item {
-        margin-right: 27px;
+        margin-right: 10px;
 
         &:last-child {
             margin-right: 0;
@@ -18,11 +17,17 @@
 
     &__link {
         display: block;
+        padding: 10px;
         fill: $social-link-color;
+        transition: all 180ms ease-out;
 
         &:hover {
             fill: $color-primary;
         }
+    }
+
+    &__icon {
+        display: block;
 
         &_vk {
             width: 31px;
@@ -40,104 +45,38 @@
     }
 }
 
-.social_footer {
-    .social__link {
-        opacity: .5;
-    }
-}
-
-.social_about-top {
-    position: absolute;
-    z-index: 2;
-    top: 30px;
-    left: 30px;
-
-    &:hover {
-        fill: #2d47ce;
-    }
-
-    .social__link {
-        &_vk {
-            width: 31px;
-        }
-
-        &_github {
-            width: 26px;
-        }
-
-        &_in {
-            width: 24px;
-        }
-    }
-}
-
-.social_welcome {
-    justify-content: center;
-    margin-bottom: 40px;
-
-    .social__link {
-        fill: rgba(0, 76, 209, .7);
-
-        &:hover {
-            fill: rgba(0, 76, 209, 1);
-        }
-    }
-}
-
-// XS
-@media screen and (max-width: $screen-xs-max) {
-    .social_footer {
-        justify-content: center;
-
+// Color
+.social_color {
+    &_blue {
         .social__link {
+            fill: rgba(0, 76, 209, 0.7);
+
             &:hover {
-                fill: $social-link-hover-color-xs;
-                opacity: 1;
-            }
-        }
-    }
-
-    .social_about-top {
-        top: 11px;
-        left: 11px;
-
-        .social__link {
-            &_vk {
-                width: 21px;
-            }
-
-            &_github {
-                width: 21px;
-            }
-
-            &_in {
-                width: 19px;
+                fill: #004cd1;
             }
         }
     }
 }
 
-// SM
-@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-    .social_footer {
-        .social__item {
-            margin-right: 29px;
-        }
+// @media
+// xs
+@include media-xs {
+    // Size
+    .social_xs-size {
+        &_small {
+            .social__icon {
+                &_vk {
+                    width: 24px;
+                }
 
-        .social__link {
-            &:hover {
-                fill: $social-link-hover-color;
-                opacity: 1;
+                &_github {
+                    width: 21px;
+                }
+
+                &_in {
+                    width: 19px;
+                }
             }
-        }
-    }
-}
-
-// LG
-@media screen and (min-width: $screen-lg-min) {
-    .social_footer {
-        .social__item {
-            margin-right: 29px;
         }
     }
 }

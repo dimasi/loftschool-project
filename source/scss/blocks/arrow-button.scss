@@ -1,8 +1,7 @@
-@import '../params';
-@import '../mixins';
+@import './../params';
+@import './../mixins';
 
 .arrow-button {
-    @include drop-style-btn;
     width: 26px;
     height: 16px;
     z-index: 2;

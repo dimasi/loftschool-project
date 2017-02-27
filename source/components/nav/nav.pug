@@ -1,7 +1,0 @@
-mixin nav (className, items)
-
-    nav(class=`nav ${className}`)
-        ul(class=`nav__list`)
-            each item in items
-                li(class=item.active ? "nav__item nav__item_active" : "nav__item")
-                    a(href=`${item.link}` class=`nav__link`)= item.text

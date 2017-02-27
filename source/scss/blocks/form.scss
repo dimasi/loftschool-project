@@ -1,31 +1,70 @@
-@import '../params';
-@import '../mixins';
+@import './../params';
+@import './../mixins';
 
 .form {
-    &__control {
-        width: 100%;
-        padding: 14px 15px 13px;
+    width: 380px;
+    box-sizing: border-box;
 
-        &:focus {
-            outline: 0 none;
-        }
+    &__body {
+        padding: 35px 20px 0;
+    }
 
-        &_textarea {
-            resize: none;
-            min-height: 130px;
+    &__title {
+        color: #fff;
+        text-align: center;
+        margin-bottom: 40px;
+
+        &::after {
+            margin-top: 25px;
+            background-color: #fff;
         }
     }
 
-    &_feedback {
-        .form__wrapper {
-            padding: 0 20px;
+    &__field {
+        margin-bottom: 20px;
+    }
+
+    &__footer {
+        display: flex;
+    }
+
+    .form__btn {
+        flex-grow: 1;
+        width: 50%;
+    }
+}
+
+// Theme
+.form_theme {
+    &_transparent {
+        background-color: rgba(255, 255, 255, .05);
+
+        .textfield__control,
+        .textarea__control {
+            background-color: rgba(255, 255, 255, 0.07);
+        }
+    }
+}
+
+// @media
+// xs
+@include media-xs {
+    .form {
+        &__body {
+            padding: 25px 20px 0;
         }
 
-        .form__control {
+        &__title {
             margin-bottom: 20px;
-            border: 0 none;
-            background-color: rgba(255, 255, 255, .07);
-            color: #fff;
+        }
+    }
+}
+
+// sm
+@include media-sm {
+    .form {
+        &__title {
+            margin-bottom: 40px;
         }
     }
 }

@@ -1,0 +1,13 @@
+@import './../params';
+@import './../mixins';
+
+.img {
+    display: block;
+}
+
+// Width
+.img_width {
+    &_100 {
+        width: 100%;
+    }
+}

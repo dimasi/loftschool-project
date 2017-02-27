@@ -1,67 +1,26 @@
-@import '../params';
-@import '../mixins';
+@import './../params';
+@import './../mixins';
 
 .nav {
-    &__list {
-        @include drop-style-ul;
-    }
-
     &__link {
-        color: #474b57;
         text-decoration: none;
     }
 }
 
-.nav_footer {
-    font-size: 14px;
-
+// Layout
+.nav_layout_inline {
     .nav__list {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: baseline;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
-
-    .nav__link {
-        color: $nav-link-color;
-        font-weight: 500;
-    }
-}
-
-.nav_blog {
-    text-align: right;
-
-    .nav__item {
-        margin-bottom: 10px;
-
-        &_active {
-            .nav__link {
-                border-color: #004cd1;
-                color: #004cd1;
-            }
-        }
-    }
-
-    .nav__link {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        min-height: 42px;
-        padding-right: 17px;
-        border-right: 3px solid transparent;
-    }
-}
-
-.nav_welcome {
-    .nav__list {
-        @include drop-style-ul;
         display: flex;
     }
 
     .nav__item {
         flex-grow: 1;
+    }
+}
+
+// Spacers
+.nav_spacers_white {
+    .nav__item {
         position: relative;
 
         &::before {
@@ -81,72 +40,15 @@
             }
         }
     }
-
-    .nav__link {
-        display: block;
-        text-align: center;
-        padding: 11px 10px 10px;
-        background-color: rgba(0, 76, 209, .85);
-        color: #fff;
-
-        &:hover {
-            background-color: rgba(4, 62, 163, .85);
-        }
-    }
 }
 
-// XS
-@media screen and (max-width: $screen-xs-max) {
-    .nav_footer {
-        .nav__list {
-            justify-content: space-around;
-        }
-
-        .nav__item {
-            margin: 0 5px;
-        }
-
-        .nav__link {
-            display: block;
-            padding: 13px 0 14px;
-        }
-    }
+.nav__item_width_50 {
+    width: 50%;
 }
 
-// SM
-@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-    .nav_footer {
-        .nav__item {
-            margin-right: 31px;
-        }
-
-        .nav__link {
-            display: block;
-            padding: 14px 0;
-        }
-    }
-}
-
-// MD
-@media screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-    .nav_footer {
-        font-size: 15.98px;
-        margin-bottom: 43px;
-
-        .nav__list {
-            justify-content: space-between;
-        }
-    }
-}
-
-// LG
-@media screen and (min-width: $screen-lg-min) {
-    .nav_footer {
-        margin-bottom: 23px;
-        font-size: 15.77px;
-
-        .nav__item {
-            margin-right: 40px;
-        }
+// @media
+@include media-xs {
+    .nav__item_xs-width_auto {
+        width: auto;
     }
 }

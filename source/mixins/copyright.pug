@@ -1,0 +1,10 @@
+//- @pugdoc
+    name: copyright
+    arguments:
+        - {string}      params.className     - Дополнительный класс для элемента
+
+mixin copyright (className)
+    div(class=`copyright` + (className ? ` ${className}` : ``))
+        span.copyright__chunk.copyright__chunk_name|© Владимир Астахов
+        span.copyright__chunk.copyright__chunk_company|Создано с любовью в LoftSchool
+        span.copyright__chunk.copyright__chunk_year|2016

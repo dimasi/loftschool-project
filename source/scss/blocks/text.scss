@@ -1,0 +1,44 @@
+@import './../params';
+@import './../mixins';
+
+.text {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+// Color
+.text_color {
+    &_white {
+        color: #fff;
+    }
+}
+
+// Weight
+.text_weight {
+    &_300 {
+        font-weight: 300;
+    }
+
+    &_500 {
+        font-weight: 500;
+    }
+
+    &_700 {
+        font-weight: 500;
+    }
+}
+
+// Style
+.text_style {
+    &_italic {
+        font-style: italic;
+    }
+}
+
+// @media
+@include media-xs {
+    .text {
+        font-size: 14px;
+        line-height: 24px;
+    }
+}

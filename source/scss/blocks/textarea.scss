@@ -1,0 +1,15 @@
+@import './../params';
+@import './../mixins';
+
+.textarea {
+    &__control {
+        width: 100%;
+        padding: 10px 15px;
+        box-sizing: border-box;
+        height: 130px;
+        resize: none;
+        border: 0 none;
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+    }
+}

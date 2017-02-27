@@ -1,10 +1,14 @@
-@import '../params';
-@import '../mixins';
+@import './../params';
+@import './../mixins';
 
 .article {
-    padding-bottom: 70px;
-    margin-bottom: 70px;
+    padding: 35px 0;
     border-bottom: 5px solid rgba(55, 62, 66, .07);
+    overflow: hidden;
+
+    &:first-child {
+        padding-top: 0;
+    }
 
     &:last-child {
         border-bottom: 0 none;
@@ -23,9 +27,50 @@
         font-size: 16px;
     }
 
-    &__content {
-        img {
-            max-width: 100%;
+    &__text {
+        margin-bottom: 10px;
+    }
+}
+
+// @media
+// xs
+@include media-xs {
+    .article {
+        padding: 25px 0;
+
+        &__title {
+            font-size: 21px;
+            line-height: 28px;
+        }
+
+        &__content {
+            margin-top: 10px;
+        }
+
+        &__date {
+            font-size: 14px;
+        }
+    }
+}
+
+// sm
+@include media-sm {
+    .article {
+        padding: 25px 0;
+
+        &__title {
+            font-size: 30px;
+            line-height: 36px;
+            margin: 0 0 15px;
+        }
+
+        &__content {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        &__date {
+            font-size: 14px;
         }
     }
 }

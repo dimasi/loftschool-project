@@ -1,36 +1,30 @@
-@import '../params';
-@import '../mixins';
+@import './../params';
+@import './../mixins';
 
 .quote {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    text-align: center;
-
     &__img {
-        display: block;
-        width: 77px;
-        height: 77px;
-        margin-bottom: 15px;
-        border-radius: 100%;
-        background-size: cover;
+        margin: 0 auto 20px;
     }
 
     &__text {
-        margin-bottom: 13px;
-        font-style: italic;
-        line-height: 26px;
-        text-align: left;
+        margin-bottom: 10px;
+        position: relative;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 75px;
+            height: 61px;
+            position: absolute;
+            left: 0;
+            top: -25px;
+            background-image: url(./../../images/quote.png);
+        }
     }
 
-    &__author-name {
-        font-style: italic;
-        font-weight: 700;
-    }
-
-    &__author-occupation {
-        font-style: italic;
+    &__author,
+    &__author-detail {
+        display: block;
+        text-align: center;
     }
 }

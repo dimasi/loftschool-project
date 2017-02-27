@@ -1,12 +1,44 @@
-@mixin drop-style-btn() {
-    background-color: transparent;
-    border: 0 none;
-    padding: 0;
-    cursor: pointer;
+@import 'params';
+
+// @media
+@mixin media-xs() {
+    @media screen and (max-width: $screen-xs-max) {
+        @content;
+    }
 }
 
-@mixin drop-style-ul() {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+@mixin media-xs-landscape() {
+    @media screen and (max-width: $screen-xs-max) and (orientation: landscape) {
+        @content;
+    }
+}
+
+@mixin media-sm() {
+    @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+        @content;
+    }
+}
+
+@mixin media-sm-landscape() {
+    @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) and (orientation: landscape) {
+        @content;
+    }
+}
+
+@mixin media-md() {
+    @media screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+        @content;
+    }
+}
+
+@mixin media-lg() {
+    @media screen and (min-width: $screen-lg-min) {
+        @content;
+    }
+}
+
+@mixin media-desktop() {
+    @media screen and (min-width: $screen-md-min) {
+        @content;
+    }
 }

@@ -1,6 +1,6 @@
-extends ../layout
+extends ./../layout
 
-include ./../../components/social/social
+include ./../../mixins/social
 
 block title
     | Portfolio page
@@ -8,115 +8,107 @@ block title
 block content
 
     //- SVG
-    - let svgArrowDown = require('../../images/icons/portf_arrow_down.svg');
-    - let svgArrowUp = require('../../images/icons/portf_arrow_up.svg');
-    - let svgHamburger = require('../../images/icons/hamburger.svg');
-    - let svgStars = require(`../../images/icons/stars1.svg`);
-    - let svgStars2 = require(`../../images/icons/stars2.svg`);
-    - let svgStars3 = require(`../../images/icons/stars3.svg`);
-    - let svgRibbonLeft = require('../../images/icons/about_bg_left.svg');
-    - let svgRibbonRight = require('../../images/icons/about_bg_right.svg');
+    - let svgArrowDown = require(`./../../images/icons/portf_arrow_down.svg`);
+    - let svgArrowUp = require(`./../../images/icons/portf_arrow_up.svg`);
+    - let svgStars = require(`./../../images/icons/stars1.svg`);
+    - let svgStars2 = require(`./../../images/icons/stars2.svg`);
+    - let svgStars3 = require(`./../../images/icons/stars3.svg`);
+    - let svgRibbonLeft = require(`./../../images/icons/about_bg_left.svg`);
+    - let svgRibbonRight = require(`./../../images/icons/about_bg_right.svg`);
 
-    .page__content-wrapper
-        section.l-section.l-top
-            .l-top__social
-                +social('social_top', [
-                    {
-                        icon: 'vk',
-                        link: '#vk'
-                    },
-                    {
-                        icon: 'github',
-                        link: '#github'
-                    },
-                    {
-                        icon: 'in',
-                        link: '#in'
-                    }
-                ])
-                
-            .l-top__hamburger
-                button.hamburger
-                    svg(class='hamburger__icon' viewBox=svgHamburger.viewBox): use(xlink:href=svgHamburger.symbol)
 
-            img(class='l-top__bg' src=require('../../images/about-top.jpg'))
+    .page__content-wrapper.page-works
+        .page-header.page-works__header
+            img(class=`page-header__bg` src=require(`./../../images/layout-bg.jpg`))
 
-            .l-top__container
-                .user
-                    svg(class="user__bg" viewBox=svgStars.viewBox): use(xlink:href=svgStars.symbol)
-                    span(class="user__img" style=`background-image: url(${require('../../images/user-avatar.png')})`)
-                    .user__name Владимир Астахов
-                    .user__occupation Личный сайт веб разработчика
+            .page-header__bg-user
+                svg(class=`page-header__bg-user-img` viewBox=svgStars.viewBox): use(xlink:href=svgStars.symbol)
 
-            button(type="button" class="l-top__arrow-button arrow-button")
-                svg(class='arrow-button__icon' viewBox=svgArrowDown.viewBox): use(xlink:href=svgArrowDown.symbol)
+            .page-header__user.user
+                .user__avatar.avatar
+                    img(class=`avatar__img` src=require(`./../../images/user-avatar.jpg`))
 
-            .l-top__ribbon.ribbon.ribbon_dark
-                .ribbon__col.ribbon__col_left
-                    svg(class="ribbon__triangle ribbon__triangle_left" viewBox=svgRibbonLeft.viewBox): use(xlink:href=svgRibbonLeft.symbol)
-                .ribbon__col.ribbon__col_right
-                    svg(class="ribbon__triangle ribbon__triangle_right" viewBox=svgRibbonRight.viewBox): use(xlink:href=svgRibbonRight.symbol)
+                h1.user__title.heading.heading_color_white.heading_size_35.heading_xs-size_21.heading_weight_500 Владимир Астахов
 
-        section.l-works
-            .l-works__heading.heading.heading_lead.heading_lg.heading_light
-                svg(class="heading__img heading__img_dark heading__img_lg heading__img_stars2" viewBox=svgStars2.viewBox): use(xlink:href=svgStars2.symbol)
-                span.heading__text Мои работы
-            .l-works__wrapper
-                .l-works__viewport
-                    img(src=require('../../images/works-current.png') class="work__current-img")
-                .l-works__info
-                    h4.work__title.heading.heading_lead.heading_shrinked.heading_bordered Сайт школы онлайн образования
-                    ul.work__features
-                        li.work__feature HTML
-                        li.work__feature CSS
-                        li.work__feature JAVASCRIPT
-                    a(href="#" class="btn btn_primary")
-                        span.btn__icon.fa.fa-link
-                        | Посмотреть сайт
-                .l-works__nav
-                    .l-works__nav.l-works__nav_prev
-                        button(type="button" class="l-works__nav-btn")
-                            svg(class='l-works__nav-btn-icon btn_icon' viewBox=svgArrowDown.viewBox): use(xlink:href=svgArrowDown.symbol)
+                p.user__text.text.text_color_white Личный сайт веб разработчика
 
-                        img(src=require('../../images/works-prev.jpg') class="work__img work__img_sm")
+                button(type=`button` class=`page-header__anchor-link btn-arrow`)
+                    svg(class=`btn-arrow__icon` viewBox=svgArrowDown.viewBox): use(xlink:href=svgArrowDown.symbol)
+            
+        .ribbon.ribbon_theme_dark.page-works__ribbon
+            .ribbon__col.ribbon__col_left
+                svg(class=`ribbon__triangle ribbon__triangle_side_left` viewBox=svgRibbonLeft.viewBox): use(xlink:href=svgRibbonLeft.symbol)
+            .ribbon__col.ribbon__col_right
+                svg(class=`ribbon__triangle ribbon__triangle_side_right` viewBox=svgRibbonRight.viewBox): use(xlink:href=svgRibbonRight.symbol)
+
+        .page-works__content
+            .page-works__title
+                .page-works__title-bg
+                    svg(class=`page-works__title-bg-img` viewBox=svgStars2.viewBox): use(xlink:href=svgStars2.symbol)
+                h1.about__title.heading.heading_font_2.heading_transform_uppercase.heading_size_63.heading_sm-size_49.heading_xs-size_35.heading_color_white Мои работы
+
+            section.works__slider.slider-works
+                .slider-works__viewport 
+                    img(src=require(`./../../images/works-current.png`) class=`slider-works__current-slide`)
+
+                .slider-works__slide-info 
+                    h4.slider-works__slide-title.heading.heading_font_2.heading_transform_uppercase.heading_size_35.heading_xs-size_21.heading_decor_border-spacer Сайт школы онлайн образования
+                    ul.slider-works__work-features.work-features
+                        li.work-features__item HTML
+                        li.work-features__item CSS
+                        li.work-features__item JAVASCRIPT
+                    a(href=`#` class=`btn btn_color_blue`)
+                        i.btn__icon.fa.fa-link
+                        span.btn__text Посмотреть сайт
+
+                .slider-works__nav 
+                    button(type=`button` class=`slider-works__nav-btn slider-works__nav-btn_action_prev`)
+                        svg(class=`slider-works__nav-icon btn-arrow__icon` viewBox=svgArrowDown.viewBox): use(xlink:href=svgArrowDown.symbol)
+                        img(src=require(`./../../images/works-prev.jpg`) class=`slider-works__thumb`)
+
+                    button(type=`button` class=`slider-works__nav-btn slider-works__nav-btn_action_next`)
+                        svg(class=`slider-works__nav-icon btn-arrow__icon` viewBox=svgArrowUp.viewBox): use(xlink:href=svgArrowUp.symbol)
+                        img(src=require(`./../../images/works-next.jpg`) class=`slider-works__thumb`)
                     
-                    .l-works__nav.l-works__nav_next
-                        button(type="button" class="l-works__nav-btn")
-                            svg(class='l-works__nav-btn-icon btn_icon' viewBox=svgArrowUp.viewBox): use(xlink:href=svgArrowUp.symbol)
+            .page-works__bottom
+                section.quotes
+                    .quotes__heading-bg
+                        svg(class=`quotes__heading-bg-img` viewBox=svgStars3.viewBox): use(xlink:href=svgStars3.symbol)
 
-                        img(src=require('../../images/works-next.jpg') class="work__img work__img_sm")
+                    h3.quotes__title.heading.heading_font_2.heading_transform_uppercase.heading_size_63.heading_sm-size_49.heading_xs-size_35.heading_color_white Что обо мне говорят
+                    
+                    ul.quotes__list
+                        li.quotes__item.quote.text.text_color_white.text_style_italic
+                            .quote__img.avatar.avatar_size_small
+                                img(class=`avatar__img` src=require(`./../../images/quote-user.png`))
+                            .quote__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                            span.quote__author.text.text_weight_700 Ковальчук Дмитрий
+                            span.quote__author-detail — основатель Loftschool
+                            
+                        li.quotes__item.quote.text.text_color_white.text_style_italic
+                            .quote__img.avatar.avatar_size_small
+                                img(class=`avatar__img` src=require(`./../../images/quote-user2.png`))
+                            .quote__text Этот код выдержеит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+                            span.quote__author.text.text_weight_700 Сабанцев Владимир
+                            span.quote__author-detail — преподаватель
 
+                section.page-works__feedback
+                    form.form.form_theme_transparent
+                        .form__body
+                            h4.form__title.heading.heading_font_2.heading_transform_uppercase.heading_size_35.heading_xs-size_21.heading_decor_border-spacer Связаться со мной
 
-        .section-wrapper.section-wrapper_works
-            section.l-reviews
-                h3.l-reviews__heading.heading.heading_lead.heading_lg.heading_light
-                    svg(class="heading__img heading__img_dark heading__img_stars3" viewBox=svgStars3.viewBox): use(xlink:href=svgStars3.symbol)
-                    span.heading__text Что обо мне говорят
-                
-                ul.l-reviews__quotes
-                    li.l-reviews__quote.quote
-                        span(class="quote__img" style=`background-image: url(${require('../../images/user.png')})`)
-                        .quote__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                        span.quote__author-name Ковальчук Дмитрий
-                        span.quote__author-occupation — основатель Loftschool
-                        
-                    li.l-reviews__quote.quote
-                        span(class="quote__img" style=`background-image: url(${require('../../images/user2.png')})`)
-                        .quote__text Этот код выдержеит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
-                        span.quote__author-name Сабанцев Владимир
-                        span.quote__author-occupation — преподаватель
-                
-            section.l-feedback
-                form.l-feedback__container.form.form_feedback
-                    h3.l-feedback__heading.heading.heading_lead.heading_light.heading_semitran-bordered Связаться со мной
-                    .form__wrapper
-                        input(class="form__control" type="text" placeholder="Ваше имя")
-                        input(class="form__control" type="text" placeholder="Ваш email")
-                        textarea(class="form__control form__control_textarea" placeholder="Ваше сообщение")
-                    .l-feedback__btns
-                        button(type="submit" class="l-feedback__btn btn btn_primary") Отправить
-                        button(type="reset" class="l-feedback__btn btn btn_transparent") Очистить
-                        
-            .to-top
-                button(type="button" class="to-top__btn btn btn_icon")
-                    svg(class='to-top__icon' viewBox=svgArrowUp.viewBox): use(xlink:href=svgArrowUp.symbol)
+                            .form__field.textfield
+                                input(type=`text` name=`name` class=`textfield__control` placeholder=`Ваше имя`)
+
+                            .form__field.textfield
+                                input(type=`email` name=`name` class=`textfield__control` placeholder=`Ваш email`)
+
+                            .form__field.textarea
+                                textarea(class=`textarea__control` placeholder=`Ваше сообщение`)
+
+                        .form__footer
+                            button(type=`submit` class=`form__btn btn btn_color_blue text text_color_white`) Отправить
+                            button(type=`reset` class=`form__btn btn btn_color_transparent text text_color_white`) Очистить
+
+                button(type=`button` class=`page-works__anchor-to-top btn-arrow`)
+                    svg(class=`btn-arrow__icon` viewBox=svgArrowUp.viewBox): use(xlink:href=svgArrowUp.symbol)

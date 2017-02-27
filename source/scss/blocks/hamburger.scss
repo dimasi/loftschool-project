@@ -1,8 +1,11 @@
-@import '../params';
-@import '../mixins';
+@import './../params';
+@import './../mixins';
 
 .hamburger {
-    @include drop-style-btn;
+    background-color: transparent;
+    border: 0 none;
+    padding: 0;
+    cursor: pointer;
     width: 40px;
     height: 35px;
     top: 28px;
@@ -15,8 +18,9 @@
     }
 }
 
-// XS
-@media screen and (max-width: $screen-xs-max) {
+// @media
+// xs
+@include media-xs {
     .hamburger {
         width: 26px;
         height: 23px;

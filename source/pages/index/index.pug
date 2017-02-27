@@ -1,41 +1,124 @@
-extends ../empty
+extends ./../empty
 
-include ../../components/nav/nav
-include ../../components/social/social
-include ../../components/copyright/copyright
+include ./../../mixins/nav
+include ./../../mixins/social
+include ./../../mixins/copyright
 
 block title
     | Index page
-    
+
 block content
-    .l-welcome
-        button(type="button" class="l-welcome__sign-in btn btn_sign-in") Авторизация
+    .page-welcome
+        img(class=`page-welcome__bg` src=require(`./../../images/layout-bg.jpg`))
 
-        .l-welcome__container
-            .user.user_welcome
-                span(class="user__img" style=`background-image: url(${require('../../images/user-avatar.png')})`)
-                span.user__name Владимир Астахов
-                .user__occupation Личный сайт веб разработчика
-            
-            +social('social_welcome', [
-                { icon: 'vk', link: '#vk' }, 
-                { icon: 'github', link: '#github' }, 
-                { icon: 'in', link: '#in' }
-            ])
+        .page-welcome__sign-in
+            button(type=`button` id=`sign-in` class=`btn btn_w_100 btn_border_white btn_hover-bg_blue btn_xs-size_small`)
+                span.text.text_color_white.text_weight_500 Авторизоваться
 
-            +nav('nav_welcome', [
-                    {
-                        text: 'Мои работы',
-                        link: '#1'
-                    },
-                    {
-                        text: 'Обо мне',
-                        link: '#2'
-                    },
-                    {
-                        text: 'Блог',
-                        link: '#3'
-                    }
-                ])
-                
-        +copyright('copyright_welcome')
+        .page-welcome__flip-panel.flip-panel
+            .flip-panel__side
+                .flip-panel__content
+                    .flip-panel__body.user
+                        .user__avatar.avatar
+                            img(class=`avatar__img` src=require(`./../../images/user-avatar.jpg`))
+
+                        h1.user__title.heading.heading_color_white.heading_size_28.heading_xs-size_21.heading_weight_500 Владимир Астахов
+
+                        p.user__text.text.text_color_white Личный сайт веб разработчика
+
+                        +social({
+                            className: `flip-panel__social social_color_blue`,
+                            items: [
+                                {
+                                    id: `vk`,
+                                    link: `#vk`
+                                },
+                                {
+                                    id: `github`,
+                                    link: `#github`
+                                },
+                                {
+                                    id: `in`,
+                                    link: `#in`
+                                }
+                            ]
+                        })
+
+                    +nav({
+                        className: `flip-panel__footer nav_layout_inline nav_spacers_white`,
+                        items: [
+                            { 
+                                text: `Мои работы`, 
+                                link: `portfolio.html`,
+                                itemClass: `btn btn_color_blue`,
+                                linkClass: `nav__link text text_color_white text_weight_500`
+                            },
+                            { 
+                                text: `Обо мне`, 
+                                link: `about.html`,
+                                itemClass: `btn btn_color_blue`,
+                                linkClass: `nav__link text text_color_white text_weight_500`
+                            },
+                            { 
+                                text: `Блог`, 
+                                link: `blog.html`,
+                                itemClass: `btn btn_color_blue`,
+                                linkClass: `nav__link text text_color_white text_weight_500`
+                            }
+                        ]
+                    })
+
+            form.flip-panel__side(style=`display: none;`)
+                .flip-panel__content
+                    .flip-panel__body.login
+                        span.login__title.heading.heading_font_2.heading_size_35.heading_color_white.heading_transform_uppercase Авторизуйтесь
+                        
+                        .login__login.textfield
+                            .textfield__addon
+                                i.textfield__addon-icon.fa.fa-user
+                            input(type=`text` name=`login` class=`textfield__control` placeholder=`Логин`)
+                        
+                        .login__pwd.textfield
+                            .textfield__addon
+                                i.textfield__addon-icon.fa.fa-key
+                            input(type=`password` name=`pwd` class=`textfield__control` placeholder=`Пароль`)
+
+                        .form-guard
+                            label.form-guard__checkbox.checkbox
+                                input(type=`checkbox` name=`antibot` class=`checkbox__control`)
+                                .checkbox__pseudo-control.fa.fa-check
+                                .checkbox__label.text.text_color_white Я человек
+
+                            .form-guard__radio.radio-group
+                                span.radio-group__title.radio-group__title_align_center.text.text_color_white Вы точно не робот?
+                                
+                                .radio-group__wrapper
+                                    label.radio-group__item.radio
+                                        input(type=`radio` name=`antibot2` class=`radio__control`)
+                                        .radio__pseudo-control
+                                        .radio__label.text.text_color_white Да
+
+                                    label.radio-group__item.radio
+                                        input(type=`radio` name=`antibot2` class=`radio__control`)
+                                        .radio__pseudo-control
+                                        .radio__label.text.text_color_white Не уверен
+
+                    +nav({
+                        className: `flip-panel__footer nav_layout_inline nav_spacers_white`,
+                        items: [
+                            { 
+                                text: `На главную`, 
+                                link: `#welcome`,
+                                itemClass: `nav__item_width_50 nav__item_xs-width_auto btn btn_color_blue`,
+                                linkClass: `nav__link text text_color_white text_weight_500`
+                            },
+                            { 
+                                text: `Войти`, 
+                                link: `#submit`,
+                                itemClass: `nav__item_width_50 nav__item_xs-width_auto btn btn_color_blue`,
+                                linkClass: `nav__link text text_color_white text_weight_500`
+                            }
+                        ]
+                    })
+
+        +copyright(`copyright_color_white page-welcome__copyright`)
