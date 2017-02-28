@@ -1,0 +1,20 @@
+//- @pugdoc
+    name: indicators-grid
+    arguments:
+        - {string}      params.className
+        - {string}      params.groups
+mixin indicators-grid (params)
+    include ./indicator-circle
+
+    ul(class=`indicators-grid` + (params.className ? ` ${params.className}` : ``))
+        each group in params.groups
+            //- @pugdoc
+                arguments:
+                    - {string}      group.title     Заголовок группы индикаторов
+                    - {string}      group.items     Индикаторы
+            li.indicators-grid__group
+                h4.indicators-grid__title= group.title
+                ul.indicators-grid__items
+                    each value, title in group.items
+                        li.indicators-grid__item
+                            +indicator-circle(title, value)

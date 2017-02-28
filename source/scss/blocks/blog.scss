@@ -1,0 +1,99 @@
+@import './../params';
+@import './../mixins';
+
+.blog {
+    padding-top: 100px;
+    position: relative;
+    z-index: 4;
+    background-color: #faf8f0;
+
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    &__sidebar {
+        width: percentage(285 / 1200);
+        margin-right: 100px;
+    }
+
+    &__mainbody {
+        width: percentage(680 / 1200);
+        padding-bottom: 30px;
+    }
+
+    &__nav {
+        text-align: right;
+
+        .nav__item {
+            margin-bottom: 10px;
+
+            &_active {
+                .nav__link {
+                    border-color: #004cd1;
+                    color: #004cd1;
+                }
+            }
+        }
+
+        .nav__link {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            min-height: 42px;
+            padding-right: 17px;
+            border-right: 3px solid transparent;
+            color: #474b57;
+        }
+    }
+}
+
+// @media
+// xs
+@include media-xs {
+    .blog {
+        padding-top: 35px;
+
+        &__sidebar {
+            display: none;
+        }
+
+        &__mainbody {
+            width: 100%;
+            padding: 0 10px 30px;
+        }
+    }
+}
+
+// sm
+@include media-sm {
+    .blog {
+        padding-top: 20px;
+
+        &__sidebar {
+            display: none;
+        }
+
+        &__mainbody {
+            width: 100%;
+            padding: 0 10px 30px;
+        }
+    }
+}
+
+// lg 
+@include media-lg {
+    .blog {
+        &__sidebar {
+            width: percentage(285 / 1800);
+            margin-right: 115px;
+        }
+
+        &__mainbody {
+            width: percentage(885 / 1200);
+        }
+    }
+}

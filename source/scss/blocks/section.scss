@@ -1,0 +1,64 @@
+@import "./../params";
+@import "./../mixins";
+
+.section {
+    &__title {
+        max-width: 300px;
+        padding-top: 40px;
+        margin: 2px auto;
+        text-align: center;
+        line-height: 41px;
+    }
+
+    &__img {
+        width: 100%;
+        display: block;
+    }
+
+    &__text {
+        margin-bottom: 15px;
+    }
+}
+
+// @media
+// xs
+@include media-xs {
+    .section {
+        &__content {
+            width: 100%;
+            max-width: 473px;
+            padding: 0 10px;
+            margin: 0 auto;
+        }
+
+        &__title {
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        &__text {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+// sm
+@include media-sm {
+    .section {
+        &__content {
+            width: 473px;
+            margin: 0 auto;
+            padding-bottom: 20px;
+        }
+
+        &__title {
+            max-width: 275px;
+            padding-top: 25px;
+            text-align: center;
+        }
+
+        &__text {
+            margin-bottom: 10px;
+        }
+    }
+}

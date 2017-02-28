@@ -1,7 +1,117 @@
-extends ../base
+extends ./../layout
+
+include ./../../mixins/social
 
 block title
     | Portfolio page
     
-block main
-    h1 page portfolio-pug
+block content
+
+    //- SVG
+    - let svgArrowDown = require(`./../../images/icons/portf_arrow_down.svg`);
+    - let svgArrowUp = require(`./../../images/icons/portf_arrow_up.svg`);
+    - let svgStars = require(`./../../images/icons/stars1.svg`);
+    - let svgStars2 = require(`./../../images/icons/stars2.svg`);
+    - let svgStars3 = require(`./../../images/icons/stars3.svg`);
+    - let svgRibbonLeft = require(`./../../images/icons/about_bg_left.svg`);
+    - let svgRibbonRight = require(`./../../images/icons/about_bg_right.svg`);
+
+
+    .page__content-wrapper.page-works
+        .page-header.page-works__header
+            video(class=`page-header__bg-video` width=`400` height=`300` autoplay loop)
+                source(src=`${require('./../../night.mp4')}`)
+
+            img(class=`page-header__bg` src=require(`./../../images/night_no_bg.png`))
+
+            .page-header__bg-user
+                svg(class=`page-header__bg-user-img` viewBox=svgStars.viewBox): use(xlink:href=svgStars.symbol)
+
+            .page-header__user.user
+                .user__avatar.avatar
+                    img(class=`avatar__img` src=require(`./../../images/user-avatar.jpg`))
+
+                h1.user__title.heading.heading_color_white.heading_size_35.heading_xs-size_21.heading_weight_500 Владимир Астахов
+
+                p.user__text.text.text_color_white Личный сайт веб разработчика
+
+                button(type=`button` class=`page-header__anchor-link btn-arrow`)
+                    svg(class=`btn-arrow__icon` viewBox=svgArrowDown.viewBox): use(xlink:href=svgArrowDown.symbol)
+        
+        .ribbon.ribbon_theme_dark.page-works__ribbon
+            .ribbon__col.ribbon__col_left
+                svg(class=`ribbon__triangle ribbon__triangle_side_left` viewBox=svgRibbonLeft.viewBox): use(xlink:href=svgRibbonLeft.symbol)
+            .ribbon__col.ribbon__col_right
+                svg(class=`ribbon__triangle ribbon__triangle_side_right` viewBox=svgRibbonRight.viewBox): use(xlink:href=svgRibbonRight.symbol)
+
+        .page-works__content
+            .page-works__title
+                .page-works__title-bg
+                    svg(class=`page-works__title-bg-img` viewBox=svgStars2.viewBox): use(xlink:href=svgStars2.symbol)
+                h1.about__title.heading.heading_font_2.heading_transform_uppercase.heading_size_63.heading_sm-size_49.heading_xs-size_35.heading_color_white Мои работы
+
+            section.works__slider.slider-works
+                .slider-works__viewport 
+                    img(src=require(`./../../images/works-current.png`) class=`slider-works__current-slide`)
+
+                .slider-works__slide-info 
+                    h4.slider-works__slide-title.heading.heading_font_2.heading_transform_uppercase.heading_size_35.heading_xs-size_21.heading_decor_border-spacer Сайт школы онлайн образования
+                    ul.slider-works__work-features.work-features
+                        li.work-features__item HTML
+                        li.work-features__item CSS
+                        li.work-features__item JAVASCRIPT
+                    a(href=`#` class=`btn btn_color_blue`)
+                        i.btn__icon.fa.fa-link
+                        span.btn__text Посмотреть сайт
+
+                .slider-works__nav 
+                    button(type=`button` class=`slider-works__nav-btn slider-works__nav-btn_action_prev`)
+                        svg(class=`slider-works__nav-icon btn-arrow__icon` viewBox=svgArrowDown.viewBox): use(xlink:href=svgArrowDown.symbol)
+                        img(src=require(`./../../images/works-prev.jpg`) class=`slider-works__thumb`)
+
+                    button(type=`button` class=`slider-works__nav-btn slider-works__nav-btn_action_next`)
+                        svg(class=`slider-works__nav-icon btn-arrow__icon` viewBox=svgArrowUp.viewBox): use(xlink:href=svgArrowUp.symbol)
+                        img(src=require(`./../../images/works-next.jpg`) class=`slider-works__thumb`)
+                    
+            .page-works__bottom
+                section.quotes
+                    .quotes__heading-bg
+                        svg(class=`quotes__heading-bg-img` viewBox=svgStars3.viewBox): use(xlink:href=svgStars3.symbol)
+
+                    h3.quotes__title.heading.heading_font_2.heading_transform_uppercase.heading_size_63.heading_sm-size_49.heading_xs-size_35.heading_color_white Что обо мне говорят
+                    
+                    ul.quotes__list
+                        li.quotes__item.quote.text.text_color_white.text_style_italic
+                            .quote__img.avatar.avatar_size_small
+                                img(class=`avatar__img` src=require(`./../../images/quote-user.png`))
+                            .quote__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                            span.quote__author.text.text_weight_700 Ковальчук Дмитрий
+                            span.quote__author-detail — основатель Loftschool
+                            
+                        li.quotes__item.quote.text.text_color_white.text_style_italic
+                            .quote__img.avatar.avatar_size_small
+                                img(class=`avatar__img` src=require(`./../../images/quote-user2.png`))
+                            .quote__text Этот код выдержеит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+                            span.quote__author.text.text_weight_700 Сабанцев Владимир
+                            span.quote__author-detail — преподаватель
+
+                section.page-works__feedback
+                    form.form.form_theme_transparent
+                        .form__body
+                            h4.form__title.heading.heading_font_2.heading_transform_uppercase.heading_size_35.heading_xs-size_21.heading_decor_border-spacer Связаться со мной
+
+                            .form__field.textfield
+                                input(type=`text` name=`name` class=`textfield__control` placeholder=`Ваше имя`)
+
+                            .form__field.textfield
+                                input(type=`email` name=`name` class=`textfield__control` placeholder=`Ваш email`)
+
+                            .form__field.textarea
+                                textarea(class=`textarea__control` placeholder=`Ваше сообщение`)
+
+                        .form__footer
+                            button(type=`submit` class=`form__btn btn btn_color_blue text text_color_white`) Отправить
+                            button(type=`reset` class=`form__btn btn btn_color_transparent text text_color_white`) Очистить
+
+                button(type=`button` class=`page-works__anchor-to-top btn-arrow`)
+                    svg(class=`btn-arrow__icon` viewBox=svgArrowUp.viewBox): use(xlink:href=svgArrowUp.symbol)

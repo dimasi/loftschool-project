@@ -1,0 +1,38 @@
+@import './../params';
+@import './../mixins';
+
+.work-features {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    color: #083c96;
+    font-size: 16px;
+    text-transform: uppercase;
+
+    &__item {
+        &::after {
+            content: ",";
+            padding-right: 5px;
+        }
+
+        &:last-child {
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+    }
+}
+
+// @media
+// xs
+@include media-xs {
+    .work-features {
+        font-size: 14px;
+        font-weight: 500;
+    }
+}

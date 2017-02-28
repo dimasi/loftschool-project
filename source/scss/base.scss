@@ -1,0 +1,36 @@
+@import 'params';
+@import 'mixins';
+@import 'fonts';
+
+* {
+    box-sizing: border-box;
+}
+
+::-webkit-input-placeholder {
+    color: fff;
+}
+
+::-moz-placeholder {
+    color: #fff;
+}
+
+:-moz-placeholder {
+    color: #fff;
+}
+
+:-ms-input-placeholder {
+    color: #fff;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-width: 320px;
+    height: 100%;
+    color: #474b57;
+    font-size: $fs-base;
+    font-family: 'Roboto', sans-serif;
+    line-height: 24px;
+}

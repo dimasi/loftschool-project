@@ -1,0 +1,14 @@
+//- @pugdoc
+    name: social-item
+    arguments:
+        - {string}      params.className    - Дополнительный класс для элемента
+        - {string}      params.id           - Идентификатор иконки по названию svg
+        - {string}      params.link         - Ссылка на соц.сеть
+
+mixin social-item (params)
+    //- SVG
+    - let icon = require(`../../images/icons/${params.id}.svg`);
+
+    li(class=`social__item` + (params.className ? ` ${params.className}` : ``))
+        a(href=`${params.link}` class=`social__link`)
+            svg(class=`social__icon social__icon_${params.id}` viewBox=icon.viewBox): use(xlink:href=icon.symbol)

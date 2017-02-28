@@ -1,0 +1,147 @@
+@import './../params';
+@import './../mixins';
+
+.about {
+    display: flex;
+    padding-top: 20px;
+    position: relative;
+    z-index: 3;
+
+    &__info,
+    &__skills {
+        width: 50%;
+    }
+
+    &__info {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+        padding-top: 5px;
+    }
+
+    &__align-wrapper {
+        padding-right: 78px;
+        width: 443px;
+    }
+
+    &__skills {
+        padding: 0 30px 30px 40px;
+
+        .section__title {
+            padding-top: 0;
+        }
+    }
+
+    &__title {
+        margin-bottom: 55px;
+        text-align: center;
+        position: relative;
+    }
+
+    &__title-bg-img {
+        fill: #1056d1;
+        stroke: #1056d1;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(-170deg);
+        opacity: .10;
+        width: 170px;
+        margin-left: -15px;
+    }
+}
+
+// @media
+// xs
+@include media-xs {
+    .about {
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 20px;
+
+        &__info {
+            width: 100%;
+            padding-bottom: 15px;
+        }
+
+        &__align-wrapper {
+            padding-right: 0;
+            width: 473px;
+            margin: 0 auto;
+        }
+
+        &__skills {
+            width: 100%;
+            background-color: #f4f5f0;
+            padding: 15px 10px;
+        }
+
+        &__indicators {
+            align-items: center;
+            text-align: center;
+        }
+
+        &__title {
+            margin-bottom: 30px;
+        }
+
+        &__title-bg-img {
+            display: none;
+        }
+    }
+}
+
+// sm
+@include media-sm {
+    .about {
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 45px;
+
+        &__info {
+            width: 100%;
+            padding-bottom: 15px;
+        }
+
+        &__align-wrapper {
+            padding-right: 0;
+            width: 473px;
+            margin: 0 auto;
+        }
+
+        &__skills {
+            width: 100%;
+            background-color: #f4f5f0;
+            padding-top: 35px;
+        }
+
+        &__indicators {
+            align-items: center;
+            text-align: center;
+        }
+
+        &__title-bg-img {
+            width: 190px;
+        }
+    }
+}
+
+// lg
+@include media-lg {
+    .about {
+        &__align-wrapper {
+            padding-right: 25px;
+            position: relative;
+        }
+
+        &__title {
+            width: 410px;
+            position: absolute;
+            right: 100%;
+        }
+
+        &__title-bg-img {
+            width: 240px;
+        }
+    }
+}

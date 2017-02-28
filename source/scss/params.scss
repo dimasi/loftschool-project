@@ -1,0 +1,38 @@
+// Colors
+$color-primary: #004cd1;
+
+// Font-size
+$fs-base: 16px;
+
+// Breakpoints
+$screen-xs-min: 320px;
+$screen-sm-min: 768px;
+$screen-md-min: 1200px;
+$screen-lg-min: 1800px;
+
+$screen-xs-max: $screen-sm-min - 1;
+$screen-sm-max: $screen-md-min - 1;
+$screen-md-max: $screen-lg-min - 1;
+
+// Layout
+// .footer
+$footer-color: #fff;
+$footer-top-bg-color: rgba(28, 31, 41, .85);
+$footer-border-color: rgba(255, 255, 255, .2);
+$footer-bottom-bg-color-xs: rgba(0, 76, 209, .85);
+$footer-bottom-bg-color-sm: rgba(45, 71, 206, .85);
+$footer-bottom-bg-color-md: rgba(8, 60, 150, .85);
+$footer-bottom-bg-color-lg: rgba(8, 60, 150, .85);
+
+// Components
+// .nav
+$nav-link-color: #fff;
+
+// .contacts
+$contacts-link-color: #fff;
+$contacts-text-color: #fff;
+
+// .social
+$social-link-color: #fff;
+$social-link-hover-color: #2d47ce;
+$social-link-hover-color-xs: #fff;

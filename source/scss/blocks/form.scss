@@ -1,0 +1,69 @@
+@import './../params';
+@import './../mixins';
+
+.form {
+    width: 380px;
+
+    &__body {
+        padding: 35px 20px 0;
+    }
+
+    &__title {
+        color: #fff;
+        text-align: center;
+        margin-bottom: 40px;
+
+        &::after {
+            margin-top: 25px;
+            background-color: #fff;
+        }
+    }
+
+    &__field {
+        margin-bottom: 20px;
+    }
+
+    &__footer {
+        display: flex;
+    }
+
+    .form__btn {
+        flex-grow: 1;
+        width: 50%;
+    }
+}
+
+// Theme
+.form_theme {
+    &_transparent {
+        background-color: rgba(255, 255, 255, .05);
+
+        .textfield__control,
+        .textarea__control {
+            background-color: rgba(255, 255, 255, 0.07);
+        }
+    }
+}
+
+// @media
+// xs
+@include media-xs {
+    .form {
+        &__body {
+            padding: 25px 20px 0;
+        }
+
+        &__title {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+// sm
+@include media-sm {
+    .form {
+        &__title {
+            margin-bottom: 40px;
+        }
+    }
+}

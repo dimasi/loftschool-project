@@ -1,0 +1,12 @@
+//- @pugdoc
+    name: contact
+    arguments:
+        - {string}      item.link
+        - {string}      item.text
+
+mixin contact (item)
+    li(class='contacts__item')
+        if (item.link)
+            a(href=`${item.link}` class=`contacts__link`)= item.text
+        else
+            span.contacts__text= item.text

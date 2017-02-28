@@ -1,0 +1,13 @@
+//- @pugdoc
+    name: nav
+    arguments:
+        - {string}      params.className     - Дополнительный класс для элемента
+        - {array}       params.items         - Элементы навигации
+
+mixin nav (params)
+    include ./nav-item
+
+    nav(class=`nav` + (params.className ? ` ${params.className}` : ``))
+        ul(class=`nav__list`)
+            each item in params.items
+                +nav-item(item)

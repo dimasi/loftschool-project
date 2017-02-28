@@ -11,6 +11,7 @@ const uglifyJS = require('./webpack/js.uglify');
 const lintJS = require('./webpack/js.lint');
 const lintCSS = require('./webpack/sass.lint');
 const copyImages = require('./webpack/images.copy');
+const copyVideo = require('./webpack/video.copy');
 const favicon = require('./webpack/favicon');
 const devserver = require('./webpack/devserver');
 const clean = require('./webpack/clean');
@@ -42,7 +43,6 @@ const common = merge([
     },
     
     pages([
-        'test-build',
         'index', 
         'about',
         'blog', 
@@ -53,7 +53,8 @@ const common = merge([
     babel(),
     lintCSS(),
     fonts(),
-    copyImages()
+    copyImages(),
+    copyVideo()
 ]);
 
 
