@@ -59,6 +59,6 @@ $(window).on('mousemove', e => {
     let $layer = $flipPanel,
         $layer2 = $('.page-welcome__bg');
 
-    $layer.css(parallaxRule(e, 0.05));
-    $layer2.css(parallaxRule(e, 0.1));
+    $layer.css(parallaxRule(e, 0.01));
+    $layer2.css(parallaxRule(e, 0.008));
 });

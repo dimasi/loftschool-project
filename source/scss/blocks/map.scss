@@ -37,7 +37,6 @@
         flex-wrap: wrap;
 
         .contacts__item {
-            box-sizing: border-box;
             width: 50%;
             margin: 10px 0;
             padding: 0 10px 0 0;
@@ -77,7 +76,6 @@
             position: static;
             background-color: #fff;
             width: 100%;
-            box-sizing: border-box;
             padding: 30px 0 15px;
         }
 

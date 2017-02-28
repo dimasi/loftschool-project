@@ -25,7 +25,6 @@
 @include media-xs {
     .section {
         &__content {
-            box-sizing: border-box;
             width: 100%;
             max-width: 473px;
             padding: 0 10px;

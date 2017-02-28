@@ -2,6 +2,10 @@
 @import 'mixins';
 @import 'fonts';
 
+* {
+    box-sizing: border-box;
+}
+
 ::-webkit-input-placeholder {
     color: fff;
 }
