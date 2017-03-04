@@ -8,13 +8,15 @@
     overflow: hidden;
     background-color: #223b65;
 
-    &__bg-video {
-        width: 120%;
-        height: 120%;
+    &__bg-media {
+        transform: translateX(-50%) translateY(-50%);
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
     }
 
     &__bg {
@@ -61,13 +63,12 @@
     }
 }
 
-// @media
 // xs
 @include media-xs {
     .page-welcome {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
         padding: 10px;
 
@@ -77,7 +78,8 @@
 
         &__flip-panel {
             width: 300px;
-            margin-left: -150px;
+            margin: 0;
+            position: static;
         }
 
         &__copyright {

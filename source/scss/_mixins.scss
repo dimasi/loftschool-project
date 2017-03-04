@@ -42,3 +42,9 @@
         @content;
     }
 }
+
+@mixin media-portrait() {
+    @media screen and (orientation: portrait) {
+        @content;
+    }
+}

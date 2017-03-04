@@ -9,8 +9,7 @@ block title
 
 block content
     .page-welcome
-        video(class=`page-welcome__bg-video` width=`400` height=`300` autoplay loop)
-            source(src=`${require('./../../night.mp4')}`)
+        .page-welcome__bg-media-holder
 
         img(class=`page-welcome__bg` src=require(`./../../images/night_no_bg.png`))
 
@@ -76,13 +75,13 @@ block content
                     .flip-panel__body.login
                         span.login__title.heading.heading_font_2.heading_size_35.heading_color_white.heading_transform_uppercase Авторизуйтесь
                         
-                        .login__login.textfield
-                            .textfield__addon
+                        label.login__login.textfield
+                            span.textfield__addon
                                 i.textfield__addon-icon.fa.fa-user
                             input(type=`text` name=`login` class=`textfield__control` placeholder=`Логин`)
                         
-                        .login__pwd.textfield
-                            .textfield__addon
+                        label.login__pwd.textfield
+                            span.textfield__addon
                                 i.textfield__addon-icon.fa.fa-key
                             input(type=`password` name=`pwd` class=`textfield__control` placeholder=`Пароль`)
 

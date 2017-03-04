@@ -22,43 +22,60 @@ import './../../scss/blocks/user.scss';
 import './../../scss/blocks/login.scss';
 import './../../scss/blocks/form-guard.scss';
 
+
 // JS
-let $flipPanel = $('.flip-panel');
+const mediaBackground = require('Modules/mediaBackground');
 
-$('#sign-in').one('click', () => {
-    $('.flip-panel__side_side_back').css('visibility', 'visible');
-});
+$(function() {
+    // Create animated background
+    mediaBackground.init({
+        layerHolder: `.page-welcome__bg-media-holder`,
+        videoSrc: `media-background.mp4`,
+        gifSrc: `media-background.gif`,
+        className: `page-welcome__bg-media`
+    });
 
-$('#sign-in').on('click', () => {
-    $flipPanel.addClass('flip-panel_state_flipped');
-});
+    // Parallax
+    if (!$(`html`).hasClass(`touchevents`)) {
+        let parallaxRule = (e, divider) => {
+            let bottomPosition = (window.innerHeight / 2) * divider,
+                pageX = e.pageX,
+                pageY = e.pageY,
+                initialX = (window.innerWidth / 2) - pageX,
+                initialY = (window.innerHeight / 2) - pageY,
+                positionX = initialX * divider,
+                positionY = initialY * divider;
 
-$('[href="#welcome-backflip"]').on('click', e => {
-    e.preventDefault();
-    $flipPanel.removeClass('flip-panel_state_flipped');
-});
+            return {
+                'transform': `translate3d(${positionX}px, ${positionY}px, 0)`,
+                '-webkit-transform': `translate3d(${positionX}px, ${positionY}px, 0)`,
+                'bottom': `-${bottomPosition}px`
+            };
+        };
 
-// Parallax
-let parallaxRule = (e, divider) => {
-    let bottomPosition = (window.innerHeight / 2) * divider,
-        pageX = e.pageX,
-        pageY = e.pageY,
-        initialX = (window.innerWidth / 2) - pageX,
-        initialY = (window.innerHeight / 2) - pageY,
-        positionX = initialX * divider,
-        positionY = initialY * divider;
+        $(window).on('mousemove', e => {
+            let $layer = $flipPanel,
+                $layer2 = $('.page-welcome__bg');
 
-    return {
-        'transform': `translate3d(${positionX}px, ${positionY}px, 0)`,
-        '-webkit-transform': `translate3d(${positionX}px, ${positionY}px, 0)`,
-        'bottom': `-${bottomPosition}px`
-    };
-};
+            $layer.css(parallaxRule(e, 0.01));
+            $layer2.css(parallaxRule(e, 0.008));
+        });
+    }
 
-$(window).on('mousemove', e => {
-    let $layer = $flipPanel,
-        $layer2 = $('.page-welcome__bg');
 
-    $layer.css(parallaxRule(e, 0.01));
-    $layer2.css(parallaxRule(e, 0.008));
+    // Flip
+    let $flipPanel = $('.flip-panel');
+
+    $('#sign-in').one('click', () => {
+        $('.flip-panel__side_side_back').css('visibility', 'visible');
+    });
+
+    $('#sign-in').on('click', () => {
+        $flipPanel.addClass('flip-panel_state_flipped');
+    });
+
+    $('[href="#welcome-backflip"]').on('click', e => {
+        e.preventDefault();
+        $flipPanel.removeClass('flip-panel_state_flipped');
+    });
 });

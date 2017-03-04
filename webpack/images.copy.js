@@ -8,7 +8,7 @@ module.exports = () => {
     module: {
       rules: [
         {
-          test: /\.(png|jpg)$/,
+          test: /\.(png|jpg|gif)$/,
           loader: 'file-loader',
           options: {
             name: 'images/[name].[ext]'
