@@ -1,14 +1,14 @@
-require(`Root/node_modules/modernizr/bin/modernizr`);
+const clientFeatureDetector = require(`Modules/clientFeatureDetector`);
 const createElement = require(`Modules/createElement`);
 
 /** 
  * @module mediaBackground
+ * The module creates animated background
  * @requires Modernizr (videoautoplay)
  * @requires module:createElement
  * */
 module.exports = (() => {
-    let _el,
-        _detectVideoAutoplaySupport = new Promise(resolve => global.Modernizr.on(`videoautoplay`, result => resolve(result)));
+    let _el;
 
     return {
         /**
@@ -19,7 +19,7 @@ module.exports = (() => {
          * @param {string} params.className - Class name for created media element
          */
         init: params => {
-            _detectVideoAutoplaySupport.then(supported => {
+            clientFeatureDetector.videoautoplay().then(supported => {
                 if (supported) {
                     _el = createElement.video({
                         src: require(`Video/${params.videoSrc}`),
