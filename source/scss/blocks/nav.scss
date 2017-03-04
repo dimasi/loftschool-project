@@ -51,13 +51,15 @@
 }
 
 // Styles
-// Button
-.nav__item_style_button {
-    padding: 0;
+// Button 
+.nav {
+    .nav__item_style_button {
+        padding: 0;
 
-    .nav__link {
-        display: block;
-        padding: 10px;
+        .nav__link {
+            display: block;
+            padding: 10px;
+        }
     }
 }
 
