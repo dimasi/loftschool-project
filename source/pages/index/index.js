@@ -24,7 +24,9 @@ import './../../scss/blocks/form-guard.scss';
 
 
 // JS
+const clientFeatureDetector = require(`Modules/clientFeatureDetector`);
 const mediaBackground = require('Modules/mediaBackground');
+const parallax = require('Modules/parallax');
 
 $(function() {
     // Create animated background
@@ -35,32 +37,21 @@ $(function() {
         className: `page-welcome__bg-media`
     });
 
-    // Parallax
-    if (!$(`html`).hasClass(`touchevents`)) {
-        let parallaxRule = (e, divider) => {
-            let bottomPosition = (window.innerHeight / 2) * divider,
-                pageX = e.pageX,
-                pageY = e.pageY,
-                initialX = (window.innerWidth / 2) - pageX,
-                initialY = (window.innerHeight / 2) - pageY,
-                positionX = initialX * divider,
-                positionY = initialY * divider;
-
-            return {
-                'transform': `translate3d(${positionX}px, ${positionY}px, 0)`,
-                '-webkit-transform': `translate3d(${positionX}px, ${positionY}px, 0)`,
-                'bottom': `-${bottomPosition}px`
-            };
-        };
-
-        $(window).on('mousemove', e => {
-            let $layer = $flipPanel,
-                $layer2 = $('.page-welcome__bg');
-
-            $layer.css(parallaxRule(e, 0.01));
-            $layer2.css(parallaxRule(e, 0.008));
-        });
-    }
+    // Create parallax
+    clientFeatureDetector.touchevents().then(touchDevice => {
+        if (!touchDevice) {
+            parallax.init([
+                {
+                    selector: `.flip-panel`,
+                    divider: 0.01
+                },
+                {
+                    selector: '.page-welcome__bg',
+                    divider: 0.008
+                }
+            ]);
+        }
+    });
 
 
     // Flip

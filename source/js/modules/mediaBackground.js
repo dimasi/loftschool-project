@@ -4,7 +4,6 @@ const createElement = require(`Modules/createElement`);
 /** 
  * @module mediaBackground
  * The module creates animated background
- * @requires Modernizr (videoautoplay)
  * @requires module:createElement
  * */
 module.exports = (() => {
