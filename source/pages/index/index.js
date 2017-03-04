@@ -27,6 +27,7 @@ import './../../scss/blocks/form-guard.scss';
 const clientFeatureDetector = require(`Modules/clientFeatureDetector`);
 const mediaBackground = require('Modules/mediaBackground');
 const parallax = require('Modules/parallax');
+const flipPanel = require('Modules/flipPanel');
 
 $(function() {
     // Create animated background
@@ -43,30 +44,21 @@ $(function() {
             parallax.init([
                 {
                     selector: `.flip-panel`,
-                    divider: 0.01
+                    divider: 0
                 },
                 {
                     selector: '.page-welcome__bg',
-                    divider: 0.008
+                    divider: 0.01
                 }
             ]);
         }
     });
 
-
-    // Flip
-    let $flipPanel = $('.flip-panel');
-
-    $('#sign-in').one('click', () => {
-        $('.flip-panel__side_side_back').css('visibility', 'visible');
+    // Init flip-panel
+    flipPanel.init({
+        frontTogglerSelector: `.flip-panel__front-toggler`,
+        backTogglerSelector: `.flip-panel__back-toggler`,
+        flipPanelSelector: `.flip-panel`
     });
 
-    $('#sign-in').on('click', () => {
-        $flipPanel.addClass('flip-panel_state_flipped');
-    });
-
-    $('[href="#welcome-backflip"]').on('click', e => {
-        e.preventDefault();
-        $flipPanel.removeClass('flip-panel_state_flipped');
-    });
 });

@@ -42,8 +42,23 @@
     }
 }
 
-.nav__item_width_50 {
-    width: 50%;
+// Nav item
+// Width
+.nav__item_width {
+    &_50 {
+        width: 50%;
+    }
+}
+
+// Styles
+// Button
+.nav__item_style_button {
+    padding: 0;
+
+    .nav__link {
+        display: block;
+        padding: 10px;
+    }
 }
 
 // @media

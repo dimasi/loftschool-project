@@ -8,7 +8,6 @@ module.exports = (() => {
     let _Modernizr = global.Modernizr;
 
     return {
-        videoautoplay: () => new Promise(resolve => _Modernizr.on(`videoautoplay`, result => resolve(result))),
         touchevents: () => new Promise(resolve => _Modernizr.on(`touchevents`, result => resolve(result)))
     };
 

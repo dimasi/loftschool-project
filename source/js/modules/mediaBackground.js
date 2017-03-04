@@ -18,8 +18,8 @@ module.exports = (() => {
          * @param {string} params.className - Class name for created media element
          */
         init: params => {
-            clientFeatureDetector.videoautoplay().then(supported => {
-                if (supported) {
+            clientFeatureDetector.touchevents().then(supported => {
+                if (!supported) {
                     _el = createElement.video({
                         src: require(`Video/${params.videoSrc}`),
                         className: params.className,

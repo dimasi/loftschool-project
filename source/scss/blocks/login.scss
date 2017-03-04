@@ -23,6 +23,13 @@
         &__title {
             margin-bottom: 35px;
         }
+
+        &__login,
+        &__pwd {
+            .textfield__control {
+                width: 215px;
+            }
+        }
     }
 }
 
@@ -31,6 +38,15 @@
     .login {
         &__title {
             margin-bottom: 35px;
+        }
+
+        &__login,
+        &__pwd {
+            width: 308px;
+
+            .textfield__control {
+                width: 263px;
+            }
         }
     }
 }
