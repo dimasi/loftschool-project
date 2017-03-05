@@ -62,7 +62,8 @@ module.exports = (() => {
             let shiftY = `${-scrollTop / 100 / divider}px`;
 
             $selector.css({
-                'margin-top': shiftY
+                'transform': `translate3d(0 ${shiftY}, 0)`,
+                '-webkit-transform': `translate3d(0, ${shiftY}, 0)`
             });
         };
 

@@ -23,7 +23,28 @@ import './../../scss/blocks/indicator.scss';
 import './../../scss/blocks/indicators-grid.scss';
 import './../../scss/blocks/map.scss';
 
+
 // JS
+// const clientFeatureDetector = require(`Modules/clientFeatureDetector`);
+// const mediaBackground = require('Modules/mediaBackground');
+const parallax = require('Modules/parallax');
+
+// Create parallax
+parallax.scroll([
+    {
+        selector: `.page-header__user`,
+        divider: 0.05
+    },
+    {
+        selector: `.page-header__bg-user`,
+        divider: 0.07
+    },
+    {
+        selector: '.page-header__bg',
+        divider: 0.09
+    }
+]);
+
 // Temp: Indicators
 $(() => {
     var $indicators = $(`.indicator`),

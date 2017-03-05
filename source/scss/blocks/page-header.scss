@@ -7,12 +7,11 @@
 
     &__bg {
         width: 2000px;
+        margin-left: -1000px;
         position: absolute;
         z-index: 1;
-        top: 30%;
+        bottom: -45%;
         left: 50%;
-        transform: translate(-50%, -50%);
-        transition: margin-top 100ms;
     }
 
     &__bg-video {
@@ -27,7 +26,7 @@
 
     &__bg-user {
         max-width: 460px;
-        transform: translateX(-50%);
+        margin-left: -250px;
         position: absolute;
         z-index: 2;
         left: 50%;
@@ -41,11 +40,10 @@
     }
 
     &__user {
-        min-width: 300px;
+        width: 100%;
         position: absolute;
         z-index: 3;
-        left: 50%;
-        transform: translateX(-50%);
+        left: 0;
     }
 
     &__anchor-link {
@@ -59,12 +57,20 @@
 // xs
 @include media-xs {
     .page-header {
-        height: 100vh;
+        height: calc(100vh - 91px);
+
+        &__bg {
+            width: 1400px;
+            margin-left: -700px;
+            top: 100vh;
+            bottom: auto;
+            margin-top: -840px;
+        }
 
         &__bg-user {
             width: 281px;
             top: (99 / 568 * 100vh);
-            margin-left: -5px;
+            margin-left: -150px;
         }
 
         &__user {
@@ -72,7 +78,7 @@
         }
 
         &__anchor-link {
-            top: (370 / 568 * 100vh);
+            top: 53vh;
         }
     }
 }
@@ -80,10 +86,6 @@
 // xs-landscape
 @include media-xs-landscape {
     .page-header {
-        &__bg {
-            width: 1400px;
-        }
-
         &__bg-user {
             top: (25 / 320 * 100vh);
         }
@@ -104,13 +106,15 @@
         height: 505px;
 
         &__bg {
-            width: 1300px;
+            width: 1200px;
+            margin-left: -600px;
+            bottom: -25%;
         }
 
         &__bg-user {
             width:  281px;
             top: 99px;
-            margin-left: -5px;
+            margin-left: -150px;
         }
 
         &__user {
@@ -118,7 +122,7 @@
         }
 
         &__anchor-link {
-            top: 265px;
+            top: 310px;
         }
     }
 }
@@ -131,7 +135,6 @@
         &__bg-user {
             width: 460px;
             top: 119px;
-            margin-left: -25px;
         }
 
         &__user {
@@ -168,7 +171,6 @@
         &__bg-user {
             width: 460px;
             top: 119px;
-            margin-left: -25px;
         }
 
         &__user {
