@@ -4,6 +4,10 @@
 .page-works {
     &__header {
         height: 790px;
+
+        .page-header__bg {
+            bottom: -14%;
+        }
     }
 
     &__ribbon {
@@ -68,12 +72,7 @@
             padding-bottom: 91px;
 
             .page-header__bg {
-                top: 100%;
-                transform: translate(-50%, -90%);
-            }
-
-            .page-header__anchor-link {
-                top: 57vh;
+                margin-top: -800px;
             }
         }
 
@@ -116,19 +115,24 @@
             padding-bottom: 135px;
 
             .page-header__bg {
-                top: 36%;
+                bottom: -12%;
             }
         }
 
         &__title {
             height: 135px;
             line-height: 135px;
+            margin-top: -135px;
         }
 
         &__title-bg {
             width: 170px;
             top: -2px;
             transform: translate(-50%, 0);
+        }
+
+        &__ribbon {
+            transform: translate(-50%, -135px);
         }
     }
 }
