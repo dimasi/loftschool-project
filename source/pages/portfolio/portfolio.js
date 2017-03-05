@@ -27,3 +27,25 @@ import './../../scss/blocks/work-features.scss';
 import './../../scss/blocks/quotes.scss';
 import './../../scss/blocks/quote.scss';
 import './../../scss/blocks/form.scss';
+
+
+// JS
+// const clientFeatureDetector = require(`Modules/clientFeatureDetector`);
+// const mediaBackground = require('Modules/mediaBackground');
+const parallax = require('Modules/parallax');
+
+// Create parallax
+parallax.scroll([
+    {
+        selector: `.page-header__user`,
+        divider: 0.05
+    },
+    {
+        selector: `.page-header__bg-user`,
+        divider: 0.07
+    },
+    {
+        selector: '.page-header__bg',
+        divider: 0.09
+    }
+]);

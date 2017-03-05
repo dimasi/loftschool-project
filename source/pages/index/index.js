@@ -41,7 +41,7 @@ $(function() {
     // Create parallax
     clientFeatureDetector.touchevents().then(touchDevice => {
         if (!touchDevice) {
-            parallax.init([
+            parallax.mousemove([
                 {
                     selector: `.flip-panel`,
                     divider: 0

@@ -64,8 +64,17 @@
 @include media-xs {
     .page-works {
         &__header {
-            height: 100vh;
+            height: calc(100vh + 91px);
             padding-bottom: 91px;
+
+            .page-header__bg {
+                top: 100%;
+                transform: translate(-50%, -90%);
+            }
+
+            .page-header__anchor-link {
+                top: 57vh;
+            }
         }
 
         &__title {
@@ -103,8 +112,12 @@
 @include media-sm {
     .page-works {
         &__header {
-            height: 505px;
+            height: 640px;
             padding-bottom: 135px;
+
+            .page-header__bg {
+                top: 36%;
+            }
         }
 
         &__title {

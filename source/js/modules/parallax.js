@@ -20,15 +20,23 @@ module.exports = (() => {
          * @private
          * @param {array} e - Mousemove event 
          */
-        _updateScene = e => _layers.forEach(layer => _setPosition(e, layer)),
+        _updateScene = e => {
+            if (e.type == `scroll`) {
+                _layers.forEach(layer => _setPositionByScroll($(window).scrollTop(), layer));
+            }
+
+            if (e.type == `mousemove`) {
+                _layers.forEach(layer => _setPositionByMousemove(e, layer));
+            }
+        },
 
         /**
-         * Calculate and set layer position
+         * Calculate and set layer position for mousemove parallax
          * @private
-         * @param {array} e - Mousemove event
+         * @param {object} e - Mousemove event
          * @param {object} layer - Object of layer
          */
-        _setPosition = (e, {$selector, divider}) => {
+        _setPositionByMousemove = (e, {$selector, divider}) => {
             let bottomPosition = (window.innerHeight / 2) * divider,
                 pageX = e.pageX,
                 pageY = e.pageY,
@@ -42,12 +50,31 @@ module.exports = (() => {
                 '-webkit-transform': `translate3d(${positionX}px, ${positionY}px, 0)`,
                 'bottom': `-${bottomPosition}px`
             });
+        },
+
+        /**
+         * Calculate and set layer position for scroll parallax
+         * @private
+         * @param {number} scrollTop - The height of the scrolling page
+         * @param {object} layer - Object of layer
+         */
+        _setPositionByScroll = (scrollTop, {$selector, divider}) => {
+            let shiftY = `${-scrollTop / 100 / divider}px`;
+
+            $selector.css({
+                'margin-top': shiftY
+            });
         };
 
     return {
-        init: (layers) => {
+        mousemove: layers => {
             _setLayers(layers);
-            $(window).on('mousemove', e => _updateScene(e));
+            $(window).on(`mousemove`, e => _updateScene(e));
+        },
+
+        scroll: layers => {
+            _setLayers(layers);
+            $(window).on(`scroll`, e => _updateScene(e));
         }
     };
 
