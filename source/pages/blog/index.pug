@@ -14,17 +14,17 @@ block content
     - let svgRibbonRight = require(`./../../images/icons/about_bg_right.svg`);
     - let svgStars = require(`./../../images/icons/stars1.svg`);
 
-    .page__content-wrapper
-        .page-header.page-header_page_blog
+    .page__content-wrapper.page-blog
+        .page-header.page-blog__header
             video(class=`page-header__bg-video` width=`400` height=`300` autoplay loop)
                 source(src=`${require('./../../video/media-background.mp4')}`)
 
-            img(class=`page-header__bg` src=require(`./../../images/night_no_bg.png`))
+            img(class=`page-header__bg page-blog__bg` src=require(`./../../images/night_no_bg.png`))
 
-            .page-header__bg-user
+            .page-header__bg-user.page-blog__bg-user
                 svg(class=`page-header__bg-user-img` viewBox=svgStars.viewBox): use(xlink:href=svgStars.symbol)
 
-            .page-header__user.user
+            .page-header__user.page-blog__user.user
                 .user__avatar.avatar
                     img(class=`avatar__img` src=require(`./../../images/user-avatar.jpg`))
 
@@ -32,16 +32,16 @@ block content
 
                 p.user__text.text.text_color_white Статьи, которые я написал
 
-                button(type=`button` class=`page-header__anchor-link btn-arrow`)
+                button(type=`button` class=`page-header__anchor-link page-blog__anchor-link btn-arrow`)
                     svg(class=`btn-arrow__icon` viewBox=svgArrowDown.viewBox): use(xlink:href=svgArrowDown.symbol)
 
-        .ribbon
+        .ribbon.page-blog__ribbon
             .ribbon__col.ribbon__col_left
                 svg(class=`ribbon__triangle ribbon__triangle_side_left` viewBox=svgRibbonLeft.viewBox): use(xlink:href=svgRibbonLeft.symbol)
             .ribbon__col.ribbon__col_right
                 svg(class=`ribbon__triangle ribbon__triangle_side_right` viewBox=svgRibbonRight.viewBox): use(xlink:href=svgRibbonRight.symbol)
 
-        .blog
+        .blog.page-blog__content
             .blog__wrapper
                 .blog__sidebar
                     +nav({

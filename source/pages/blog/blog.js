@@ -16,5 +16,28 @@ import './../../scss/blocks/footer.scss';
 import './../../scss/blocks/page-header.scss';
 import './../../scss/blocks/user.scss';
 import './../../scss/blocks/ribbon.scss';
+import './../../scss/blocks/page-blog.scss';
 import './../../scss/blocks/blog.scss';
 import './../../scss/blocks/article.scss';
+
+
+// JS
+// const clientFeatureDetector = require(`Modules/clientFeatureDetector`);
+// const mediaBackground = require('Modules/mediaBackground');
+const parallax = require('Modules/parallax');
+
+// Create parallax
+parallax.scroll([
+    {
+        selector: `.page-header__user`,
+        divider: 0.05
+    },
+    {
+        selector: `.page-header__bg-user`,
+        divider: 0.07
+    },
+    {
+        selector: '.page-header__bg',
+        divider: 0.09
+    }
+]);
