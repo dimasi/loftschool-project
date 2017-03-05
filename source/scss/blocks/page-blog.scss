@@ -43,6 +43,11 @@
 
         &__header {
             height: 410px;
+
+            .page-header__bg-video {
+                top: auto;
+                bottom: -37%;
+            }
         }
 
         &__anchor-link {

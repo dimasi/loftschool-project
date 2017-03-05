@@ -26,8 +26,16 @@ import './../../scss/blocks/map.scss';
 
 // JS
 // const clientFeatureDetector = require(`Modules/clientFeatureDetector`);
-// const mediaBackground = require('Modules/mediaBackground');
+const mediaBackground = require('Modules/mediaBackground');
 const parallax = require('Modules/parallax');
+
+// Create animated background
+mediaBackground.init({
+    layerHolder: `.page-header__bg-video`,
+    videoSrc: `media-background.mp4`,
+    gifSrc: `media-background.gif`,
+    className: `page-header__bg-video`
+});
 
 // Create parallax
 parallax.scroll([
