@@ -28,6 +28,7 @@ import './../../scss/blocks/map.scss';
 // const clientFeatureDetector = require(`Modules/clientFeatureDetector`);
 const mediaBackground = require('Modules/mediaBackground');
 const parallax = require('Modules/parallax');
+const anchorLinks = require('Modules/anchorLinks');
 
 // Create animated background
 mediaBackground.init({
@@ -52,6 +53,9 @@ parallax.scroll([
         divider: 0.09
     }
 ]);
+
+// Initialize anchor-links
+anchorLinks.init();
 
 // Temp: Indicators
 $(() => {
