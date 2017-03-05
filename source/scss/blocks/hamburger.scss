@@ -12,9 +12,73 @@
     right: 30px;
     z-index: 2;
     cursor: pointer;
+    transition-timing-function: linear;
+    transition-duration: .15s;
+    transition-property: opacity,filter;
+
+    &__wrapper {
+        position: relative;
+        display: inline-block;
+        width: 40px;
+        height: 35px;
+    }
+
+    &__inner {
+        top: 50%;
+        display: block;
+        margin-top: -2px;
+        position: absolute;
+        width: 40px;
+        height: 5px;
+        border-radius: 4px;
+        background-color: #fff;
+        transition-property: transform;
+        transition-timing-function: cubic-bezier(.19, 1, .22, 1);
+        transition-duration: .3s;
+
+        &::before,
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 40px;
+            height: 5px;
+            border-radius: 4px;
+            background-color: #fff;
+            transition-delay: .1s;
+            transition-timing-function: linear;
+            transition-duration: 0s;
+            transition-property: top,opacity;
+        }
+
+        &::before {
+            top: -15px;
+        }
+
+        &::after {
+            bottom: -15px;
+        }
+    }
 
     &__icon {
         fill: #fff;
+    }
+}
+
+.hamburger_state_cross {
+    .hamburger__inner {
+        transition-timing-function: cubic-bezier(.19, 1, .22, 1);
+        transform: rotate(765deg);
+
+        &::before {
+            top: 0;
+            opacity: 0;
+        }
+
+        &::after {
+            bottom: 0;
+            transform: rotate(90deg);
+        }
     }
 }
 
@@ -24,5 +88,29 @@
     .hamburger {
         width: 26px;
         height: 23px;
+
+        &__wrapper {
+            width: 26px;
+            height: 23px;
+        }
+
+        &__inner {
+            width: 26px;
+            height: 3px;
+
+            &::before,
+            &::after {
+                width: 26px;
+                height: 3px;
+            }
+
+            &::before {
+                top: -10px;
+            }
+
+            &::after {
+                bottom: -10px;
+            }
+        }
     }
 }

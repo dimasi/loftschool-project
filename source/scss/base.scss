@@ -4,6 +4,10 @@
 
 * {
     box-sizing: border-box;
+
+    &:focus {
+        outline: 0 none;
+    }
 }
 
 ::-webkit-input-placeholder {
@@ -33,4 +37,5 @@ body {
     font-size: $fs-base;
     font-family: 'Roboto', sans-serif;
     line-height: 24px;
+    position: relative;
 }

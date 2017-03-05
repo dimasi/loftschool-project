@@ -8,5 +8,5 @@
         - {boolean}     params.active       - Признак активной ссылки
 
 mixin nav-item (params)
-    li(class=`nav__item` + (params.active == true ? ` nav__item_active` : ``) + (params.itemClass ? ` ${params.itemClass}` : ``))
+    li(class=`nav__item` + (params.active == true ? ` nav__item_state_active` : ``) + (params.itemClass ? ` ${params.itemClass}` : ``))
         a(href=`${params.link}` class=`nav__link` + (params.linkClass ? ` ${params.linkClass}` : ``))= params.text

@@ -11,6 +11,7 @@ import './../../scss/blocks/hamburger.scss';
 import './../../scss/blocks/social.scss';
 import './../../scss/blocks/nav.scss';
 import './../../scss/blocks/copyright.scss';
+import './../../scss/blocks/menu.scss';
 
 import './../../scss/blocks/page.scss';
 import './../../scss/blocks/footer.scss';
@@ -29,6 +30,7 @@ import './../../scss/blocks/map.scss';
 const mediaBackground = require('Modules/mediaBackground');
 const parallax = require('Modules/parallax');
 const anchorLinks = require('Modules/anchorLinks');
+const menu = require('Modules/menu');
 
 // Create animated background
 mediaBackground.init({
@@ -56,6 +58,9 @@ parallax.scroll([
 
 // Initialize anchor-links
 anchorLinks.init();
+
+// Initialize menu
+menu.init();
 
 // Temp: Indicators
 $(() => {

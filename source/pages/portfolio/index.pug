@@ -1,12 +1,12 @@
 extends ./../layout
 
+include ./../../mixins/menu
 include ./../../mixins/social
 
 block title
     | Portfolio page
     
 block content
-
     //- SVG
     - let svgArrowDown = require(`./../../images/icons/portf_arrow_down.svg`);
     - let svgArrowUp = require(`./../../images/icons/portf_arrow_up.svg`);
@@ -115,3 +115,25 @@ block content
 
                 button(type=`button` data-toggle=`anchor-link` data-target=`.page-works` class=`page-works__anchor-to-top btn-arrow`)
                     svg(class=`btn-arrow__icon` viewBox=svgArrowUp.viewBox): use(xlink:href=svgArrowUp.symbol)
+
+block bottom
+    //- Menu
+    +menu([
+        { 
+            text: 'Мои работы', 
+            link: 'portfolio.html',
+            active: true
+        },
+        { 
+            text: 'Блог', 
+            link: 'blog.html' 
+        },
+        { 
+            text: 'Обо мне', 
+            link: 'about.html'
+        },
+        { 
+            text: 'Авторизация', 
+            link: '/' 
+        }
+    ])

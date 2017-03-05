@@ -1,6 +1,6 @@
 /** 
  * @module anchorLinks
- * Flip
+ * Anchor links
  * @todo Возможность передавать duration через data-атрибут
  * @todo Easing и возможность передачи функции в параметрах или через data-атрибут
  * */

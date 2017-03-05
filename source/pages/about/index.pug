@@ -1,5 +1,6 @@
 extends ./../layout
 
+include ./../../mixins/menu
 include ./../../mixins/social
 include ./../../mixins/indicators-grid
 include ./../../mixins/contacts
@@ -8,7 +9,6 @@ block title
     | About page
     
 block content
-
     //- SVG
     - let svgArrowDown = require(`./../../images/icons/portf_arrow_down.svg`);
     - let svgRibbonLeft = require(`./../../images/icons/about_bg_left.svg`);
@@ -121,3 +121,25 @@ block content
                         span.contacts__text г. Новосибирск, ул. Инская, д.4
 
         .map__container
+
+block bottom
+    //- Menu
+    +menu([
+        { 
+            text: 'Мои работы', 
+            link: 'portfolio.html'
+        },
+        { 
+            text: 'Блог', 
+            link: 'blog.html'
+        },
+        { 
+            text: 'Обо мне', 
+            link: 'about.html',
+            active: true
+        },
+        { 
+            text: 'Авторизация', 
+            link: '/' 
+        }
+    ])

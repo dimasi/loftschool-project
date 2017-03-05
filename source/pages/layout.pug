@@ -1,6 +1,3 @@
-//- SVG
-- let svgHamburger = require(`../../images/icons/hamburger.svg`);
-
 doctype html
 html
     head
@@ -29,11 +26,10 @@ html
                 ]
             })
 
-            button(type=`button` class=`page__hamburger hamburger`)
-                svg(class=`hamburger__icon` viewBox=svgHamburger.viewBox): use(xlink:href=svgHamburger.symbol)
-
             .page__content
                 block content
 
             .page__footer
                 include ../components/footer/footer
+
+        block bottom
