@@ -1,4 +1,3 @@
-// CSS
 import 'reset-css/reset.css';
 import './../../scss/base.scss';
 
@@ -22,43 +21,40 @@ import './../../scss/blocks/user.scss';
 import './../../scss/blocks/login.scss';
 import './../../scss/blocks/form-guard.scss';
 
-// JS
-let $flipPanel = $('.flip-panel');
+const clientFeatureDetector = require(`Modules/clientFeatureDetector`);
+const mediaBackground = require('Modules/mediaBackground');
+const parallax = require('Modules/parallax');
+const flipPanel = require('Modules/flipPanel');
 
-$('#sign-in').one('click', () => {
-    $('.flip-panel__side_side_back').css('visibility', 'visible');
-});
+$(function() {
+    // Create animated background
+    mediaBackground.init({
+        layerHolder: `.page-welcome__bg-media-holder`,
+        videoSrc: `media-background.mp4`,
+        gifSrc: `media-background.gif`,
+        className: `page-welcome__bg-media`
+    });
 
-$('#sign-in').on('click', () => {
-    $flipPanel.addClass('flip-panel_state_flipped');
-});
+    // Create parallax
+    clientFeatureDetector.touchevents().then(touchDevice => {
+        if (!touchDevice) {
+            parallax.mousemove([
+                {
+                    selector: `.flip-panel`,
+                    divider: 0
+                },
+                {
+                    selector: '.page-welcome__bg',
+                    divider: 0.01
+                }
+            ]);
+        }
+    });
 
-$('[href="#welcome-backflip"]').on('click', e => {
-    e.preventDefault();
-    $flipPanel.removeClass('flip-panel_state_flipped');
-});
-
-// Parallax
-let parallaxRule = (e, divider) => {
-    let bottomPosition = (window.innerHeight / 2) * divider,
-        pageX = e.pageX,
-        pageY = e.pageY,
-        initialX = (window.innerWidth / 2) - pageX,
-        initialY = (window.innerHeight / 2) - pageY,
-        positionX = initialX * divider,
-        positionY = initialY * divider;
-
-    return {
-        'transform': `translate3d(${positionX}px, ${positionY}px, 0)`,
-        '-webkit-transform': `translate3d(${positionX}px, ${positionY}px, 0)`,
-        'bottom': `-${bottomPosition}px`
-    };
-};
-
-$(window).on('mousemove', e => {
-    let $layer = $flipPanel,
-        $layer2 = $('.page-welcome__bg');
-
-    $layer.css(parallaxRule(e, 0.01));
-    $layer2.css(parallaxRule(e, 0.008));
+    // Init flip-panel
+    flipPanel.init({
+        frontTogglerSelector: `.flip-panel__front-toggler`,
+        backTogglerSelector: `.flip-panel__back-toggler`,
+        flipPanelSelector: `.flip-panel`
+    });
 });

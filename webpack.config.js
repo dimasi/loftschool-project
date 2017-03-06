@@ -16,6 +16,9 @@ const favicon = require('./webpack/favicon');
 const devserver = require('./webpack/devserver');
 const clean = require('./webpack/clean');
 const fonts = require('./webpack/fonts');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const modernizr = require('./webpack/modernizr');
+const resolveAliases = require('./webpack/resolve.aliases');
 
 global.$ = {
     PATHS: {
@@ -34,9 +37,17 @@ const common = merge([
             filename: './js/[name].js'
         },
         plugins: [
+            new BrowserSyncPlugin({
+                host: 'localhost',
+                port: 3000,
+                proxy: 'http://localhost:8080/'
+            }, {
+                reload: false
+            }),
             new webpack.ProvidePlugin({
                 $: 'jquery',
-                jQuery: 'jquery'
+                jQuery: 'jquery',
+                Modernizr: 'modernizr'
             }),
             new webpack.NoEmitOnErrorsPlugin()
         ]
@@ -54,7 +65,9 @@ const common = merge([
     lintCSS(),
     fonts(),
     copyImages(),
-    copyVideo()
+    copyVideo(),
+    modernizr(),
+    resolveAliases()
 ]);
 
 

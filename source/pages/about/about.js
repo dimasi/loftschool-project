@@ -1,4 +1,3 @@
-// CSS
 import 'reset-css/reset.css';
 import './../../scss/base.scss';
 
@@ -23,7 +22,8 @@ import './../../scss/blocks/indicator.scss';
 import './../../scss/blocks/indicators-grid.scss';
 import './../../scss/blocks/map.scss';
 
-// JS
+require(`Js/common`);
+
 // Temp: Indicators
 $(() => {
     var $indicators = $(`.indicator`),

@@ -1,4 +1,3 @@
-// CSS
 import 'reset-css/reset.css';
 import './../../scss/base.scss';
 
@@ -27,3 +26,5 @@ import './../../scss/blocks/work-features.scss';
 import './../../scss/blocks/quotes.scss';
 import './../../scss/blocks/quote.scss';
 import './../../scss/blocks/form.scss';
+
+require(`Js/common`);

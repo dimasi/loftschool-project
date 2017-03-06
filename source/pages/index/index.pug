@@ -9,13 +9,12 @@ block title
 
 block content
     .page-welcome
-        video(class=`page-welcome__bg-video` width=`400` height=`300` autoplay loop)
-            source(src=`${require('./../../night.mp4')}`)
+        .page-welcome__bg-media-holder
 
         img(class=`page-welcome__bg` src=require(`./../../images/night_no_bg.png`))
 
         .page-welcome__sign-in
-            button(type=`button` id=`sign-in` class=`btn btn_w_100 btn_border_white btn_hover-bg_blue btn_xs-size_small`)
+            button(type=`button` class=`flip-panel__front-toggler btn btn_w_100 btn_border_white btn_hover-bg_blue btn_xs-size_small`)
                 span.text.text_color_white.text_weight_500 Авторизоваться
 
         .page-welcome__flip-panel.flip-panel
@@ -53,19 +52,19 @@ block content
                             { 
                                 text: `Мои работы`, 
                                 link: `portfolio.html`,
-                                itemClass: `btn btn_color_blue`,
+                                itemClass: `nav__item_style_button btn btn_color_blue`,
                                 linkClass: `nav__link text text_color_white text_weight_500`
                             },
                             { 
                                 text: `Обо мне`, 
                                 link: `about.html`,
-                                itemClass: `btn btn_color_blue`,
+                                itemClass: `nav__item_style_button btn btn_color_blue`,
                                 linkClass: `nav__link text text_color_white text_weight_500`
                             },
                             { 
                                 text: `Блог`, 
                                 link: `blog.html`,
-                                itemClass: `btn btn_color_blue`,
+                                itemClass: `nav__item_style_button btn btn_color_blue`,
                                 linkClass: `nav__link text text_color_white text_weight_500`
                             }
                         ]
@@ -76,13 +75,13 @@ block content
                     .flip-panel__body.login
                         span.login__title.heading.heading_font_2.heading_size_35.heading_color_white.heading_transform_uppercase Авторизуйтесь
                         
-                        .login__login.textfield
-                            .textfield__addon
+                        label.login__login.textfield
+                            span.textfield__addon
                                 i.textfield__addon-icon.fa.fa-user
                             input(type=`text` name=`login` class=`textfield__control` placeholder=`Логин`)
                         
-                        .login__pwd.textfield
-                            .textfield__addon
+                        label.login__pwd.textfield
+                            span.textfield__addon
                                 i.textfield__addon-icon.fa.fa-key
                             input(type=`password` name=`pwd` class=`textfield__control` placeholder=`Пароль`)
 
@@ -112,13 +111,13 @@ block content
                             { 
                                 text: `На главную`, 
                                 link: `#welcome-backflip`,
-                                itemClass: `nav__item_width_50 nav__item_xs-width_auto btn btn_color_blue`,
-                                linkClass: `nav__link text text_color_white text_weight_500`
+                                itemClass: `nav__item_style_button nav__item_width_50 nav__item_xs-width_auto btn btn_color_blue`,
+                                linkClass: `flip-panel__back-toggler nav__link text text_color_white text_weight_500`
                             },
                             { 
                                 text: `Войти`, 
                                 link: `#submit`,
-                                itemClass: `nav__item_width_50 nav__item_xs-width_auto btn btn_color_blue`,
+                                itemClass: `nav__item_style_button nav__item_width_50 nav__item_xs-width_auto btn btn_color_blue`,
                                 linkClass: `nav__link text text_color_white text_weight_500`
                             }
                         ]

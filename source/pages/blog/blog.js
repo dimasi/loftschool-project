@@ -1,4 +1,3 @@
-// CSS
 import 'reset-css/reset.css';
 import './../../scss/base.scss';
 
@@ -16,5 +15,8 @@ import './../../scss/blocks/footer.scss';
 import './../../scss/blocks/page-header.scss';
 import './../../scss/blocks/user.scss';
 import './../../scss/blocks/ribbon.scss';
+import './../../scss/blocks/page-blog.scss';
 import './../../scss/blocks/blog.scss';
 import './../../scss/blocks/article.scss';
+
+require(`Js/common`);

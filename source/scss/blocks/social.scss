@@ -18,8 +18,20 @@
     &__link {
         display: block;
         padding: 10px;
+        position: relative;
         fill: $social-link-color;
         transition: all 180ms ease-out;
+
+        // Для предотвращение бага неправильного вычисления координат мыши в Edge при переходе курсора на shadow-dom
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
 
         &:hover {
             fill: $color-primary;
@@ -28,6 +40,8 @@
 
     &__icon {
         display: block;
+        position: relative;
+        z-index: 1;
 
         &_vk {
             width: 31px;
