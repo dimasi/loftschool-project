@@ -1,4 +1,3 @@
-// CSS
 import 'reset-css/reset.css';
 import './../../scss/base.scss';
 
@@ -22,8 +21,6 @@ import './../../scss/blocks/user.scss';
 import './../../scss/blocks/login.scss';
 import './../../scss/blocks/form-guard.scss';
 
-
-// JS
 const clientFeatureDetector = require(`Modules/clientFeatureDetector`);
 const mediaBackground = require('Modules/mediaBackground');
 const parallax = require('Modules/parallax');
@@ -60,5 +57,4 @@ $(function() {
         backTogglerSelector: `.flip-panel__back-toggler`,
         flipPanelSelector: `.flip-panel`
     });
-
 });

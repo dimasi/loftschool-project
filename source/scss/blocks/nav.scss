@@ -52,18 +52,17 @@
 
 // Styles
 // Button 
-.nav {
-    .nav__item_style_button {
-        padding: 0;
+.nav__item_style_button {
+    padding: 0;
 
-        .nav__link {
-            display: block;
-            padding: 10px;
-        }
+    .nav__link {
+        display: block;
+        padding: 10px;
     }
 }
 
 // @media
+// xs
 @include media-xs {
     .nav__item_xs-width_auto {
         width: auto;
