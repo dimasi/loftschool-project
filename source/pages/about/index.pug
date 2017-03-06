@@ -37,7 +37,7 @@ block content
 
             p.user__text.text.text_color_white Личный сайт веб разработчика
 
-            button(type=`button` data-toggle=`anchor-link` data-target=`.about` class=`page-header__anchor-link btn-arrow`)
+            a(href=`#section-about` class=`page-header__anchor-link anchor-link btn-arrow`)
                 svg(class=`btn-arrow__icon` viewBox=svgArrowDown.viewBox): use(xlink:href=svgArrowDown.symbol)
             
     .ribbon.ribbon_theme_striped
@@ -46,7 +46,7 @@ block content
         .ribbon__col.ribbon__col_right
             svg(class=`ribbon__triangle ribbon__triangle_side_right` viewBox=svgRibbonRight.viewBox): use(xlink:href=svgRibbonRight.symbol)
 
-    section.about
+    section#section-about.about
         section.section.about__info
             .about__align-wrapper
                 h1.about__title.heading.heading_font_2.heading_transform_uppercase.heading_size_63.heading_sm-size_49.heading_xs-size_35

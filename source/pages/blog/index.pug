@@ -32,7 +32,7 @@ block content
 
                 p.user__text.text.text_color_white Статьи, которые я написал
 
-                button(type=`button` data-toggle=`anchor-link` data-target=`.blog` class=`page-header__anchor-link page-blog__anchor-link btn-arrow`)
+                a(href=`#section-blog` class=`page-header__anchor-link anchor-link btn-arrow`)
                     svg(class=`btn-arrow__icon` viewBox=svgArrowDown.viewBox): use(xlink:href=svgArrowDown.symbol)
 
         .ribbon.page-blog__ribbon
@@ -41,7 +41,7 @@ block content
             .ribbon__col.ribbon__col_right
                 svg(class=`ribbon__triangle ribbon__triangle_side_right` viewBox=svgRibbonRight.viewBox): use(xlink:href=svgRibbonRight.symbol)
 
-        .blog.page-blog__content
+        #section-blog.blog.page-blog__content
             .blog__wrapper
                 .blog__sidebar
                     +nav({

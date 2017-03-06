@@ -17,7 +17,7 @@ block content
     - let svgRibbonRight = require(`./../../images/icons/about_bg_right.svg`);
 
 
-    .page__content-wrapper.page-works
+    #page-top.page__content-wrapper.page-works
         .page-header.page-works__header
             video(class=`page-header__bg-video` width=`400` height=`300` autoplay loop)
                 source(src=`${require('./../../video/media-background.mp4')}`)
@@ -35,7 +35,7 @@ block content
 
                 p.user__text.text.text_color_white Личный сайт веб разработчика
 
-                button(data-toggle=`anchor-link` data-target=`.slider-works` type=`button` class=`page-header__anchor-link btn-arrow`)
+                a(href=`section-works` class=`page-header__anchor-link anchor-link btn-arrow`)
                     svg(class=`btn-arrow__icon` viewBox=svgArrowDown.viewBox): use(xlink:href=svgArrowDown.symbol)
         
         .ribbon.ribbon_theme_dark.page-works__ribbon
@@ -44,7 +44,7 @@ block content
             .ribbon__col.ribbon__col_right
                 svg(class=`ribbon__triangle ribbon__triangle_side_right` viewBox=svgRibbonRight.viewBox): use(xlink:href=svgRibbonRight.symbol)
 
-        .page-works__content
+        #section-works.page-works__content
             .page-works__title
                 .page-works__title-bg
                     svg(class=`page-works__title-bg-img` viewBox=svgStars2.viewBox): use(xlink:href=svgStars2.symbol)
@@ -113,7 +113,7 @@ block content
                             button(type=`submit` class=`form__btn btn btn_color_blue text text_color_white`) Отправить
                             button(type=`reset` class=`form__btn btn btn_color_transparent text text_color_white`) Очистить
 
-                button(type=`button` data-toggle=`anchor-link` data-target=`.page-works` class=`page-works__anchor-to-top btn-arrow`)
+                a(href=`#page-top` class=`page-works__anchor-to-top anchor-link btn-arrow`)
                     svg(class=`btn-arrow__icon` viewBox=svgArrowUp.viewBox): use(xlink:href=svgArrowUp.symbol)
 
 block bottom
