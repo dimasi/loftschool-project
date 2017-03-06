@@ -20,6 +20,7 @@ import './../../scss/blocks/ribbon.scss';
 import './../../scss/blocks/page-blog.scss';
 import './../../scss/blocks/blog.scss';
 import './../../scss/blocks/article.scss';
+import './../../scss/blocks/side-menu.scss';
 
 
 // JS
@@ -28,6 +29,7 @@ const mediaBackground = require('Modules/mediaBackground');
 const parallax = require('Modules/parallax');
 const anchorLinks = require('Modules/anchorLinks');
 const menu = require('Modules/menu');
+const sideMenu = require('Modules/sideMenu');
 
 // Create animated background
 mediaBackground.init({
@@ -58,3 +60,9 @@ anchorLinks.init();
 
 // Initialize menu
 menu.init();
+
+// Initialize side menu
+sideMenu.init({
+    navSelector: `.blog__nav`,
+    pageSelector: `.page`
+});

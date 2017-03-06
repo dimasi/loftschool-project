@@ -6,10 +6,6 @@
 mixin menu (items)
     include ./nav
 
-    button(type=`button` class=`menu__toggler page__hamburger hamburger`)
-        span.hamburger__wrapper
-            span.hamburger__inner
-
     .menu
         +nav({
             className: 'menu__nav',
