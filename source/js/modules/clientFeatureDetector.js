@@ -1,14 +1,15 @@
 require(`Root/node_modules/modernizr/bin/modernizr`);
 
 /** 
- * @module clientFeatureDetector
  * The module determines the client's capabilities using Modernizr
+ * @module clientFeatureDetector
  * */
 module.exports = (() => {
     let _Modernizr = global.Modernizr;
 
-    return {
-        touchevents: () => new Promise(resolve => _Modernizr.on(`touchevents`, result => resolve(result)))
-    };
+    let _detectTouchevents = () => new Promise(resolve => _Modernizr.on(`touchevents`, result => resolve(result)));
 
+    return {
+        touchevents: _detectTouchevents
+    };
 })();

@@ -1,4 +1,3 @@
-// CSS
 import 'reset-css/reset.css';
 import './../../scss/base.scss';
 
@@ -22,38 +21,11 @@ import './../../scss/blocks/blog.scss';
 import './../../scss/blocks/article.scss';
 import './../../scss/blocks/side-menu.scss';
 
-
-// JS
-// const clientFeatureDetector = require(`Modules/clientFeatureDetector`);
-const mediaBackground = require('Modules/mediaBackground');
-const parallax = require('Modules/parallax');
 const anchorLinks = require('Modules/anchorLinks');
 const menu = require('Modules/menu');
 const sideMenu = require('Modules/sideMenu');
 
-// Create animated background
-mediaBackground.init({
-    layerHolder: `.page-header__bg-video`,
-    videoSrc: `media-background.mp4`,
-    gifSrc: `media-background.gif`,
-    className: `page-header__bg-video`
-});
-
-// Create parallax
-parallax.scroll([
-    {
-        selector: `.page-header__user`,
-        divider: 0.05
-    },
-    {
-        selector: `.page-header__bg-user`,
-        divider: 0.07
-    },
-    {
-        selector: '.page-header__bg',
-        divider: 0.09
-    }
-]);
+require(`Js/common`);
 
 // Initialize anchor-links
 anchorLinks.init();
