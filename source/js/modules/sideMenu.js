@@ -1,54 +1,88 @@
 /** 
- * @module sideMenu
  * Mobile side menu
+ * @module sideMenu
  * */
 module.exports = (() => {
-    let _$window = $(`html, body`),
-        _$page,
-        _$sideMenu,
-        _$overlay = $(`<div class='side-menu__overlay'></div>`),
-        _$sideMenuToggler = $(`<button type='button' class='side-menu__toggler'></button>`),
+    let _$window = $(`html, body`);
+    let _$overlay = $(`<div class='side-menu__overlay'></div>`);
+    let _$sideMenuToggler = $(`<button type='button' class='side-menu__toggler'></button>`);
 
-        /**
-         * @param {object} params
-         * @param {string} params.navSelector - Original nav selector
-         * @param {string} params.pageSelector - Page content-wrapper selector
-         */
-        _createMenu = params => {
-            _$page = $(params.pageSelector);
-            _$page.addClass(`side-menu__page`);
+    let _$page, _$sideMenu, _$originalMenu, _$abstractMenu;
 
-            let _$cloneNav = $(params.navSelector).clone();
-            _$sideMenu = $(`<div class='side-menu'></div>`)
-                .html(_$cloneNav)
-                .append(_$sideMenuToggler)
-                .append(_$overlay);
-            
-            _$page.after(_$sideMenu);
+    /**
+     * Initialize and render menu
+     * @param {object} params
+     * @param {string} params.navSelector - Original nav selector
+     * @param {string} params.pageSelector - Page content-wrapper selector
+     */
+    let _createMenu = params => {
+        _$page = $(params.pageSelector);
+        _$page.addClass(`side-menu__page`);
+        _$originalMenu = $(params.navSelector);
 
-            _$sideMenuToggler.on(`click touchend`, e => {
-                e.preventDefault();
-                _$page.addClass(`side-menu__page_state_side-menu-active`);
-                _$sideMenu.addClass(`side-menu_state_active`);
-                _$window.css({
-                    overflow: `hidden`,
-                    height: `auto`
-                });
-            });
+        let _$cloneNav = _$originalMenu.clone();
 
-            _$overlay.on(`click touchend`, e => {
-                e.preventDefault();
-                _$page.removeClass(`side-menu__page_state_side-menu-active`);
-                _$sideMenu.removeClass(`side-menu_state_active`);
-                _$window.css({
-                    overflow: `visible`,
-                    height: `100%`
-                });
-            });
-        };
+        _$abstractMenu = _$originalMenu.add(_$cloneNav);
 
-    return {
-        init: params => _createMenu(params)
+        _$sideMenu = $(`<div class='side-menu'></div>`)
+            .html(_$cloneNav)
+            .append(_$sideMenuToggler)
+            .append(_$overlay);
+
+        _$page.after(_$sideMenu);
+        
+        _$sideMenu.find(`.stick-block`).removeClass(`stick-block`);
+        
+        _setEventListeners();
+        _checkCurrentSection();
     };
 
+    /** Open menu */
+    let _openMenu = () => {
+        _$page.addClass(`side-menu__page_state_side-menu-active`);
+        _$window.addClass(`side-menu__window_state_side-menu-active`);
+        _$sideMenu.addClass(`side-menu_state_active`);
+    };
+
+    /** Close menu */
+    let _closeMenu = () => {
+        _$page.one(`transitionend`, () => {
+            _$window.removeClass(`side-menu__window_state_side-menu-active`);
+        });
+        _$page.removeClass(`side-menu__page_state_side-menu-active`);
+        _$sideMenu.removeClass(`side-menu_state_active`);
+    };
+
+    /** Set DOM event listeners */
+    let _setEventListeners = () => {
+        $(document).on(`scroll`, _checkCurrentSection);
+
+        _$sideMenuToggler.on(`click touchend`, e => {
+            e.preventDefault();
+            _openMenu();
+        });
+
+        _$overlay.on(`click touchend`, e => {
+            e.preventDefault();
+            _closeMenu();
+        });
+    };
+
+    /** Set active nav element by page scroll */
+    let _checkCurrentSection = () => {
+        _$abstractMenu.find(`.nav__link`).each((index, item) => {
+            let $section = $($(item).attr(`href`));
+            let sectionPosition = $section.offset().top;
+            let scrollPosition = $(window).scrollTop();
+            
+            if (sectionPosition <= scrollPosition && sectionPosition + $section.outerHeight() > scrollPosition) {
+                $(item).closest(`nav`).find(`.nav__item`).removeClass(`nav__item_state_active`);
+                $(item).closest(`.nav__item`).addClass(`nav__item_state_active`);
+            }
+        });
+    };
+
+    return {
+        init: _createMenu
+    };
 })();

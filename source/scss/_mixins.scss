@@ -37,6 +37,12 @@
     }
 }
 
+@mixin media-mobile-and-tablets() {
+    @media screen and (max-width: $screen-sm-max) {
+        @content;
+    }
+}
+
 @mixin media-desktop() {
     @media screen and (min-width: $screen-md-min) {
         @content;

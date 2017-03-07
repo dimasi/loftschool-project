@@ -16,7 +16,7 @@
     }
 
     &__sidebar {
-        width: percentage(285 / 1200);
+        width: 380px;
         margin-right: 100px;
     }
 
@@ -26,6 +26,7 @@
     }
 
     &__nav {
+        width: 380px;
         text-align: right;
         padding-top: 10px;
 
@@ -89,12 +90,16 @@
 @include media-lg {
     .blog {
         &__sidebar {
-            width: percentage(285 / 1800);
+            width: 305px;
             margin-right: 115px;
         }
 
         &__mainbody {
             width: percentage(885 / 1200);
+        }
+
+        &__nav {
+            width: 305px;
         }
     }
 }

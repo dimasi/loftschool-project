@@ -49,6 +49,11 @@
 
     .nav__item_state_active {
         font-weight: 700;
+
+        .nav__link {
+            border-color: transparent;
+            color: #fff;
+        }
     }
 
     .nav__link {
@@ -89,23 +94,35 @@
     }
 }
 
-.side-menu_state_active {
-    transform: translate3d(0, 0, 0);
-    transition: transform 300ms;
+// @media
+// mobile and tablets
+@include media-mobile-and-tablets {
+    // Активное состояние бокового меню на телефонах и планшетах
+    // Запрет прокрутки страницы при активном состоянии бокового слайд-меню
+    .side-menu__window_state_side-menu-active {
+        overflow: hidden;
+        height: auto;
+    }
 
-    .side-menu__overlay {
-        opacity: .5;
-        pointer-events: all;
-        transition: opacity 300ms linear 300ms;
+    // Одновременный сдвиг меню и страницы
+    .side-menu_state_active {
+        transform: translate3d(0, 0, 0);
+        transition: transform 300ms;
+
+        // Затемнение контента
+        .side-menu__overlay {
+            opacity: .5;
+            pointer-events: all;
+            transition: opacity 300ms linear 300ms;
+        }
+    }
+
+    .side-menu__page_state_side-menu-active {
+        transform: translate3d(285px, 0, 0);
+        transition: transform 300ms;
     }
 }
 
-.side-menu__page_state_side-menu-active {
-    transform: translate3d(285px, 0, 0);
-    transition: transform 300ms;
-}
-
-// @media
 // desktop
 @include media-desktop {
     .side-menu {

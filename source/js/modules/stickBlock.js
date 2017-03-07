@@ -25,7 +25,6 @@ module.exports = (() => {
 
             if ($(window).scrollTop() > itemStaticOffset && !isFixed) { 
                 $(item).css({
-                    width: $(item).width(),
                     position: `fixed`, 
                     top: 0
                 });
@@ -33,7 +32,6 @@ module.exports = (() => {
 
             if ($(window).scrollTop() < itemStaticOffset && isFixed) { 
                 $(item).css({
-                    width: `auto`,
                     position: `static`
                 });
             } 
