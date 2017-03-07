@@ -45,29 +45,32 @@ block content
             .blog__wrapper
                 .blog__sidebar
                     +nav({
-                        className: 'blog__nav',
+                        className: 'blog__nav stick-block',
                         items: [
                             { 
                                 text: 'Самое важное в SASS', 
-                                link: '#1',
-                                active: true
+                                link: '#blog_1',
+                                linkClass: 'anchor-link'
                             },
                             { 
                                 text: 'Приёмы в вёрстке, без которых не обходится ни один сайт', 
-                                link: '#2'
+                                link: '#blog_2',
+                                linkClass: 'anchor-link'
                             },
                             { 
                                 text: 'Самый необходимый набор Gulp плагинов', 
-                                link: '#3'
+                                link: '#blog_3',
+                                linkClass: 'anchor-link'
                             },
                             { 
                                 text: 'Почему я выбрал Jade', 
-                                link: '#4'
+                                link: '#blog_4',
+                                linkClass: 'anchor-link'
                             }
                         ]
                     })
                 .blog__mainbody
-                    .article
+                    #blog_1.article
                         h3.article__title Самое важное в SASS
                         span.article__date 22 ноября 2016
                         .article__content
@@ -75,12 +78,26 @@ block content
                             p.article__text.text Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
                             img(src=require(`./../../images/code-snippet.png`))
 
-                    .article
+                    #blog_2.article
                         h3.article__title Приёмы в вёрстке, без которых не обходится ни один сайт
                         span.article__date 13 ноября 2016
                         .article__content
                             p.article__text.text Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.
                             p.article__text.text Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
+
+                    #blog_3.article
+                        h3.article__title Самый необходимый набор Gulp плагинов
+                        span.article__date 1 сентября 2016
+                        .article__content
+                            p.article__text.text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at sapien eget purus dignissim cursus. Mauris dignissim imperdiet elementum. Curabitur condimentum eget ex ac aliquam. Aliquam in vehicula augue, sit amet ultrices nulla. Curabitur mollis placerat sem, quis tempor purus congue non. Aliquam pulvinar lorem vitae risus scelerisque, ac maximus nulla facilisis. Vivamus finibus turpis in sem pretium imperdiet nec porttitor nisl. Phasellus rhoncus neque in nisl consequat egestas.
+                            p.article__text.text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut neque diam, molestie non tempor nec, molestie quis augue. Duis vitae eros pharetra, pulvinar dolor id, ultricies dolor. Nullam luctus commodo eros, et vehicula leo semper id. Etiam fermentum turpis a vestibulum dignissim. Pellentesque pharetra, ante nec luctus luctus, justo leo cursus ligula, at malesuada nunc arcu a dolor. Mauris volutpat quam et est semper rhoncus. Nulla et ullamcorper lectus, ac ornare magna. Vestibulum sit amet ultricies urna, non venenatis dui. Aliquam tristique velit non tincidunt luctus. Suspendisse et urna eu leo cursus mollis ac sed dui. Cras nec mi tempor, lobortis turpis vel, eleifend purus. Donec a sem eget turpis commodo egestas sit amet ac dui.
+
+                    #blog_4.article
+                        h3.article__title Почему я выбрал Jade
+                        span.article__date 1 сентября 2016
+                        .article__content
+                            p.article__text.text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut neque diam, molestie non tempor nec, molestie quis augue. Duis vitae eros pharetra, pulvinar dolor id, ultricies dolor. Nullam luctus commodo eros, et vehicula leo semper id. Etiam fermentum turpis a vestibulum dignissim. Pellentesque pharetra, ante nec luctus luctus, justo leo cursus ligula, at malesuada nunc arcu a dolor. Mauris volutpat quam et est semper rhoncus. Nulla et ullamcorper lectus, ac ornare magna. Vestibulum sit amet ultricies urna, non venenatis dui. Aliquam tristique velit non tincidunt luctus. Suspendisse et urna eu leo cursus mollis ac sed dui. Cras nec mi tempor, lobortis turpis vel, eleifend purus. Donec a sem eget turpis commodo egestas sit amet ac dui.
+                            img(class=`img img_width_100` src=`http://lorempixel.com/1920/1080/abstract/`)
 
 block bottom
     //- Menu

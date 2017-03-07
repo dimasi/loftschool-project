@@ -2,6 +2,7 @@ import 'reset-css/reset.css';
 import './../../scss/base.scss';
 
 import './../../scss/blocks/text.scss';
+import './../../scss/blocks/img.scss';
 import './../../scss/blocks/btn-arrow.scss';
 import './../../scss/blocks/heading.scss';
 import './../../scss/blocks/avatar.scss';
@@ -24,6 +25,7 @@ import './../../scss/blocks/side-menu.scss';
 const anchorLinks = require('Modules/anchorLinks');
 const menu = require('Modules/menu');
 const sideMenu = require('Modules/sideMenu');
+const stickBlock = require('Modules/stickBlock');
 
 require(`Js/common`);
 
@@ -38,3 +40,6 @@ sideMenu.init({
     navSelector: `.blog__nav`,
     pageSelector: `.page`
 });
+
+// Initialize stick blocks
+stickBlock.init($(`.stick-block`));

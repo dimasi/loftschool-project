@@ -2,7 +2,7 @@
 @import './../mixins';
 
 .blog {
-    padding-top: 100px;
+    padding-top: 80px;
     position: relative;
     z-index: 4;
     background-color: #faf8f0;
@@ -27,11 +27,12 @@
 
     &__nav {
         text-align: right;
+        padding-top: 10px;
 
         .nav__item {
             margin-bottom: 10px;
 
-            &_active {
+            &_state_active {
                 .nav__link {
                     border-color: #004cd1;
                     color: #004cd1;

@@ -2,7 +2,8 @@
 @import './../mixins';
 
 .article {
-    padding: 35px 0;
+    padding: 0 0 35px;
+    margin: 0 0 35px;
     border-bottom: 5px solid rgba(55, 62, 66, .07);
     overflow: hidden;
 
@@ -15,7 +16,7 @@
     }
 
     &__title {
-        margin: -8px 0 15px;
+        margin: 15px 0;
         font-size: 35px;
         font-family: 'Sansus Webissimo', sans-serif;
         font-weight: 400;
