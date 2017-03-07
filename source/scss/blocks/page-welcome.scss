@@ -34,15 +34,11 @@
         left: 50%;
         margin-left: -190px;
         z-index: 2;
-
-        .nav__link {
-            padding: 0;
-        }
     }
 
     &__sign-in {
         width: 180px;
-        height: 40px;
+        min-height: 40px;
         position: absolute;
         top: 25px;
         right: 20px;

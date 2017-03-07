@@ -4,7 +4,6 @@
 .btn {
     background-color: transparent;
     border: 0 none;
-    padding: 10px;
     border: 1px solid transparent;
     cursor: pointer;
     text-align: center;
@@ -12,6 +11,8 @@
     transition: border-color 180ms ease-out, background-color 180ms ease-out;
 
     &__text {
+        display: block;
+        padding: 10px;
         font-size: 16px;
         text-decoration: none;
         transition: color 180ms ease-out;
@@ -79,7 +80,9 @@
 @include media-xs {
     .btn_xs-size {
         &_small {
-            padding: 7px;
+            .btn__text {
+                padding: 7px;
+            }
         }
     }
 }

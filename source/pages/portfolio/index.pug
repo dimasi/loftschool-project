@@ -35,7 +35,7 @@ block content
 
                 p.user__text.text.text_color_white Личный сайт веб разработчика
 
-                a(href=`section-works` class=`page-header__anchor-link anchor-link btn-arrow`)
+                a(href=`#section-works` class=`page-header__anchor-link anchor-link btn-arrow`)
                     svg(class=`btn-arrow__icon` viewBox=svgArrowDown.viewBox): use(xlink:href=svgArrowDown.symbol)
         
         .ribbon.ribbon_theme_dark.page-works__ribbon
@@ -61,8 +61,9 @@ block content
                         li.work-features__item CSS
                         li.work-features__item JAVASCRIPT
                     a(href=`#` class=`btn btn_color_blue`)
-                        i.btn__icon.fa.fa-link
-                        span.btn__text Посмотреть сайт
+                        span.btn__text 
+                            i.btn__icon.fa.fa-link
+                            | Посмотреть сайт
 
                 .slider-works__nav 
                     button(type=`button` class=`slider-works__nav-btn slider-works__nav-btn_action_prev`)
@@ -110,8 +111,10 @@ block content
                                 textarea(class=`textarea__control` placeholder=`Ваше сообщение`)
 
                         .form__footer
-                            button(type=`submit` class=`form__btn btn btn_color_blue text text_color_white`) Отправить
-                            button(type=`reset` class=`form__btn btn btn_color_transparent text text_color_white`) Очистить
+                            button(type=`submit` class=`form__btn btn btn_color_blue `)
+                                span.btn__text.text Отправить
+                            button(type=`reset` class=`form__btn btn btn_color_transparent`)
+                                span.btn__text.text Очистить
 
                 a(href=`#page-top` class=`page-works__anchor-to-top anchor-link btn-arrow`)
                     svg(class=`btn-arrow__icon` viewBox=svgArrowUp.viewBox): use(xlink:href=svgArrowUp.symbol)
