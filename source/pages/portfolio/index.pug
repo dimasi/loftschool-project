@@ -44,35 +44,57 @@ block content
             .ribbon__col.ribbon__col_right
                 svg(class=`ribbon__triangle ribbon__triangle_side_right` viewBox=svgRibbonRight.viewBox): use(xlink:href=svgRibbonRight.symbol)
 
-        #section-works.page-works__content
+        .page-works__content
             .page-works__title
                 .page-works__title-bg
                     svg(class=`page-works__title-bg-img` viewBox=svgStars2.viewBox): use(xlink:href=svgStars2.symbol)
                 h1.about__title.heading.heading_font_2.heading_transform_uppercase.heading_size_63.heading_sm-size_49.heading_xs-size_35.heading_color_white Мои работы
 
-            section.works__slider.slider-works
-                .slider-works__viewport 
-                    img(src=require(`./../../images/works-current.png`) class=`slider-works__current-slide`)
+            #section-works.section.works__slider.combo-slider
+                ul.slider-data
+                    li.slider-data__item(data-link=`#slider-1`)
+                        img(src=require(`./../../images/slider-1.jpg`) class=`slider-data__img`)
+                        h4.slider-data__title Lorem ipsum dolor sit amet
+                        ul.slider-data__features
+                            li.slider-data__feature nisl
+                            li.slider-data__feature neque
+                            li.slider-data__feature nunc
+                    li.slider-data__item(data-link=`#slider-2`)
+                        img(src=require(`./../../images/slider-2.jpg`) class=`slider-data__img`)
+                        h4.slider-data__title Fusce eget augue et augue iaculis
+                        ul.slider-data__features
+                            li.slider-data__feature quam
+                            li.slider-data__feature risus
+                            li.slider-data__feature mauris
+                    li.slider-data__item(data-link=`#slider-3`)
+                        img(src=require(`./../../images/slider-3.jpg`) class=`slider-data__img`)
+                        h4.slider-data__title Integer pharetra ultricies dignissim
+                        ul.slider-data__features
+                            li.slider-data__feature vel ante
+                            li.slider-data__feature elementum
 
-                .slider-works__slide-info 
-                    h4.slider-works__slide-title.heading.heading_font_2.heading_transform_uppercase.heading_size_35.heading_xs-size_21.heading_decor_border-spacer Сайт школы онлайн образования
-                    ul.slider-works__work-features.work-features
+
+                .combo-slider__main-slider.carousel
+
+                .combo-slider__slide-info 
+                    h4.combo-slider__slide-title.heading.heading_font_2.heading_transform_uppercase.heading_size_35.heading_xs-size_21.heading_decor_border-spacer Сайт школы онлайн образования
+                    ul.combo-slider__work-features.work-features
                         li.work-features__item HTML
                         li.work-features__item CSS
                         li.work-features__item JAVASCRIPT
-                    a(href=`#` class=`btn btn_color_blue`)
+                    a(href=`#` class=`combo-slider__slide-link btn btn_color_blue`)
                         span.btn__text 
                             i.btn__icon.fa.fa-link
                             | Посмотреть сайт
 
-                .slider-works__nav 
-                    button(type=`button` class=`slider-works__nav-btn slider-works__nav-btn_action_prev`)
-                        svg(class=`slider-works__nav-icon btn-arrow__icon` viewBox=svgArrowDown.viewBox): use(xlink:href=svgArrowDown.symbol)
-                        img(src=require(`./../../images/works-prev.jpg`) class=`slider-works__thumb`)
+                .combo-slider__nav 
+                    button(type=`button` class=`combo-slider__nav-btn combo-slider__nav-btn_slider_prev`)
+                        span.combo-slider__nav-icon.icomoon-icon-portf-arrow-down
+                        span.combo-slider__nav-slider.carousel
 
-                    button(type=`button` class=`slider-works__nav-btn slider-works__nav-btn_action_next`)
-                        svg(class=`slider-works__nav-icon btn-arrow__icon` viewBox=svgArrowUp.viewBox): use(xlink:href=svgArrowUp.symbol)
-                        img(src=require(`./../../images/works-next.jpg`) class=`slider-works__thumb`)
+                    button(type=`button` class=`combo-slider__nav-btn combo-slider__nav-btn_slider_next`)
+                        span.combo-slider__nav-icon.icomoon-icon-portf-arrow-up
+                        span.combo-slider__nav-slider.carousel
                     
             .page-works__bottom
                 section.quotes

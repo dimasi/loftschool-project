@@ -22,7 +22,9 @@ import './../../scss/blocks/page-header.scss';
 import './../../scss/blocks/ribbon.scss';
 import './../../scss/blocks/user.scss';
 import './../../scss/blocks/page-works.scss';
-import './../../scss/blocks/slider-works.scss';
+import './../../scss/blocks/combo-slider.scss';
+import './../../scss/blocks/carousel.scss';
+import './../../scss/blocks/text-fx.scss';
 import './../../scss/blocks/work-features.scss';
 import './../../scss/blocks/quotes.scss';
 import './../../scss/blocks/quote.scss';
@@ -30,6 +32,7 @@ import './../../scss/blocks/form.scss';
 
 const anchorLinks = require('Modules/anchorLinks');
 const menu = require('Modules/menu');
+const comboSlider = require('Modules/comboSlider');
 
 require(`Js/common`);
 
@@ -38,3 +41,6 @@ anchorLinks.init();
 
 // Initialize menu
 menu.init();
+
+// Init portfolio slider
+comboSlider.init($(`.combo-slider`));
