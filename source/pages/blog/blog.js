@@ -1,6 +1,7 @@
 import 'reset-css/reset.css';
 import './../../scss/base.scss';
 
+import './../../scss/blocks/preloader.scss';
 import './../../scss/blocks/text.scss';
 import './../../scss/blocks/img.scss';
 import './../../scss/blocks/btn-arrow.scss';

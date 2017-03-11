@@ -3,6 +3,7 @@ import './../../scss/base.scss';
 
 import 'font-awesome/css/font-awesome.css';
 
+import './../../scss/blocks/preloader.scss';
 import './../../scss/blocks/text.scss';
 import './../../scss/blocks/btn.scss';
 import './../../scss/blocks/btn-arrow.scss';

@@ -15,7 +15,12 @@ module.exports = (() => {
      */
     let _createMediaBackground = params => {
         let _$el;
+        let _params = {
+            onRender: () => {}
+        };
 
+        params = Object.assign(_params, params);
+        
         clientFeatureDetector.touchevents().then(supported => {
             if (!supported) {
                 _$el = $(`<video>`, {
@@ -36,6 +41,7 @@ module.exports = (() => {
             }
 
             $(params.layerHolder).replaceWith(_$el);
+            params.onRender();
         });
     };
 
