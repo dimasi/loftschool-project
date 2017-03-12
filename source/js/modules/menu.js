@@ -27,7 +27,7 @@ module.exports = (() => {
                 _active = true;
             }
         });
-    }
+    };
 
     return {
         init: _init
