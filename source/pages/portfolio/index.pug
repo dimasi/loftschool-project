@@ -2,6 +2,7 @@ extends ./../layout
 
 include ./../../mixins/menu
 include ./../../mixins/social
+include ./../../mixins/form-message
 
 block title
     | Portfolio page
@@ -119,24 +120,32 @@ block content
                             span.quote__author-detail — преподаватель
 
                 section.page-works__feedback
-                    form.form.form_theme_transparent
+                    form(name=`contact` class=`form form_theme_transparent` novalidate autocomplete=`off`)
                         .form__body
                             h4.form__title.heading.heading_font_2.heading_transform_uppercase.heading_size_35.heading_xs-size_21.heading_decor_border-spacer Связаться со мной
 
-                            .form__field.textfield
-                                input(type=`text` name=`name` class=`textfield__control` placeholder=`Ваше имя`)
+                            label.form__field.textfield.formfield
+                                span.textfield__wrapper
+                                    input(type=`text` name=`name` class=`textfield__control formfield__control` placeholder=`Ваше имя`)
+                                    span.textfield__error-message.formfield__error-message
 
-                            .form__field.textfield
-                                input(type=`email` name=`name` class=`textfield__control` placeholder=`Ваш email`)
+                            label.form__field.textfield.formfield
+                                span.textfield__wrapper
+                                    input(type=`email` name=`email` class=`textfield__control formfield__control` placeholder=`Ваш email`)
+                                    span.textfield__error-message.formfield__error-message
 
-                            .form__field.textarea
-                                textarea(class=`textarea__control` placeholder=`Ваше сообщение`)
+                            label.form__field.textarea.formfield
+                                span.textarea__wrapper
+                                    textarea(class=`textarea__control formfield__control` name=`message` placeholder=`Ваше сообщение`)
+                                    span.textarea__error-message.formfield__error-message
 
                         .form__footer
                             button(type=`submit` class=`form__btn btn btn_color_blue `)
                                 span.btn__text.text Отправить
                             button(type=`reset` class=`form__btn btn btn_color_transparent`)
                                 span.btn__text.text Очистить
+
+                        +form-message()
 
                 a(href=`#page-top` class=`page-works__anchor-to-top anchor-link btn-arrow`)
                     svg(class=`btn-arrow__icon` viewBox=svgArrowUp.viewBox): use(xlink:href=svgArrowUp.symbol)

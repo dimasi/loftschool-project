@@ -48,6 +48,11 @@
         display: flex;
         justify-content: center;
         margin-bottom: 50px;
+
+        .textarea__control,
+        .textfield__control {
+            color: #fff;
+        }
     }
 
     &__bottom {

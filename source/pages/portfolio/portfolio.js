@@ -9,6 +9,8 @@ import './../../scss/blocks/btn.scss';
 import './../../scss/blocks/btn-arrow.scss';
 import './../../scss/blocks/textfield.scss';
 import './../../scss/blocks/textarea.scss';
+import './../../scss/blocks/formfield.scss';
+import './../../scss/blocks/form-message.scss';
 import './../../scss/blocks/heading.scss';
 import './../../scss/blocks/avatar.scss';
 import './../../scss/blocks/hamburger.scss';
@@ -34,6 +36,7 @@ import './../../scss/blocks/form.scss';
 const anchorLinks = require('Modules/anchorLinks');
 const menu = require('Modules/menu');
 const comboSlider = require('Modules/comboSlider');
+const forms = require('Modules/forms');
 
 require(`Js/common`);
 
@@ -45,3 +48,6 @@ menu.init();
 
 // Init portfolio slider
 comboSlider.init($(`.combo-slider`));
+
+// Forms validate
+forms.init();

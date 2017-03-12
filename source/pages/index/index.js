@@ -11,6 +11,8 @@ import './../../scss/blocks/avatar.scss';
 import './../../scss/blocks/social.scss';
 import './../../scss/blocks/nav.scss';
 import './../../scss/blocks/textfield.scss';
+import './../../scss/blocks/formfield.scss';
+import './../../scss/blocks/form-message.scss';
 import './../../scss/blocks/checkbox.scss';
 import './../../scss/blocks/radio.scss';
 import './../../scss/blocks/copyright.scss';
@@ -27,6 +29,7 @@ const clientFeatureDetector = require(`Modules/clientFeatureDetector`);
 const mediaBackground = require('Modules/mediaBackground');
 const parallax = require('Modules/parallax');
 const flipPanel = require('Modules/flipPanel');
+const forms = require('Modules/forms');
 
 $(function() {
     // preloader
@@ -65,4 +68,7 @@ $(function() {
         backTogglerSelector: `.flip-panel__back-toggler`,
         flipPanelSelector: `.flip-panel`
     });
+
+    // Forms validate
+    forms.init();
 });

@@ -28,6 +28,13 @@
     }
 }
 
+// Opacity
+.text_opacity {
+    &_80 {
+        opacity: .8;
+    }
+}
+
 // Style
 .text_style {
     &_italic {

@@ -3,6 +3,7 @@ extends ./../empty
 include ./../../mixins/nav
 include ./../../mixins/social
 include ./../../mixins/copyright
+include ./../../mixins/form-message
 
 block title
     | Index page
@@ -70,40 +71,46 @@ block content
                         ]
                     })
 
-            form.flip-panel__side.flip-panel__side_side_back
+            form(name=`auth` class=`flip-panel__side flip-panel__side_side_back` novalidate)
                 .flip-panel__content
                     .flip-panel__body.login
                         span.login__title.heading.heading_font_2.heading_size_35.heading_color_white.heading_transform_uppercase Авторизуйтесь
                         
-                        label.login__login.textfield
+                        label.login__login.textfield.formfield
                             span.textfield__addon
                                 i.textfield__addon-icon.fa.fa-user
-                            input(type=`text` name=`login` class=`textfield__control` placeholder=`Логин`)
+                            span.textfield__wrapper
+                                input(type=`text` name=`username` class=`textfield__control formfield__control` placeholder=`Логин`)
+                                span.textfield__error-message.formfield__error-message
                         
-                        label.login__pwd.textfield
+                        label.login__pwd.textfield.formfield
                             span.textfield__addon
                                 i.textfield__addon-icon.fa.fa-key
-                            input(type=`password` name=`pwd` class=`textfield__control` placeholder=`Пароль`)
+                            span.textfield__wrapper
+                                input(type=`password` name=`password` class=`textfield__control formfield__control` placeholder=`Пароль`)
+                                span.textfield__error-message.formfield__error-message
 
                         .form-guard
                             label.form-guard__checkbox.checkbox
                                 input(type=`checkbox` name=`antibot` class=`checkbox__control`)
-                                .checkbox__pseudo-control.fa.fa-check
-                                .checkbox__label.text.text_color_white Я человек
+                                span.checkbox__pseudo-control.fa.fa-check
+                                span.checkbox__label.text.text_color_white Я человек
 
                             .form-guard__radio.radio-group
                                 span.radio-group__title.radio-group__title_align_center.text.text_color_white Вы точно не робот?
                                 
                                 .radio-group__wrapper
                                     label.radio-group__item.radio
-                                        input(type=`radio` name=`antibot2` class=`radio__control`)
-                                        .radio__pseudo-control
-                                        .radio__label.text.text_color_white Да
+                                        input(type=`radio` name=`antibot2` value=`1` class=`radio__control`)
+                                        span.radio__pseudo-control
+                                        span.radio__label.text.text_color_white Да
 
                                     label.radio-group__item.radio
-                                        input(type=`radio` name=`antibot2` class=`radio__control`)
-                                        .radio__pseudo-control
-                                        .radio__label.text.text_color_white Не уверен
+                                        input(type=`radio` name=`antibot2` value=`2` class=`radio__control`)
+                                        span.radio__pseudo-control
+                                        span.radio__label.text.text_color_white Не уверен
+
+                        +form-message()
 
                     +nav({
                         className: `flip-panel__footer nav_layout_inline nav_spacers_white`,
@@ -116,7 +123,7 @@ block content
                             },
                             { 
                                 text: `Войти`, 
-                                link: `#submit`,
+                                btnType: `submit`,
                                 itemClass: `nav__item_style_button nav__item_width_50 nav__item_xs-width_auto btn btn_color_blue`,
                                 linkClass: `nav__link btn__text text text_weight_500`
                             }

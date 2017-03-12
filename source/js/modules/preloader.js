@@ -1,4 +1,4 @@
-const uniq = require('lodash/uniq');
+const lodashUniq = require('lodash/uniq');
 
 /** 
  * @module preloader
@@ -60,7 +60,7 @@ module.exports = (() => {
             if (path && path.indexOf(`data:`) != 0) return path;
         });
 
-        return uniq(paths);
+        return lodashUniq(paths);
     };
 
     /**

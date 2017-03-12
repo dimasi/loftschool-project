@@ -1,0 +1,11 @@
+//- @pugdoc
+    name: form-message
+    arguments:
+        - {string}      params.className     - Дополнительный класс для элемента
+
+mixin form-message (className)
+    div(class=`form-message` + (className ? ` ${className}` : ``))
+        .form-message__body
+            .form-message__text.text.text_opacity_80
+            button(type=`button` class=`form-message__close btn btn_color_blue btn_size_small btn_corners_rounded`)
+                span.btn__text.text.text_opacity_80 Закрыть

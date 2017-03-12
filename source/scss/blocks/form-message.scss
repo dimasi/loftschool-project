@@ -1,0 +1,39 @@
+@import './../params';
+@import './../mixins';
+
+.form-message {
+    display: none;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    &__body {
+        width: 280px;
+        display: flex;
+        flex-direction: column;
+        padding: 14px 20px 20px;
+        align-items: center;
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 4px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+        text-align: center;
+    }
+
+    &__text {
+        margin-bottom: 14px;
+    }
+}
+
+// Error state
+.form-message_state_error {
+    .form-message__body {
+        color: $color-error;
+    }
+}

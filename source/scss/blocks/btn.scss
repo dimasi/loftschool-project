@@ -55,9 +55,27 @@
     }
 }
 
+// Size
+.btn_size {
+    &_small {
+        padding: 0 6px;
+
+        .btn__text {
+            line-height: 18px;
+        }
+    }
+}
+
 // Border
 .btn_border_white {
     border-color: #fff;
+}
+
+// Corners
+.btn_corners {
+    &_rounded {
+        border-radius: 4px;
+    }
 }
 
 // Background on hover
