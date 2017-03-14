@@ -26,6 +26,7 @@ import './../../scss/blocks/map.scss';
 
 const anchorLinks = require('Modules/anchorLinks');
 const menu = require('Modules/menu');
+const map = require('Modules/map');
 
 require(`Js/common`);
 
@@ -50,3 +51,6 @@ $(() => {
         }
     }, 350);
 });
+
+// Initialize map
+map.init($(`.map__map`)[0]);

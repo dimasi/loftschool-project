@@ -3520,6 +3520,10 @@ load-bmfont@^1.2.3:
     xhr "^2.0.1"
     xtend "^4.0.0"
 
+load-google-maps-api-2@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/load-google-maps-api-2/-/load-google-maps-api-2-1.0.1.tgz#f012cd2e0d4745b115b6b2db1901937fa305494b"
+
 load-json-file@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/load-json-file/-/load-json-file-1.1.0.tgz#956905708d58b4bab4c2261b04f59f31c99374c0"

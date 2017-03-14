@@ -4,6 +4,7 @@
 .about {
     display: flex;
     padding-top: 20px;
+    padding-bottom: 20px;
     position: relative;
     z-index: 3;
 
@@ -97,6 +98,7 @@
         flex-direction: column;
         justify-content: center;
         padding-top: 45px;
+        padding-bottom: 0;
 
         &__info {
             width: 100%;
@@ -113,6 +115,7 @@
             width: 100%;
             background-color: #f4f5f0;
             padding-top: 35px;
+            padding-bottom: 20px;
         }
 
         &__indicators {
