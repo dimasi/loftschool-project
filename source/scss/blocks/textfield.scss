@@ -100,3 +100,25 @@
         color: #0548be;
     }
 }
+
+// Color
+.textfield_color {
+    &_white {
+        .textfield__control {
+            color: #fff;
+        }
+    }
+}
+
+// @media
+// xs
+@include media-xs {
+    .textfield {
+        &__control {
+            height: 40px;
+            padding: 0 20px;
+            font-size: 14px;
+            line-height: 40px;
+        }
+    }
+}

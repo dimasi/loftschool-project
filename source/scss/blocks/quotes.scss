@@ -2,7 +2,6 @@
 @import './../mixins';
 
 .quotes {
-    margin-bottom: 65px;
     position: relative;
 
     &__heading-bg-img {
@@ -18,12 +17,11 @@
     }
 
     &__title {
-        text-align: center;
-        padding-top: 55px;
         width: 510px;
+        padding: 57px 0 64px;
         margin: 0 auto;
         line-height: 66px;
-        padding-bottom: 60px;
+        text-align: center;
     }
 
     &__list {
@@ -41,8 +39,6 @@
 // xs
 @include media-xs {
     .quotes {
-        margin-bottom: 45px;
-
         &__heading-bg-img {
             width: 75px;
             top: 20px;
@@ -55,14 +51,13 @@
         }
 
         &__list {
-            flex-direction: column;
+            flex-wrap: wrap;
             padding: 0 10px;
         }
 
         &__item {
-            width: auto;
-            max-width: 380px;
-            margin: 0 auto 25px;
+            width: 300px;
+            margin: 0 10px 25px;
         }
     }
 }
@@ -70,8 +65,6 @@
 // sm
 @include media-sm {
     .quotes {
-        margin-bottom: 45px;
-
         &__heading-bg-img {
             top: 7px;
         }
@@ -79,7 +72,11 @@
         &__title {
             width: 320px;
             line-height: 56px;
-            padding-bottom: 40px;
+            padding-bottom: 23px;
+        }
+
+        &__item {
+            margin: 0 20px;
         }
     }
 }

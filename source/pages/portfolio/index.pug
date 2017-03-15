@@ -96,9 +96,12 @@ block content
                     button(type=`button` class=`combo-slider__nav-btn combo-slider__nav-btn_slider_next`)
                         span.combo-slider__nav-icon.icomoon-icon-portf-arrow-up
                         span.combo-slider__nav-slider.carousel
-                    
-            .page-works__bottom
-                section.quotes
+
+            .page-works__blur-bg.blur
+                .blur__bg
+                    img(class=`blur__img` src=require(`Images/works-bg.jpg`) alt=``)
+                
+                section.page-works__quotes.quotes
                     .quotes__heading-bg
                         svg(class=`quotes__heading-bg-img` viewBox=svgStars3.viewBox): use(xlink:href=svgStars3.symbol)
 
@@ -107,48 +110,52 @@ block content
                     ul.quotes__list
                         li.quotes__item.quote.text.text_color_white.text_style_italic
                             .quote__img.avatar.avatar_size_small
-                                img(class=`avatar__img` src=require(`./../../images/quote-user.png`))
+                                img(class=`avatar__img` src=require(`Images/quote-user.png`))
                             .quote__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
                             span.quote__author.text.text_weight_700 Ковальчук Дмитрий
                             span.quote__author-detail — основатель Loftschool
                             
                         li.quotes__item.quote.text.text_color_white.text_style_italic
                             .quote__img.avatar.avatar_size_small
-                                img(class=`avatar__img` src=require(`./../../images/quote-user2.png`))
-                            .quote__text Этот код выдержеит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+                                img(class=`avatar__img` src=require(`Images/quote-user2.png`))
+                            .quote__text Этот код выдержеит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах!
                             span.quote__author.text.text_weight_700 Сабанцев Владимир
                             span.quote__author-detail — преподаватель
 
-                section.page-works__feedback
-                    form(name=`contact` class=`form form_theme_transparent` novalidate autocomplete=`off`)
-                        .form__body
-                            h4.form__title.heading.heading_font_2.heading_transform_uppercase.heading_size_35.heading_xs-size_21.heading_decor_border-spacer Связаться со мной
+                section.page-works__contact
+                    .blur__panel-wrapper
+                        .blur__panel
+                        form(name=`contact` class=`form form_theme_transparent` novalidate autocomplete=`off`)
+                            .form__body
+                                h4.form__title.heading.heading_font_2.heading_transform_uppercase.heading_size_35.heading_sm-size_30.heading_xs-size_21.heading_decor_border-spacer Связаться со мной
 
-                            label.form__field.textfield.formfield
-                                span.textfield__wrapper
-                                    input(type=`text` name=`name` class=`textfield__control formfield__control` placeholder=`Ваше имя`)
-                                    span.textfield__error-message.formfield__error-message
+                                label.form__field.textfield.textfield_color_white.formfield
+                                    span.textfield__wrapper
+                                        input(type=`text` name=`name` class=`textfield__control textfield__control_color_white formfield__control` placeholder=`Ваше имя`)
+                                        span.textfield__error-message.formfield__error-message
 
-                            label.form__field.textfield.formfield
-                                span.textfield__wrapper
-                                    input(type=`email` name=`email` class=`textfield__control formfield__control` placeholder=`Ваш email`)
-                                    span.textfield__error-message.formfield__error-message
+                                label.form__field.textfield.textfield_color_white.formfield
+                                    span.textfield__wrapper
+                                        input(type=`email` name=`email` class=`textfield__control formfield__control` placeholder=`Ваш email`)
+                                        span.textfield__error-message.formfield__error-message
 
-                            label.form__field.textarea.formfield
-                                span.textarea__wrapper
-                                    textarea(class=`textarea__control formfield__control` name=`message` placeholder=`Ваше сообщение`)
-                                    span.textarea__error-message.formfield__error-message
+                                label.form__field.textarea.textarea_color_white.formfield
+                                    span.textarea__wrapper
+                                        textarea(class=`textarea__control formfield__control` name=`message` placeholder=`Ваше сообщение`)
+                                        span.textarea__error-message.formfield__error-message
 
-                        .form__footer
-                            button(type=`submit` class=`form__btn btn btn_color_blue `)
-                                span.btn__text.text Отправить
-                            button(type=`reset` class=`form__btn btn btn_color_transparent`)
-                                span.btn__text.text Очистить
+                            .form__footer
+                                button(type=`submit` class=`form__btn btn btn_color_blue `)
+                                    span.btn__text.text.text_weight_500 Отправить
+                                button(type=`reset` class=`form__btn btn btn_color_transparent`)
+                                    span.btn__text.text Очистить
 
-                        +form-message()
+                            +form-message()
 
-                a(href=`#page-top` class=`page-works__anchor-to-top anchor-link btn-arrow`)
-                    svg(class=`btn-arrow__icon` viewBox=svgArrowUp.viewBox): use(xlink:href=svgArrowUp.symbol)
+                .page-works__to-top
+                    a(href=`#page-top` class=`anchor-link btn-arrow`)
+                        svg(class=`btn-arrow__icon` viewBox=svgArrowUp.viewBox): use(xlink:href=svgArrowUp.symbol)
+
 
 block bottom
     //- Menu

@@ -43,9 +43,20 @@
 }
 
 // @media
+// xs
 @include media-xs {
     .text {
         font-size: 14px;
         line-height: 24px;
+    }
+}
+
+// md
+@include media-md {
+    // Weight
+    .text_md-weight {
+        &_500 {
+            font-weight: 500;
+        }
     }
 }

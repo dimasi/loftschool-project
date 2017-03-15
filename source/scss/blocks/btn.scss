@@ -96,11 +96,27 @@
 // @media
 // xs
 @include media-xs {
-    .btn_xs-size {
-        &_small {
-            .btn__text {
-                padding: 7px;
-            }
+    .btn {
+        &__text {
+            padding: 8px;
+        }
+    }
+}
+
+// sm
+@include media-sm {
+    .btn {
+        &__text {
+            padding: 8px;
+        }
+    }
+}
+
+// md
+@include media-md {
+    .btn {
+        &__text {
+            padding: 9px;
         }
     }
 }

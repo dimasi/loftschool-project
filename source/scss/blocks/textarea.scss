@@ -10,6 +10,7 @@
     }
 
     &__control {
+        display: block;
         width: 100%;
         padding: 10px 15px;
         height: 130px;
@@ -17,5 +18,26 @@
         border: 0 none;
         font-family: 'Roboto', sans-serif;
         font-size: 16px;
+    }
+}
+
+// Color
+.textarea_color {
+    &_white {
+        .textarea__control {
+            color: #fff;
+        }
+    }
+}
+
+// @media
+// xs
+@include media-xs {
+    .textarea {
+        &__control {
+            height: 138px;
+            font-size: 14px;
+            padding: 15px 20px;
+        }
     }
 }

@@ -44,27 +44,23 @@
         opacity: .15;
     }
 
-    &__feedback {
+    &__blur-bg {
+        padding-bottom: 183px;
+    }
+
+    &__quotes {
+        padding-bottom: 65px;
+    }
+
+    &__contact {
+        padding-bottom: 50px;
+    }
+
+    &__to-top {
         display: flex;
         justify-content: center;
-        margin-bottom: 50px;
-
-        .textarea__control,
-        .textfield__control {
-            color: #fff;
-        }
-    }
-
-    &__bottom {
-        display: flex;
-        flex-direction: column;
         padding-bottom: 50px;
-        background: url(./../../images/works-bg.jpg) no-repeat 62% bottom;
-        background-size: cover;
-    }
-
-    &__anchor-to-top {
-        margin: auto;
+        position: relative;
     }
 }
 
@@ -92,12 +88,15 @@
             transform: translate(-50%, 0);
         }
 
-        &__feedback {
-            padding: 0 10px;
-            margin-bottom: 40px;
+        &__quotes {
+            padding-bottom: 0;
         }
 
-        &__bottom {
+        &__contact {
+            padding-bottom: 40px;
+        }
+
+        &__to-top {
             padding-bottom: 40px;
         }
     }
@@ -138,6 +137,10 @@
 
         &__ribbon {
             transform: translate(-50%, -135px);
+        }
+
+        &__quotes {
+            padding-bottom: 43px;
         }
     }
 }

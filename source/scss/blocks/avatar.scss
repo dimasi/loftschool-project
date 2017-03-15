@@ -13,7 +13,7 @@
 
     &__img {
         display: block;
-        width: 140px;
+        width: 100%;
     }
 }
 
@@ -21,4 +21,13 @@
 .avatar_size_small {
     width: 77px;
     height: 77px;
+}
+
+// @media
+// xs
+@include media-xs {
+    .avatar_size_small {
+        width: 51px;
+        height: 51px;
+    }
 }

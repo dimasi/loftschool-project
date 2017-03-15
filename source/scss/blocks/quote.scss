@@ -3,11 +3,11 @@
 
 .quote {
     &__img {
-        margin: 0 auto 20px;
+        margin: 0 auto 17px;
     }
 
     &__text {
-        margin-bottom: 10px;
+        margin-bottom: 18px;
         position: relative;
 
         &::before {
@@ -26,5 +26,24 @@
     &__author-detail {
         display: block;
         text-align: center;
+    }
+}
+
+// @media
+// xs
+@include media-xs {
+    .quote {
+        &__img {
+            margin-bottom: 15px;
+        }
+    }
+}
+
+// sm
+@include media-sm {
+    .quote {
+        &__text {
+            font-size: 14px;
+        }
     }
 }

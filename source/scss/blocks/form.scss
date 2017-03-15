@@ -12,10 +12,10 @@
     &__title {
         color: #fff;
         text-align: center;
-        margin-bottom: 40px;
 
         &::after {
-            margin-top: 25px;
+            width: 89px;
+            margin: 28px auto 30px;
             background-color: #fff;
         }
     }
@@ -37,11 +37,12 @@
 // Theme
 .form_theme {
     &_transparent {
-        background-color: rgba(255, 255, 255, .05);
+        background-color: rgba(255, 255, 255, .03);
 
         .textfield__control,
         .textarea__control {
-            background-color: rgba(255, 255, 255, 0.07);
+            background-color: rgba(255, 255, 255, 0.06);
+            box-shadow: inset 0 0 2px rgba(0, 0, 0, .6);
         }
     }
 }
@@ -50,12 +51,16 @@
 // xs
 @include media-xs {
     .form {
+        width: 300px;
+
         &__body {
             padding: 25px 20px 0;
         }
 
         &__title {
-            margin-bottom: 20px;
+            &::after {
+                margin: 15px auto 20px;
+            }
         }
     }
 }
@@ -63,8 +68,10 @@
 // sm
 @include media-sm {
     .form {
-        &__title {
-            margin-bottom: 40px;
+        width: 348px;
+
+        &__body {
+            padding-top: 45px;
         }
     }
 }

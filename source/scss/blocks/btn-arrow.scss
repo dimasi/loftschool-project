@@ -2,6 +2,7 @@
 @import './../mixins';
 
 .btn-arrow {
+    display: block;
     width: 44px;
     background-color: transparent;
     border: 0 none;
@@ -9,5 +10,20 @@
     &__icon {
         display: block;
         fill: rgba(255, 255, 255, .7);
+    }
+}
+
+// @media
+// xs
+@include media-xs {
+    .btn-arrow {
+        width: 27px;
+    }
+}
+
+// sm
+@include media-sm {
+    .btn-arrow {
+        width: 27px;
     }
 }

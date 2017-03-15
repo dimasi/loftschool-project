@@ -32,11 +32,13 @@ import './../../scss/blocks/work-features.scss';
 import './../../scss/blocks/quotes.scss';
 import './../../scss/blocks/quote.scss';
 import './../../scss/blocks/form.scss';
+import './../../scss/blocks/blur.scss';
 
 const anchorLinks = require('Modules/anchorLinks');
 const menu = require('Modules/menu');
 const comboSlider = require('Modules/comboSlider');
 const forms = require('Modules/forms');
+const blur = require('Modules/blur');
 
 require(`Js/common`);
 
@@ -46,8 +48,11 @@ anchorLinks.init();
 // Initialize menu
 menu.init();
 
-// Init portfolio slider
+// Initialize portfolio slider
 comboSlider.init($(`.combo-slider`));
 
 // Forms validate
 forms.init();
+
+// Initialize blur
+blur.init($(`.blur`));
