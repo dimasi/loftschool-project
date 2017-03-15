@@ -6,7 +6,10 @@ module.exports = () => {
       rules: [
         {
           test: /\.(woff2?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-          exclude: [path.join($.PATHS.source, 'images')],
+          exclude: [
+            path.join($.PATHS.source, 'images'), 
+            path.join($.PATHS.source, 'components')
+          ],
           use: {
             loader: 'file-loader',
             options: {

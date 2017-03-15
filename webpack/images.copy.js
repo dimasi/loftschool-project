@@ -8,7 +8,8 @@ module.exports = () => {
     module: {
       rules: [
         {
-          test: /\.(png|jpg|gif)$/,
+          test: /\.(png|jpg|gif|svg)$/,
+          exclude: [path.join($.PATHS.source, 'images/icons')],
           loader: 'file-loader',
           options: {
             name: 'images/[name].[ext]'
@@ -16,7 +17,8 @@ module.exports = () => {
         },
         {
           test: /\.svg$/,
-          exclude: [/node_modules/],
+          exclude: [/node_modules/, 'images'],
+          include: path.join($.PATHS.source, 'images/icons'),
           loader: 'external-svg-sprite-loader',
           options: {
             name: 'images/sprite.svg'
