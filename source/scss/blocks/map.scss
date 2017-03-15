@@ -6,7 +6,6 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin-bottom: -185px;
     position: relative;
     z-index: 10;
 
@@ -127,8 +126,6 @@
 // sm
 @include media-sm {
     .map {
-        margin-bottom: -270px;
-
         &__container {
             margin-left: -150px;
         }

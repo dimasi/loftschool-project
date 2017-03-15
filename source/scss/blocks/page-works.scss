@@ -44,10 +44,6 @@
         opacity: .15;
     }
 
-    &__blur-bg {
-        padding-bottom: 183px;
-    }
-
     &__quotes {
         padding-bottom: 65px;
     }
@@ -61,6 +57,10 @@
         justify-content: center;
         padding-bottom: 50px;
         position: relative;
+    }
+
+    &__blur-bg {
+        padding-bottom: 185px;
     }
 }
 
@@ -98,6 +98,10 @@
 
         &__to-top {
             padding-bottom: 40px;
+        }
+
+        &__blur-bg {
+            padding-bottom: 0;
         }
     }
 }
@@ -141,6 +145,10 @@
 
         &__quotes {
             padding-bottom: 43px;
+        }
+
+        &__blur-bg {
+            padding-bottom: 240px;
         }
     }
 }

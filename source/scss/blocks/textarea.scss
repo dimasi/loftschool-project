@@ -19,6 +19,22 @@
         font-family: 'Roboto', sans-serif;
         font-size: 16px;
     }
+
+    ::-webkit-input-placeholder {
+        color: rgba(255, 255, 255, .5);
+    }
+
+    ::-moz-placeholder {
+        color: rgba(255, 255, 255, .5);
+    }
+
+    :-moz-placeholder {
+        color: rgba(255, 255, 255, .5);
+    }
+
+    :-ms-input-placeholder {
+        color: rgba(255, 255, 255, .5);
+    }
 }
 
 // Color

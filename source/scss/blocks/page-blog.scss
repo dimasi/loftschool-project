@@ -2,6 +2,9 @@
 @import './../mixins';
 
 .page-blog {
+    background-color: #faf8f0;
+    padding-bottom: 185px;
+
     &__bg-user {
         top: 59px;
     }
@@ -15,6 +18,8 @@
 // xs
 @include media-xs {
     .page-blog {
+        padding-bottom: 0;
+
         &__header {
             height: 100vh;
         }
@@ -31,6 +36,13 @@
         &__anchor-link {
             top: (275 / 320 * 100vh);
         }
+    }
+}
+
+// sm
+@include media-sm {
+    .page-blog {
+        padding-bottom: 270px;
     }
 }
 

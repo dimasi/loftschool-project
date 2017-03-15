@@ -2,7 +2,10 @@
 @import './../mixins';
 
 .footer {
-    position: relative;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 
     &__main {
         padding-bottom: 21px;
@@ -98,6 +101,8 @@
 // xs
 @include media-xs {
     .footer {
+        position: static;
+
         &__main {
             padding: 0 10px;
         }

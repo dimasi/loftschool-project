@@ -41,6 +41,22 @@
             outline: 0 none;
         }
     }
+
+    ::-webkit-input-placeholder {
+        color: rgba(55, 62, 66, .5);
+    }
+
+    ::-moz-placeholder {
+        color: rgba(55, 62, 66, .5);
+    }
+
+    :-moz-placeholder {
+        color: rgba(55, 62, 66, .5);
+    }
+
+    :-ms-input-placeholder {
+        color: rgba(55, 62, 66, .5);
+    }
 }
 
 // Error state mixin
@@ -107,6 +123,22 @@
         .textfield__control {
             color: #fff;
         }
+
+        ::-webkit-input-placeholder {
+            color: rgba(255, 255, 255, .5);
+        }
+
+        ::-moz-placeholder {
+            color: rgba(255, 255, 255, .5);
+        }
+
+        :-moz-placeholder {
+            color: rgba(255, 255, 255, .5);
+        }
+
+        :-ms-input-placeholder {
+            color: rgba(255, 255, 255, .5);
+        }
     }
 }
 
@@ -119,6 +151,11 @@
             padding: 0 20px;
             font-size: 14px;
             line-height: 40px;
+        }
+
+        &__addon {
+            width: 40px;
+            height: 40px;
         }
     }
 }
