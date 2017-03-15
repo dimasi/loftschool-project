@@ -42,11 +42,13 @@
     "webpack-spritesmith": "^0.3.1"
   },
   "dependencies": {
+    "express": "^4.15.2",
     "font-awesome": "^4.7.0",
     "jquery": "^3.1.1",
     "load-google-maps-api-2": "^1.0.1",
     "lodash": "^4.17.4",
     "modernizr": "^3.3.1",
+    "mongoose": "^4.9.0",
     "reset-css": "^2.2.0"
   }
 }
