@@ -1,0 +1,19 @@
+@import './../params';
+@import './../mixins';
+
+.grid-layout {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+// @media
+// xs
+@include media-xs {
+    .grid-layout {
+        &__col {
+            &_xs-size_7 {
+                width: (100% / 12 * 7);
+            }
+        }
+    }
+}

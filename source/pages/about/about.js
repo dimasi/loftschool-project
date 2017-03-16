@@ -30,14 +30,17 @@ const map = require('Modules/map');
 
 require(`Js/common`);
 
-// Initialize anchor-links
-anchorLinks.init();
-
-// Initialize menu
-menu.init();
-
-// Temp: Indicators
 $(() => {
+    // Initialize anchor-links
+    anchorLinks.init();
+
+    // Initialize menu
+    menu.init();
+
+    // Initialize map
+    map.init($(`.map__map`)[0]);
+
+    // Temp: Indicators
     var $indicators = $(`.indicator`),
         len = $indicators.length,
         i = 0,
@@ -51,6 +54,3 @@ $(() => {
         }
     }, 350);
 });
-
-// Initialize map
-map.init($(`.map__map`)[0]);

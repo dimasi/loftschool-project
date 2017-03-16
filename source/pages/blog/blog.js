@@ -30,17 +30,19 @@ const stickBlock = require('Modules/stickBlock');
 
 require(`Js/common`);
 
-// Initialize anchor-links
-anchorLinks.init();
+$(() => {
+    // Initialize anchor-links
+    anchorLinks.init();
 
-// Initialize menu
-menu.init();
+    // Initialize menu
+    menu.init();
 
-// Initialize side menu
-sideMenu.init({
-    navSelector: `.blog__nav`,
-    pageSelector: `.page`
+    // Initialize side menu
+    sideMenu.init({
+        navSelector: `.blog__nav`,
+        pageSelector: `.page`
+    });
+
+    // Initialize stick blocks
+    stickBlock.init($(`.stick-block`));
 });
-
-// Initialize stick blocks
-stickBlock.init($(`.stick-block`));
