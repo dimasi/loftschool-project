@@ -31,7 +31,7 @@ const parallax = require('Modules/parallax');
 const flipPanel = require('Modules/flipPanel');
 const forms = require('Modules/forms');
 
-$(function() {
+$(() => {
     // preloader
     preloader.init($(`.preloader`), {
         waiting: true

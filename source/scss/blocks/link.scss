@@ -1,0 +1,10 @@
+@import './../params';
+@import './../mixins';
+
+.link {
+    text-decoration: underline;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
