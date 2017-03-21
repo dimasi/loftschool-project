@@ -18,11 +18,4 @@ mongoose.connect(`mongodb://${host}:${port}/${dbname}`, options)
         throw e;
     });
 
-let db = mongoose.connection;
-
-db.on('error', console.error.bind(console, 'Connection Error : '));
-db.once('open', () => {
-  console.log('Connection ok!');
-});
-
 module.exports = mongoose;

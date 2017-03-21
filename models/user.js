@@ -1,7 +1,8 @@
 `use strict`
 
-let mongoose = require(`mongoose`);
+let mongoose = require(`./../mongoose`);
 let crypto = require(`crypto`);
+
 let UserSchema = new mongoose.Schema({
     login: {
         type: String,
@@ -12,7 +13,6 @@ let UserSchema = new mongoose.Schema({
         required: [true, `Укажите пароль!`],
         set(v) {
             if (v == ``) {
-                console.log(1);
                 return v;
             } else {
                 return crypto.createHash(`md5`).update(v).digest(`hex`)
@@ -21,4 +21,4 @@ let UserSchema = new mongoose.Schema({
     }
 });
 
-mongoose.model(`user`, UserSchema);
+module.exports = UserSchema;
