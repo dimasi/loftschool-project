@@ -1,13 +1,13 @@
 @font-face {
     font-family: 'Sansus Webissimo';
-    src: url('./../fonts/SansusWebissimo.woff') format('woff'),
-        url('../fonts/SansusWebissimo.ttf') format('truetype');
+    src: url('~Fonts/SansusWebissimo.woff') format('woff'),
+        url('~Fonts/SansusWebissimo.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'icomoon';
-    src: url('./../fonts/icomoon.ttf?240bdv') format('truetype'),
-        url('./../fonts/icomoon.woff?240bdv') format('woff');
+    src: url('~Fonts/icomoon.ttf?240bdv') format('truetype'),
+        url('~Fonts/icomoon.woff?240bdv') format('woff');
     font-weight: 400;
     font-style: normal;
 }
