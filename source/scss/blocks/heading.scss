@@ -2,12 +2,11 @@
 @import './../mixins';
 
 // Color
-.heading_color {
-    &_white {
-        color: #fff;
-    }
-}
-
+// .heading_color {
+//     &_white {
+//         color: #fff;
+//     }
+// }
 // Font-family
 .heading_font {
     &_2 {
@@ -16,40 +15,37 @@
 }
 
 // Size
-.heading_size {
-    &_21 {
-        font-size: 21px;
-        line-height: 34px;
-    }
+// .heading_size {
+//     &_21 {
+//         font-size: 21px;
+//         line-height: 34px;
+//     }
 
-    &_28 {
-        font-size: 28px;
-        line-height: 34px;
-    }
+//     &_28 {
+//         font-size: 28px;
+//         line-height: 34px;
+//     }
 
-    &_35 {
-        font-size: 35px;
-        line-height: 34px;
-    }
+//     &_35 {
+//         font-size: 35px;
+//         line-height: 34px;
+//     }
 
-    &_63 {
-        font-size: 63px;
-        line-height: 56px;
-    }
-}
-
+//     &_63 {
+//         font-size: 63px;
+//         line-height: 56px;
+//     }
+// }
 // Weight
-.heading_weight {
-    &_500 {
-        font-weight: 500;
-    }
-}
-
+// .heading_weight {
+//     &_500 {
+//         font-weight: 500;
+//     }
+// }
 // Text-transform
-.heading_transform_uppercase {
-    text-transform: uppercase;
-}
-
+// .heading_transform_uppercase {
+//     text-transform: uppercase;
+// }
 // Decor
 .heading_decor {
     &_border-spacer {
@@ -75,45 +71,43 @@
 
 // @media
 // xs
-@include media-xs {
-    // Size
-    .heading_xs-size {
-        &_21 {
-            font-size: 21px;
-            line-height: 28px;
-        }
+// @include media-xs {
+//     // Size
+//     .heading_xs-size {
+//         &_21 {
+//             font-size: 21px;
+//             line-height: 28px;
+//         }
 
-        &_35 {
-            font-size: 35px;
-            line-height: 42px;
-        }
-    }
-
-    // Weight
-    .heading_xs-weight {
-        &_500 {
-            font-weight: 500;
-        }
-    }
-}
-
+//         &_35 {
+//             font-size: 35px;
+//             line-height: 42px;
+//         }
+//     }
+//     // Weight
+//     .heading_xs-weight {
+//         &_500 {
+//             font-weight: 500;
+//         }
+//     }
+// }
 // sm
-@include media-sm {
-    // Size
-    .heading_sm-size {
-        &_21 {
-            font-size: 21px;
-            line-height: 34px;
-        }
+// @include media-sm {
+//     // Size
+//     .heading_sm-size {
+//         &_21 {
+//             font-size: 21px;
+//             line-height: 34px;
+//         }
 
-        &_30 {
-            font-size: 30px;
-            line-height: 36px;
-        }
+//         &_30 {
+//             font-size: 30px;
+//             line-height: 36px;
+//         }
 
-        &_49 {
-            font-size: 49px;
-            line-height: 52px;
-        }
-    }
-}
+//         &_49 {
+//             font-size: 49px;
+//             line-height: 52px;
+//         }
+//     }
+// }
