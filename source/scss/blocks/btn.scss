@@ -63,6 +63,12 @@
         .btn__text {
             line-height: 18px;
         }
+
+        &.btn_corners {
+            &_rounded {
+                border-radius: 4px;
+            }
+        }
     }
 }
 
@@ -74,7 +80,7 @@
 // Corners
 .btn_corners {
     &_rounded {
-        border-radius: 4px;
+        border-radius: 5px;
     }
 }
 

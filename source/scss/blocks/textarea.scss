@@ -16,6 +16,7 @@
         height: 130px;
         resize: none;
         border: 0 none;
+        color: rgba(55, 62, 66, .5);
         font-family: 'Roboto', sans-serif;
         font-size: 16px;
     }
@@ -44,6 +45,11 @@
             color: #fff;
         }
     }
+}
+
+// Rounded corners
+.textarea__control_corners_rounded {
+    border-radius: 5px;
 }
 
 // @media
