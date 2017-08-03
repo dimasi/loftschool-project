@@ -11,7 +11,7 @@ block content
 
     .page-admin
         header.page-admin__header
-            h1.page-admin__title.heading.text.text_size_28.text_xs-size_21.text_sm-size_21.text_wight_500 Панель администрирования
+            h1.page-admin__title.heading.heading_size_28.heading_xs-size_21.heading_sm-size_21.heading_wight_500 Панель администрирования
             a(href=`about.html` class=`page-admin__to-site-link link text`) Вернуться на сайт
 
         .page-admin__tabs.tabs
@@ -35,72 +35,68 @@ block content
             })
 
             .tabs__content
-                section(class=`tabs__tab tabs__tab_state_active page-admin-section` data-tab-name=`about`)
-                    //- Form "Skills"
-                    h4.page-admin-section__title.text.text_size_21.text_weight_500 Навыки
-                    form(class=`page-admin-section__body grid-layout` action=`/admin/about`)
-                        .grid-layout__row
-                            .grid-layout__item.grid-layout__item_size_6
-                                .grid-layout__row
-                                    fieldset.grid-layout__item.grid-layout__item_size_6.grid-layout__item_xs-size_7
-                                        legend.page-admin-section__group-title.text.text_weight_500 Frontend
-                                        .page-admin-section__field.textfield.textfield_bg_white.textfield_size_small
-                                            label.textfield__label Html
-                                            input(type=`text` class=`textfield__control` value=`100`)
-                                            span.textfield__measure %
-
-                                        .page-admin-section__field.textfield.textfield_bg_white.textfield_size_small
-                                            label.textfield__label CSS
-                                            input(type=`text` class=`textfield__control` value=`90`)
-                                            span.textfield__measure %
-
-                                        .page-admin-section__field.textfield.textfield_bg_white.textfield_size_small
-                                            label.textfield__label JavaScript
-                                            input(type=`text` class=`textfield__control` value=`80`)
-                                            span.textfield__measure %
-
-                                    fieldset.grid-layout__item.grid-layout__item_size_6.grid-layout__item_xs-size_7
-                                        legend.page-admin-section__group-title.text.text_weight_500 Backend
-                                        .page-admin-section__field.textfield.textfield_bg_white.textfield_size_small
-                                            label.textfield__label PHP
-                                            input(type=`text` class=`textfield__control` value=`80`)
-                                            span.textfield__measure %
-
-                                        .page-admin-section__field.textfield.textfield_bg_white.textfield_size_small
-                                            label.textfield__label Node.js
-                                            input(type=`text` class=`textfield__control` value=`90`)
-                                            span.textfield__measure %
-
-                                        .page-admin-section__field.textfield.textfield_bg_white.textfield_size_small
-                                            label.textfield__label Mongo.db
-                                            input(type=`text` class=`textfield__control` value=`80`)
-                                            span.textfield__measure %
-
-                                    fieldset.grid-layout__item.grid-layout__item_size_6.grid-layout__item_xs-size_7
-                                        legend.page-admin-section__group-title.text.text_weight_500 Workflow
-                                        .page-admin-section__field.textfield.textfield_bg_white.textfield_size_small
-                                            label.textfield__label Html
-                                            input(type=`text` class=`textfield__control` value=`80`)
-                                            span.textfield__measure %
-
-                                        .page-admin-section__field.textfield.textfield_bg_white.textfield_size_small
-                                            label.textfield__label CSS
-                                            input(type=`text` class=`textfield__control` value=`30`)
-                                            span.textfield__measure %
-
-                                        .page-admin-section__field.textfield.textfield_bg_white.textfield_size_small
-                                            label.textfield__label JavaScript
-                                            input(type=`text` class=`textfield__control` value=`40`)
-                                            span.textfield__measure %
-                    
-                    footer.page-admin-section__footer
-                        button(type=`submit` class=`btn btn btn_color_blue`)
-                            span.btn__text.text.text_color_white.text_weight_500 Сохранить
-
-
-                .tabs__tab(data-tab-name=`works` style=`display: none`)
+                .tabs__tab.tabs__tab_state_active(data-tab-name=`about`)
                     .admin-tab
-                        h3.admin-tab__title.heading.text.text_size_21.text_wight_500 Страница «Страница «Мои работы»
+                        h3.admin-tab__title.heading.heading_size_21.heading_wight_500 Страница «Обо мне»
+
+                        form.form.grid-layout.grid-layout_direction_column
+                            .grid-layout__col.grid-layout__col_size_4.grid-layout__col_xs-size_7
+                                h4.form__group-title.text.text_weight_500 Frontend
+                                .form__field.textfield.textfield_bg_white.textfield_size_small
+                                    label.textfield__label Html
+                                    input(type=`text` class=`textfield__control` value=`100`)
+                                    span.textfield__measure %
+
+                                .form__field.textfield.textfield_bg_white.textfield_size_small
+                                    label.textfield__label CSS
+                                    input(type=`text` class=`textfield__control` value=`90`)
+                                    span.textfield__measure %
+
+                                .form__field.textfield.textfield_bg_white.textfield_size_small
+                                    label.textfield__label JavaScript
+                                    input(type=`text` class=`textfield__control` value=`80`)
+                                    span.textfield__measure %
+
+                            .grid-layout__col.grid-layout__col_size_4.grid-layout__col_xs-size_7
+                                h4.form__group-title.text.text_weight_500 Workflow
+                                .form__field.textfield.textfield_bg_white.textfield_size_small
+                                    label.textfield__label Html
+                                    input(type=`text` class=`textfield__control` value=`80`)
+                                    span.textfield__measure %
+
+                                .form__field.textfield.textfield_bg_white.textfield_size_small
+                                    label.textfield__label CSS
+                                    input(type=`text` class=`textfield__control` value=`30`)
+                                    span.textfield__measure %
+
+                                .form__field.textfield.textfield_bg_white.textfield_size_small
+                                    label.textfield__label JavaScript
+                                    input(type=`text` class=`textfield__control` value=`40`)
+                                    span.textfield__measure %
+
+                            .grid-layout__col.grid-layout__col_size_4.grid-layout__col_xs-size_7
+                                h4.form__group-title.text.text_weight_500 Backend
+                                .form__field.textfield.textfield_bg_white.textfield_size_small
+                                    label.textfield__label PHP
+                                    input(type=`text` class=`textfield__control` value=`80`)
+                                    span.textfield__measure %
+
+                                .form__field.textfield.textfield_bg_white.textfield_size_small
+                                    label.textfield__label Node.js
+                                    input(type=`text` class=`textfield__control` value=`90`)
+                                    span.textfield__measure %
+
+                                .form__field.textfield.textfield_bg_white.textfield_size_small
+                                    label.textfield__label Mongo.db
+                                    input(type=`text` class=`textfield__control` value=`80`)
+                                    span.textfield__measure %
+
+                                button(type=`submit` class=`btn btn_w_100 btn btn_color_blue`)
+                                    span.btn__text.text.text_color_white.text_weight_500 Сохранить
+
+                .tabs__tab(data-tab-name=`works`)
+                    .admin-tab
+                        h3.admin-tab__title.heading.heading_size_21.heading_wight_500 Страница «Страница «Мои работы»
 
                         form
                             h4.form__group-title.text.text_weight_500 Добавить работу
@@ -124,9 +120,9 @@ block content
                                 span.btn__text.text.text_color_white.text_weight_500 Добавить
                             
                     
-                .tabs__tab(data-tab-name=`blog` style=`display: none`)
+                .tabs__tab(data-tab-name=`blog`)
                     .admin-tab
-                        h3.admin-tab__title.heading.text.text_size_21.text_wight_500 Страница «Блог»
+                        h3.admin-tab__title.heading.heading_size_21.heading_wight_500 Страница «Блог»
 
                         form
                             h4.form__group-title.text.text_weight_500 Добавить работу

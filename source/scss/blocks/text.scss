@@ -13,29 +13,6 @@
     }
 }
 
-// Size
-.text_size {
-    &_21 {
-        font-size: 21px;
-        line-height: 34px;
-    }
-
-    &_28 {
-        font-size: 28px;
-        line-height: 34px;
-    }
-
-    &_35 {
-        font-size: 35px;
-        line-height: 34px;
-    }
-
-    &_63 {
-        font-size: 63px;
-        line-height: 56px;
-    }
-}
-
 // Weight
 .text_weight {
     &_300 {
@@ -65,58 +42,12 @@
     }
 }
 
-// Transform
-.text_transform_uppercase {
-    text-transform: uppercase;
-}
-
 // @media
 // xs
 @include media-xs {
     .text {
         font-size: 14px;
         line-height: 24px;
-    }
-
-    // Size
-    .text_xs-size {
-        &_21 {
-            font-size: 21px;
-            line-height: 28px;
-        }
-
-        &_35 {
-            font-size: 35px;
-            line-height: 42px;
-        }
-    }
-
-    // Weight
-    .text_xs-weight {
-        &_500 {
-            font-weight: 500;
-        }
-    }
-}
-
-// sm
-@include media-sm {
-    // Size
-    .text_sm-size {
-        &_21 {
-            font-size: 21px;
-            line-height: 34px;
-        }
-
-        &_30 {
-            font-size: 30px;
-            line-height: 36px;
-        }
-
-        &_49 {
-            font-size: 49px;
-            line-height: 52px;
-        }
     }
 }
 
