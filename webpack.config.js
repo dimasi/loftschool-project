@@ -57,8 +57,7 @@ const common = merge([
         'index', 
         'about',
         'blog', 
-        'portfolio',
-        `admin`
+        'portfolio'
     ]),
     pug(),
     lintJS(),
