@@ -17,7 +17,7 @@
             min-width: 179px;
             padding: 18px;
             color: rgba(71, 75, 87, .7);
-            font-weight: 700;
+            font-weight: 500;
             text-align: center;
             text-transform: uppercase;
         }
@@ -36,16 +36,8 @@
             flex-direction: column;
         }
 
-        .nav__item {
-            border-right: 0 none;
-            border-bottom: 1px solid #fff;
-
-            &:last-child {
-                border-bottom: 0 none;
-            }
-        }
-
         .nav__link {
+            border-bottom: 1px solid #fff;
             font-size: 14px;
 
             &.nav__link_state_active {
@@ -60,10 +52,6 @@
     .tabs {
         .nav__item {
             flex-grow: 1;
-
-            &:last-child {
-                border-right: 0 none;
-            }
         }
     }
 }

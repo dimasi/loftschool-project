@@ -2,51 +2,18 @@
 @import './../mixins';
 
 .grid-layout {
-    padding: 0 10px;
-
-    &__row {
-        display: flex;
-        flex-wrap: wrap;
-        margin: 0 -10px;
-    }
-
-    &__item {
-        padding: 0 10px;
-    }
-
-    // Item size
-    &__item_size {
-        @include grid(12);
-    }
+    display: flex;
+    flex-wrap: wrap;
 }
 
 // @media
 // xs
 @include media-xs {
     .grid-layout {
-        // Item size
-        &__item_xs-size {
-            @include grid(12);
-        }
-    }
-}
-
-// sm
-@include media-sm {
-    .grid-layout {
-        // Item size
-        &__item_sm-size {
-            @include grid(12);
-        }
-    }
-}
-
-// sm-landscape
-@include media-sm-landscape {
-    .grid-layout {
-        // Item size
-        &__item_sm-lnd-size {
-            @include grid(12);
+        &__col {
+            &_xs-size_7 {
+                width: (100% / 12 * 7);
+            }
         }
     }
 }

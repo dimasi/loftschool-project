@@ -55,19 +55,9 @@
     }
 }
 
-// Make the same margin on all sides
 @mixin synch-margin($margin) {
     top: $margin;
     right: $margin;
     bottom: $margin;
     left: $margin;
-}
-
-// Make grid layout
-@mixin grid($grid-column-count) {
-    @for $i from 1 through $grid-column-count {
-        &_#{$i} {
-            width: (100% / $grid-column-count * $i);
-        }
-    }
 }

@@ -48,10 +48,9 @@
     }
 
     &__label {
-        flex-grow: 1;
-        flex-shrink: 0;
-        padding-right: 10px;
         font-weight: 400;
+        flex-grow: 0;
+        flex-shrink: 0;
     }
 
     ::-webkit-input-placeholder {
@@ -71,7 +70,7 @@
     }
 }
 
-// Error state
+// Error state mixin
 .textfield.formfield_state_error {
     .textfield__addon-icon {
         color: $color-error;
@@ -122,7 +121,7 @@
     }
 }
 
-// Correct state
+// Correct state mixin
 .textfield.formfield_state_correct {
     .textfield__addon-icon {
         color: #0548be;
@@ -154,14 +153,12 @@
     }
 }
 
-// Bg color
 .textfield_bg_white {
     .textfield__control {
         background-color: #fff;
     }
 }
 
-// Size
 .textfield_size {
     &_small {
         .textfield__control {
@@ -172,16 +169,13 @@
             padding: 0 10px;
             text-align: center;
         }
-
-        .textfield__control_corners_rounded {
-            border-radius: 4px;
-        }
     }
 }
 
-// Rounded corners
-.textfiled__control_corners_rounded {
-    border-radius: 5px;
+.textfiled_corners_rounded {
+    .textfield__control {
+        border-radius: 4px;
+    }
 }
 
 // @media

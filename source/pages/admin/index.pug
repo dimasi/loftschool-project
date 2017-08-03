@@ -10,158 +10,141 @@ block content
     - let svgArrowDown = require(`Images/icons/portf_arrow_down.svg`);
 
     .page-admin
-        .page-admin__bg
+        header.page-admin__header
+            h1.page-admin__title.heading.text.text_size_28.text_xs-size_21.text_sm-size_21.text_wight_500 Панель администрирования
+            a(href=`about.html` class=`page-admin__to-site-link link text`) Вернуться на сайт
 
         .page-admin__tabs.tabs
-            header.page-admin__header
-                .page-admin__header-wrapper
-                    h1.page-admin__title.heading.text.text_size_28.text_xs-size_21.text_sm-size_21.text_wight_500 Панель администрирования
-                    a(href=`about.html` class=`page-admin__to-site-link link text`) Вернуться на сайт
-                
-                +nav({
-                    className: `page-admin__header-tabs tabs__nav`,
-                    items: [
-                        { 
-                            text: 'Обо мне', 
-                            link: '#about',
-                            linkClass: 'nav__link_state_active'
-                        },
-                        { 
-                            text: 'Портфолио', 
-                            link: '#works'
-                        },
-                        { 
-                            text: 'Блог', 
-                            link: '#blog'
-                        }
-                    ]
-                })
+            +nav({
+                className: `tabs__nav`,
+                items: [
+                    { 
+                        text: 'Обо мне', 
+                        href: '#about',
+                        linkClass: 'nav__link_state_active'
+                    },
+                    { 
+                        text: 'Портфолио', 
+                        href: '#works'
+                    },
+                    { 
+                        text: 'Блог', 
+                        href: '#blog'
+                    }
+                ]
+            })
 
-            .page-admin__body.tabs__content
-                section(class=`tabs__tab tabs__tab_state_active page-admin-section` id=`about`)
+            .tabs__content
+                section(class=`tabs__tab tabs__tab_state_active page-admin-section` data-tab-name=`about`)
                     //- Form "Skills"
-                    form(class=`page-admin-section__body page-admin-section__body_section_skills` action=`/admin/about`)
-                        h4.page-admin-section__title.text.text_size_21.text_xs-size_21.text_weight_700 Навыки
-                        .page-admin-section__center.grid-layout
-                            .grid-layout__row
-                                .grid-layout__item.grid-layout__item_size_6.grid-layout__item_sm-size_12.grid-layout__item_xs-size_12
-                                    .grid-layout__row
-                                        fieldset.page-admin-section__fieldset.grid-layout__item.grid-layout__item_size_6.grid-layout__item_sm-lnd-size_4.grid-layout__item_xs-size_12
-                                            legend.page-admin-section__group-title.text.text_weight_500 Frontend
-                                            .page-admin-section__textfield.textfield.textfield_bg_white.textfield_size_small
-                                                label.textfield__label Html
-                                                input(type=`text` class=`textfield__control textfield__control_corners_rounded` value=`90`)
-                                                span.textfield__measure %
+                    h4.page-admin-section__title.text.text_size_21.text_weight_500 Навыки
+                    form(class=`page-admin-section__body grid-layout` action=`/admin/about`)
+                        .grid-layout__row
+                            .grid-layout__item.grid-layout__item_size_6
+                                .grid-layout__row
+                                    fieldset.grid-layout__item.grid-layout__item_size_6.grid-layout__item_xs-size_7
+                                        legend.page-admin-section__group-title.text.text_weight_500 Frontend
+                                        .page-admin-section__field.textfield.textfield_bg_white.textfield_size_small
+                                            label.textfield__label Html
+                                            input(type=`text` class=`textfield__control` value=`100`)
+                                            span.textfield__measure %
 
-                                            .page-admin-section__textfield.textfield.textfield_bg_white.textfield_size_small
-                                                label.textfield__label CSS
-                                                input(type=`text` class=`textfield__control textfield__control_corners_rounded` value=`88`)
-                                                span.textfield__measure %
+                                        .page-admin-section__field.textfield.textfield_bg_white.textfield_size_small
+                                            label.textfield__label CSS
+                                            input(type=`text` class=`textfield__control` value=`90`)
+                                            span.textfield__measure %
 
-                                            .page-admin-section__textfield.textfield.textfield_bg_white.textfield_size_small
-                                                label.textfield__label JavaScript
-                                                input(type=`text` class=`textfield__control textfield__control_corners_rounded` value=`75`)
-                                                span.textfield__measure %
+                                        .page-admin-section__field.textfield.textfield_bg_white.textfield_size_small
+                                            label.textfield__label JavaScript
+                                            input(type=`text` class=`textfield__control` value=`80`)
+                                            span.textfield__measure %
 
-                                        fieldset.page-admin-section__fieldset.grid-layout__item.grid-layout__item_size_6.grid-layout__item_sm-lnd-size_4.grid-layout__item_xs-size_12
-                                            legend.page-admin-section__group-title.text.text_weight_500 Backend
-                                            .page-admin-section__textfield.textfield.textfield_bg_white.textfield_size_small
-                                                label.textfield__label PHP
-                                                input(type=`text` class=`textfield__control textfield__control_corners_rounded` value=`35`)
-                                                span.textfield__measure %
+                                    fieldset.grid-layout__item.grid-layout__item_size_6.grid-layout__item_xs-size_7
+                                        legend.page-admin-section__group-title.text.text_weight_500 Backend
+                                        .page-admin-section__field.textfield.textfield_bg_white.textfield_size_small
+                                            label.textfield__label PHP
+                                            input(type=`text` class=`textfield__control` value=`80`)
+                                            span.textfield__measure %
 
-                                            .page-admin-section__textfield.textfield.textfield_bg_white.textfield_size_small
-                                                label.textfield__label Node.js
-                                                input(type=`text` class=`textfield__control textfield__control_corners_rounded` value=`30`)
-                                                span.textfield__measure %
+                                        .page-admin-section__field.textfield.textfield_bg_white.textfield_size_small
+                                            label.textfield__label Node.js
+                                            input(type=`text` class=`textfield__control` value=`90`)
+                                            span.textfield__measure %
 
-                                            .page-admin-section__textfield.textfield.textfield_bg_white.textfield_size_small
-                                                label.textfield__label Mongo.db
-                                                input(type=`text` class=`textfield__control textfield__control_corners_rounded` value=`30`)
-                                                span.textfield__measure %
+                                        .page-admin-section__field.textfield.textfield_bg_white.textfield_size_small
+                                            label.textfield__label Mongo.db
+                                            input(type=`text` class=`textfield__control` value=`80`)
+                                            span.textfield__measure %
 
-                                        fieldset.page-admin-section__fieldset.grid-layout__item.grid-layout__item_size_6.grid-layout__item_sm-lnd-size_4.grid-layout__item_xs-size_12
-                                            legend.page-admin-section__group-title.text.text_weight_500 Workflow
-                                            .page-admin-section__textfield.textfield.textfield_bg_white.textfield_size_small
-                                                label.textfield__label Webpack
-                                                input(type=`text` class=`textfield__control textfield__control_corners_rounded` value=`60`)
-                                                span.textfield__measure %
+                                    fieldset.grid-layout__item.grid-layout__item_size_6.grid-layout__item_xs-size_7
+                                        legend.page-admin-section__group-title.text.text_weight_500 Workflow
+                                        .page-admin-section__field.textfield.textfield_bg_white.textfield_size_small
+                                            label.textfield__label Html
+                                            input(type=`text` class=`textfield__control` value=`80`)
+                                            span.textfield__measure %
 
-                                            .page-admin-section__textfield.textfield.textfield_bg_white.textfield_size_small
-                                                label.textfield__label Gulp
-                                                input(type=`text` class=`textfield__control textfield__control_corners_rounded` value=`30`)
-                                                span.textfield__measure %
+                                        .page-admin-section__field.textfield.textfield_bg_white.textfield_size_small
+                                            label.textfield__label CSS
+                                            input(type=`text` class=`textfield__control` value=`30`)
+                                            span.textfield__measure %
 
-                                            .page-admin-section__textfield.textfield.textfield_bg_white.textfield_size_small
-                                                label.textfield__label Grunt
-                                                input(type=`text` class=`textfield__control textfield__control_corners_rounded` value=`70`)
-                                                span.textfield__measure %
+                                        .page-admin-section__field.textfield.textfield_bg_white.textfield_size_small
+                                            label.textfield__label JavaScript
+                                            input(type=`text` class=`textfield__control` value=`40`)
+                                            span.textfield__measure %
+                    
+                    footer.page-admin-section__footer
+                        button(type=`submit` class=`btn btn btn_color_blue`)
+                            span.btn__text.text.text_color_white.text_weight_500 Сохранить
 
-                        footer.page-admin-section__footer
-                            button(type=`submit` class=`btn btn_corners_rounded btn_color_blue`)
-                                span.btn__text.text.text_color_white.text_weight_500 Сохранить
 
+                .tabs__tab(data-tab-name=`works` style=`display: none`)
+                    .admin-tab
+                        h3.admin-tab__title.heading.text.text_size_21.text_wight_500 Страница «Страница «Мои работы»
 
-                section(class=`tabs__tab page-admin-section` id=`works`)
-                    //- Form "Мои работы"
-                    form(class=`page-admin-section__body page-admin-section__body_section_works` action=`/admin/works`)
-                        h4.page-admin-section__title.text.text_size_21.text_xs-size_21.text_weight_700 Мои работы
+                        form
+                            h4.form__group-title.text.text_weight_500 Добавить работу
+                            
+                            .textfield.formfield
+                                span.textfield__wrapper
+                                    input(type=`text` name=`project-name` class=`textfield__control formfield__control` placeholder=`Название проекта`)
+                                    span.textfield__error-message.formfield__error-message
+                            
+                            .textfield.formfield
+                                span.textfield__wrapper
+                                    input(type=`text` name=`tech` class=`textfield__control formfield__control` placeholder=`Технологии`)
+                                    span.textfield__error-message.formfield__error-message
 
-                        .page-admin-section__center.grid-layout
-                            .grid-layout__row
-                                fieldset.page-admin-section__fieldset.grid-layout__item.grid-layout__item_size_4.grid-layout__item_sm-size_6.grid-layout__item_xs-size_12
-                                    legend.page-admin-section__group-title.text.text_weight_500 Добавить работу
+                            .filefield
+                                label.filefield__label
+                                    svg(class=`filefield__icon` viewBox=svgArrowDown.viewBox): use(xlink:href=svgArrowDown.symbol)
+                                    .filefield__text Загрузить картинку
 
-                                    .page-admin-section__textfield.textfield.textfield_bg_white
-                                        span.textfield__wrapper
-                                            input(type=`text` name=`project-name` class=`textfield__control textfield__control_corners_rounded formfield__control` placeholder=`Название проекта`)
-                                            span.textfield__error-message.formfield__error-message
-                                    
-                                    .page-admin-section__textfield.textfield.textfield_bg_white
-                                        span.textfield__wrapper
-                                            input(type=`text` name=`tech` class=`textfield__control textfield__control_corners_rounded formfield__control` placeholder=`Технологии`)
-                                            span.textfield__error-message.formfield__error-message
-
-                                    .page-admin-section__textfield.filefield
-                                        label.filefield__label
-                                            span.filefield__icon
-                                                i.fa.fa-picture-o
-                                                i.fa.fa-plus-circle
-                                            span.filefield__text Загрузить картинку
-                                            input(type=`file` class=`filefield__control`)
-
-                        footer.page-admin-section__footer
-                            button(type=`submit` class=`btn btn_corners_rounded btn_color_blue`)
+                            button(type=`submit` class=`btn btn_w_100 btn btn_color_blue`)
                                 span.btn__text.text.text_color_white.text_weight_500 Добавить
+                            
+                    
+                .tabs__tab(data-tab-name=`blog` style=`display: none`)
+                    .admin-tab
+                        h3.admin-tab__title.heading.text.text_size_21.text_wight_500 Страница «Блог»
 
+                        form
+                            h4.form__group-title.text.text_weight_500 Добавить работу
 
-                section(class=`tabs__tab page-admin-section` id=`blog`)
-                    //- Form Новая запись блога
-                    form(class=`page-admin-section__body page-admin-section__body_section_blog` action=`/admin/blog`)
-                        h4.page-admin-section__title.text.text_size_21.text_xs-size_21.text_weight_700 Блог
+                            .form__field.textfield.formfield
+                                span.textfield__wrapper
+                                    input(type=`text` name=`name` class=`textfield__control formfield__control` placeholder=`Название`)
+                                    span.textfield__error-message.formfield__error-message
 
-                        .page-admin-section__center.grid-layout
-                            .grid-layout__row
-                                fieldset.page-admin-section__fieldset.grid-layout__item.grid-layout__item_size_6.grid-layout__item_sm-size_9.grid-layout__item_xs-size_12
-                                    legend.page-admin-section__group-title.text.text_weight_500 Добавить запись
+                            .form__field.textfield.formfield
+                                span.textfield__wrapper
+                                    input(type=`text` name=`date` class=`textfield__control formfield__control` placeholder=`Дата`)
+                                    span.textfield__error-message.formfield__error-message
 
-                                    .grid-layout__row
-                                        .grid-layout__item.grid-layout__item_size_8.grid-layout__item_sm-size_10.grid-layout__item_xs-size_12
-                                            .page-admin-section__textfield.textfield.textfield_bg_white
-                                                span.textfield__wrapper
-                                                    input(type=`text` name=`name` class=`textfield__control textfield__control_corners_rounded formfield__control` placeholder=`Название`)
-                                                    span.textfield__error-message.formfield__error-message
+                            .form__field.textarea.formfield
+                                span.textarea__wrapper
+                                    textarea(class=`textarea__control formfield__control` name=`text` placeholder=`Содержание`)
+                                    span.textarea__error-message.formfield__error-message
 
-                                            .page-admin-section__textfield.textfield.textfield_bg_white
-                                                span.textfield__wrapper
-                                                    input(type=`text` name=`date` class=`textfield__control textfield__control_corners_rounded formfield__control` placeholder=`Дата`)
-                                                    span.textfield__error-message.formfield__error-message
-
-                                    .page-admin-section__textarea.textarea.formfield
-                                        span.textarea__wrapper
-                                            textarea(class=`textarea__control textarea__control_corners_rounded formfield__control` name=`content`) Содержание
-                                            span.textarea__error-message.formfield__error-message
-
-                        footer.page-admin-section__footer
-                            button(type=`submit` class=`btn btn_corners_rounded btn_color_blue`)
+                            button(type=`submit` class=`btn btn_w_100 btn btn_color_blue`)
                                 span.btn__text.text.text_color_white.text_weight_500 Добавить
