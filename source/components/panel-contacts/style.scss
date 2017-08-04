@@ -18,6 +18,10 @@
             padding: 0 10px;
         }
 
+        @include media-xs-landscape {
+            padding: 0 20px;
+        }
+
         @include media-sm-portrait {
             flex-direction: column;
         }

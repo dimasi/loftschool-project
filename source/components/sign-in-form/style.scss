@@ -28,4 +28,10 @@
     &__antibot-checkbox {
         margin-bottom: 15px;
     }
+
+    .textfield__wrapper {
+        @include media-xs-landscape {
+            width: 220px;
+        }
+    }
 }

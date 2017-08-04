@@ -35,6 +35,12 @@
             bottom: -15%;
         }
 
+        @include media-xs-landscape {
+            width: 840px;
+            margin-left: -420px;
+            bottom: -12%;
+        }
+
         @include media-sm {
             width: 1400px;
             margin-left: -700px;
@@ -61,6 +67,10 @@
             margin-left: -150px;
         }
 
+        @include media-xs-landscape {
+            top: 25px;
+        }
+
         @include media-sm {
             width: 281px;
             top: 99px;
@@ -84,6 +94,10 @@
             top: 19.71831vh;
         }
 
+        @include media-xs-landscape {
+            top: 48px;
+        }
+
         @include media-sm {
             top: 116px;
         }
@@ -91,6 +105,10 @@
 
     &__avatar {
         margin-bottom: 25px;
+
+        @include media-xs-landscape {
+            margin-bottom: 15px;
+        }
 
         @include media-sm {
             margin-bottom: 15px;
@@ -110,6 +128,10 @@
             line-height: 28px;
         }
 
+        @include media-xs-landscape {
+            display: none;
+        }
+
         @include media-sm {
             margin-bottom: 5px;
         }
@@ -124,6 +146,10 @@
             font-size: 14px;
             line-height: 24px;
         }
+
+        @include media-xs-landscape {
+            display: none;
+        }
     }
 
     &__anchor-link {
@@ -131,6 +157,10 @@
 
         @include media-xs {
             margin-top: 92px;
+        }
+
+        @include media-xs-landscape {
+            display: none;
         }
     }
 }
@@ -153,6 +183,12 @@
             bottom: -15%;
         }
 
+        @include media-xs-landscape {
+            bottom: -20%;
+            width: 840px;
+            margin-left: -420px;
+        }
+
         @include media-sm {
             bottom: -20%;
         }
@@ -160,10 +196,18 @@
 
     .parallax__stars {
         top: 59px;
+
+        @include media-xs-landscape {
+            top: 25px;
+        }
     }
 
     .parallax__panel {
         top: 82px;
+
+        @include media-xs-landscape {
+            top: 48px;
+        }
     }
 
     .parallax__heading {
@@ -171,6 +215,16 @@
         font-family: 'Sansus Webissimo', sans-serif;
         font-size: 63px;
         line-height: 56px;
+
+        @include media-xs-landscape {
+            display: inline-block;
+        }
+    }
+
+    .parallax__text {
+        @include media-xs-landscape {
+            display: inline-block;
+        }
     }
 
     .parallax__anchor-link {
@@ -180,6 +234,10 @@
         @include media-xs {
             display: block;
             margin-top: 92px;
+        }
+
+        @include media-xs-landscape {
+            display: none;
         }
 
         @include media-sm {

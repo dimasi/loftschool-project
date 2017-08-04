@@ -4,11 +4,34 @@
 @import '~Scss/params';
 @import '~Scss/mixins';
 
-.video-background__video {
-    @include media-sm {
-        width: 110%;
-        position: relative;
-        top: -5%;
-        left: -5%;
+.video-background {
+    &__video {
+        @include media-sm {
+            width: 110%;
+            position: relative;
+            top: -5%;
+            left: -5%;
+        }
+    }
+
+    &__image {
+        @include media-xs {
+            height: calc(100vh - 92px);
+        }
+
+        @include media-xs-landscape {
+            height: 100vh;
+        }
+
+        @include media-sm-portrait {
+            height: 50vh;
+        }
+
+        @include media-sm-landscape {
+            width: 100%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
     }
 }
