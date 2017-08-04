@@ -1,46 +1,48 @@
 import 'reset-css/reset.css';
-import './../../scss/base.scss';
+import 'font-awesome/css/font-awesome.css';
+import './blog.scss';
 
-import './../../scss/blocks/preloader.scss';
-import './../../scss/blocks/text.scss';
-import './../../scss/blocks/img.scss';
-import './../../scss/blocks/btn-arrow.scss';
-import './../../scss/blocks/heading.scss';
-import './../../scss/blocks/avatar.scss';
-import './../../scss/blocks/hamburger.scss';
-import './../../scss/blocks/social.scss';
-import './../../scss/blocks/nav.scss';
-import './../../scss/blocks/copyright.scss';
-import './../../scss/blocks/menu.scss';
+import 'Root/node_modules/modernizr/bin/modernizr';
+import preloader from 'Components/preloader/script';
+import menu from 'Components/menu/script';
+import videoBackground from 'Components/video-background/script';
+import parallax from 'Components/parallax/script';
+import anchorLinks from 'Components/anchor-link/script';
+import sideMenu from 'Components/side-menu/script';
+import stickBlock from 'Components/stick-block/script';
 
-import './../../scss/blocks/page.scss';
-import './../../scss/blocks/footer.scss';
-import './../../scss/blocks/page-header.scss';
-import './../../scss/blocks/user.scss';
-import './../../scss/blocks/ribbon.scss';
-import './../../scss/blocks/page-blog.scss';
-import './../../scss/blocks/blog.scss';
-import './../../scss/blocks/article.scss';
-import './../../scss/blocks/side-menu.scss';
+$(() => {
+    preloader.init({
+        waiting: true
+    });
 
-const anchorLinks = require('Modules/anchorLinks');
-const menu = require('Modules/menu');
-const sideMenu = require('Modules/sideMenu');
-const stickBlock = require('Modules/stickBlock');
+    menu.init();
 
-require(`Js/common`);
+    videoBackground.init($('.video-background'), {
+        onRender: () => $(document).trigger('preloader:continue')
+    });
 
-// Initialize anchor-links
-anchorLinks.init();
+    parallax.scroll([
+        {
+            selector: '.parallax__panel',
+            divider: 0.05
+        },
+        {
+            selector: '.parallax__stars',
+            divider: 0.07
+        },
+        {
+            selector: '.parallax__mountains',
+            divider: 0.09
+        }
+    ]);
 
-// Initialize menu
-menu.init();
+    sideMenu.init({
+        navSelector: '.blog__nav .nav',
+        pageSelector: '.layout-base'
+    });
 
-// Initialize side menu
-sideMenu.init({
-    navSelector: `.blog__nav`,
-    pageSelector: `.page`
+    stickBlock.init($('.blog__nav'));
+
+    anchorLinks.init();
 });
-
-// Initialize stick blocks
-stickBlock.init($(`.stick-block`));

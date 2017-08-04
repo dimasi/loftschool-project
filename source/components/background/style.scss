@@ -1,0 +1,136 @@
+/* Component: blog
+ * Usage: @import '~Components/blog/style';
+ */
+@import '~Scss/params';
+@import '~Scss/mixins';
+
+.background {
+    @include media-xs-landscape {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__media {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .video-background__image {
+        width: 1199px;
+        position: absolute;
+        top: 0;
+        right: 50%;
+        transform: translateX(50%);
+
+        @include media-xs {
+            height: 75vh;
+            width: auto;
+            transform: translateX(180px);
+            right: 0;
+        }
+
+        @include media-xs-landscape {
+            width: 100%;
+            height: auto;
+            transform: translateX(0);
+        }
+
+        @include media-sm {
+            min-width: 1366px;
+        }
+
+        @include media-md {
+            width: 100%;
+        }
+
+        @include media-lg {
+            width: 100%;
+        }
+
+        @include ipad-pro-portrait {
+            width: 1992px;
+            right: auto;
+            left: 0;
+            transform: translateX(-920px);
+        }
+
+        @include ipad-pro-landscape {
+            width: 100%;
+            min-width: 1680px;
+        }
+    }
+
+    .video-background__video {
+        position: absolute;
+        left: -10px;
+        right: -10px;
+        top: -10px;
+        bottom: -10px;
+        width: 1940px;
+        height: 1100px;
+    }
+
+    &__mountains {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    &__mountains-image {
+        width: 1580px;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+
+        @include media-xs {
+            width: auto;
+            height: 90vh;
+        }
+
+        @include media-xs-landscape {
+            width: 100%;
+            height: auto;
+            bottom: -15px;
+        }
+
+        @include media-md {
+            width: 100%;
+        }
+
+        @include media-lg {
+            width: 100%;
+        }
+
+        @include ipad-pro-portrait {
+            width: 1920px;
+        }
+    }
+}
+
+.background_embedded {
+    .background__media {
+        width: 100%;
+        position: static;
+        overflow: hidden;
+    }
+
+    .video-background__video {
+        width: 104vw;
+        height: auto;
+        margin-left: -2vw;
+        margin-top: -15px;
+        position: static;
+    }
+
+    .video-background__image {
+        width: 100%;
+        position: static;
+    }
+}

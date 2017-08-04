@@ -1,0 +1,60 @@
+@import '~Scss/params';
+@import '~Scss/mixins';
+
+@import '~Scss/base';
+@import '~Layouts/preloader/style';
+
+@import '~Components/background/style';
+@import '~Components/panel-welcome/style';
+@import '~Components/copyright/style';
+
+.page-welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #0a0f33;
+
+    &__background {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    &__top {
+        align-self: flex-end;
+        padding: 20px 20px 0;
+        position: relative;
+
+        @include media-xs {
+            align-self: center;
+        }
+    }
+
+    &__flip-panel {
+        flex: 1 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: -10vh;
+        position: relative;
+
+        @include media-xs {
+            padding: 10px 0 5px;
+            margin-top: 0;
+        }
+    }
+
+    &__copyright {
+        width: 100%;
+        position: relative;
+        text-align: center;
+        padding-bottom: 10px;
+
+        @include media-xs {
+            padding-bottom: 15px;
+        }
+    }
+}

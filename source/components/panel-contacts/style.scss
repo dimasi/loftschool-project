@@ -1,0 +1,71 @@
+/* Component: panel-contacts
+ * Usage: @import '~Components/panel-contacts/style';
+ */
+@import '~Scss/params';
+@import '~Scss/mixins';
+
+.panel-contacts {
+    &__heading {
+        @include title-bordered;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+
+        @include media-xs {
+            flex-direction: column;
+            padding: 0 10px;
+        }
+
+        @include media-sm-portrait {
+            flex-direction: column;
+        }
+    }
+
+    &__item {
+        width: 50%;
+        margin: 10px 0;
+        padding: 0 10px 0 0;
+
+        @include media-xs {
+            width: 100%;
+            padding-bottom: 20px;
+            margin: 0;
+        }
+
+        @include media-sm-portrait {
+            width: 100%;
+        }
+    }
+
+    &__link {
+        display: inline-flex;
+        align-items: baseline;
+        text-decoration: none;
+    }
+
+    &__icon {
+        flex-shrink: 0;
+        flex-grow: 0;
+        fill: #004cd1;
+        width: 45px;
+        height: 45px;
+        margin-right: 10px;
+
+        @include media-xs {
+            width: 34px;
+            height: 34px;
+        }
+    }
+
+    &__text {
+        top: -20px;
+        position: relative;
+        color: #474b57;
+
+        @include media-xs {
+            top: -14px;
+        }
+    }
+}

@@ -1,44 +1,45 @@
 import 'reset-css/reset.css';
-import './../../scss/base.scss';
+import 'font-awesome/css/font-awesome.css';
+import './about.scss';
 
-import './../../scss/blocks/preloader.scss';
-import './../../scss/blocks/text.scss';
-import './../../scss/blocks/btn-arrow.scss';
-import './../../scss/blocks/heading.scss';
-import './../../scss/blocks/img.scss';
-import './../../scss/blocks/avatar.scss';
-import './../../scss/blocks/hamburger.scss';
-import './../../scss/blocks/social.scss';
-import './../../scss/blocks/nav.scss';
-import './../../scss/blocks/copyright.scss';
-import './../../scss/blocks/menu.scss';
+import 'Root/node_modules/modernizr/bin/modernizr';
+import preloader from 'Components/preloader/script';
+import menu from 'Components/menu/script';
+import videoBackground from 'Components/video-background/script';
+import parallax from 'Components/parallax/script';
+import anchorLinks from 'Components/anchor-link/script';
+import map from 'Components/map/script';
 
-import './../../scss/blocks/page.scss';
-import './../../scss/blocks/footer.scss';
-import './../../scss/blocks/page-header.scss';
-import './../../scss/blocks/section.scss';
-import './../../scss/blocks/ribbon.scss';
-import './../../scss/blocks/about.scss';
-import './../../scss/blocks/user.scss';
-import './../../scss/blocks/indicator.scss';
-import './../../scss/blocks/indicators-grid.scss';
-import './../../scss/blocks/map.scss';
-
-const anchorLinks = require('Modules/anchorLinks');
-const menu = require('Modules/menu');
-const map = require('Modules/map');
-
-require(`Js/common`);
-
-// Initialize anchor-links
-anchorLinks.init();
-
-// Initialize menu
-menu.init();
-
-// Temp: Indicators
 $(() => {
-    var $indicators = $(`.indicator`),
+    preloader.init({
+        waiting: true
+    });
+
+    menu.init();
+
+    videoBackground.init($('.video-background'), {
+        onRender: () => $(document).trigger(`preloader:continue`)
+    });
+
+    parallax.scroll([
+        {
+            selector: `.parallax__panel`,
+            divider: 0.05
+        },
+        {
+            selector: `.parallax__stars`,
+            divider: 0.07
+        },
+        {
+            selector: `.parallax__mountains`,
+            divider: 0.09
+        }
+    ]);
+
+    anchorLinks.init();
+
+    // Temp: Indicators
+    let $indicators = $(`.indicator`),
         len = $indicators.length,
         i = 0,
         interval;
@@ -50,7 +51,8 @@ $(() => {
             clearInterval(interval);
         }
     }, 350);
-});
 
-// Initialize map
-map.init($(`.map__map`)[0]);
+    map.init($('.map')[0], {
+
+    });
+});

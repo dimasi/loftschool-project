@@ -1,0 +1,41 @@
+@import '~Scss/params';
+@import '~Scss/mixins';
+
+@import '~Scss/base';
+@import '~Layouts/base/style';
+
+@import '~Components/menu/style';
+@import '~Components/background/style';
+@import '~Components/parallax/style';
+@import '~Components/ribbon/style';
+@import '~Components/blog/style';
+@import '~Components/side-menu/style';
+
+.page-blog {
+    background-color: #faf8f0;
+    padding-bottom: 225px;
+    overflow: hidden;
+    position: relative;
+
+    @include media-xs {
+        padding-bottom: 0;
+    }
+
+    @include media-sm {
+        padding-bottom: 270px;
+    }
+
+    &__body {
+        padding-top: 80px;
+        position: relative;
+        z-index: 4;
+
+        @include media-xs {
+            padding-top: 35px;
+        }
+
+        @include media-sm {
+            padding-top: 20px;
+        }
+    }
+}

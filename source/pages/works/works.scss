@@ -1,0 +1,150 @@
+@import '~Scss/params';
+@import '~Scss/mixins';
+
+@import '~Scss/base';
+@import '~Layouts/base/style';
+
+@import '~Components/menu/style';
+@import '~Components/background/style';
+@import '~Components/parallax/style';
+@import '~Components/ribbon/style';
+@import '~Components/carousel/style';
+@import '~Components/combo-slider/style';
+@import '~Components/btn/style';
+@import '~Components/blur/style';
+@import '~Components/quotes/style';
+@import '~Components/panel-contact/style';
+
+.page-works {
+    position: relative;
+    overflow: hidden;
+
+    .parallax {
+        @include media-sm {
+            height: 640px;
+        }
+    }
+
+    .parallax__mountains {
+        @include media-sm {
+            bottom: -12%;
+        }
+    }
+
+    &__ribbon {
+        width: 100%;
+        overflow: hidden;
+
+        .ribbon {
+            transform: translate(-50%, -180px);
+
+            @include media-xs {
+                transform: translate(-50%, -92px);
+            }
+
+            @include media-sm {
+                transform: translate(-50%, -135px);
+            }
+        }
+    }
+
+    &__title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 180px;
+        margin-top: -180px;
+        position: relative;
+
+        @include media-xs {
+            height: 92px;
+            margin-top: -92px;
+        }
+
+        @include media-sm {
+            height: 135px;
+            margin-top: -135px;
+        }
+    }
+
+    &__title-stars {
+        width: 240px;
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        margin-left: -10px;
+        transform: translate(-50%, -50%) rotate(-170deg);
+        opacity: .15;
+        fill: #fff;
+        stroke: #fff;
+
+        @include media-xs {
+            width: 120px;
+            top: -5px;
+            transform: translate(-50%, 0) rotate(-170deg);
+        }
+
+        @include media-sm {
+            width: 170px;
+            top: auto;
+            transform: translate(-50%, 0) rotate(-170deg);
+        }
+    }
+
+    &__title-text {
+        position: relative;
+        z-index: 2;
+        color: #fff;
+        font-family: 'Sansus Webissimo', sans-serif;
+        font-size: 63px;
+        line-height: 56px;
+        text-transform: uppercase;
+
+        @include media-xs {
+            font-size: 35px;
+            line-height: 42px;
+        }
+
+        @include media-sm {
+            font-size: 49px;
+            line-height: 52px;
+        }
+    }
+
+    &__slider {
+        position: relative;
+        z-index: 1;
+    }
+
+    &__blur {
+        padding-bottom: 190px;
+
+        @include media-xs {
+            padding-bottom: 0;
+        }
+
+        @include media-sm {
+            padding-bottom: 240px;
+        }
+    }
+
+    &__quotes {
+        padding-bottom: 65px;
+
+        @include media-xs {
+            padding-bottom: 0;
+        }
+    }
+
+    &__contact {
+        padding-bottom: 50px;
+    }
+
+    &__to-top {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 50px;
+        position: relative;
+    }
+}

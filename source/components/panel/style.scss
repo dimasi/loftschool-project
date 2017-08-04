@@ -1,0 +1,49 @@
+/* Component: panel
+ * Usage: @import '~Components/panel/style';
+ */
+@import '~Scss/params';
+@import '~Scss/mixins';
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &__heading {
+        padding: 30px;
+        color: #fff;
+        font-family: 'Sansus Webissimo', sans-serif;
+        font-size: 35px;
+        line-height: 34px;
+        text-align: center;
+        text-transform: uppercase;
+
+        @include media-xs {
+            padding: 30px 20px;
+            font-size: 30px;
+        }
+    }
+
+    &__content {
+        padding: 0 30px;
+
+        @include media-xs {
+            padding: 0 20px;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        margin-top: auto;
+    }
+
+    &__button,
+    &__button.btn {
+        flex: 1 0 auto;
+        border-left: 1px solid rgba(222, 227, 231, 0.5);
+
+        &:first-child {
+            border-left: 0 none;
+        }
+    }
+}

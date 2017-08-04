@@ -1,146 +1,94 @@
-extends ./../layout
+extends ~Layouts/base/l-base
 
-include ./../../mixins/menu
-include ./../../mixins/social
-include ./../../mixins/indicators-grid
-include ./../../mixins/contacts
+include ~Components/menu/m-menu
+include ~Components/parallax/m-parallax
+include ~Components/ribbon/m-ribbon
+include ~Components/indicators-grid/m-indicators-grid
 
 block title
-    | About page
-    
+    | About
+
+block head
+
 block content
-    //- SVG
-    - let svgArrowDown = require(`./../../images/icons/portf_arrow_down.svg`);
-    - let svgRibbonLeft = require(`./../../images/icons/about_bg_left.svg`);
-    - let svgRibbonRight = require(`./../../images/icons/about_bg_right.svg`);
-    - let svgStars = require(`./../../images/icons/stars1.svg`);
-    - let svgStars2 = require(`./../../images/icons/stars2.svg`);
-    - var svgContactsSkype = require(`./../../images/icons/skype_n.svg`);
-    - var svgContactsEnvelope = require(`./../../images/icons/envelope_n.svg`);
-    - var svgContactsPhone = require(`./../../images/icons/phone_n.svg`);
-    - var svgContactsMap = require(`./../../images/icons/map_n.svg`);
-
-    .page-header
-        video(class=`page-header__bg-video` width=`400` height=`300` autoplay loop)
-            source(src=`${require('./../../video/media-background.mp4')}`)
-
-        img(class=`page-header__bg` src=require(`./../../images/night_no_bg.png`))
-
-        .page-header__bg-user
-            svg(class=`page-header__bg-user-img` viewBox=svgStars.viewBox): use(xlink:href=svgStars.symbol)
-
-        .page-header__user.user
-            .user__avatar.avatar
-                img(class=`avatar__img` src=require(`./../../images/user-avatar.jpg`))
-
-            h1.user__title.heading.heading_color_white.heading_size_35.heading_xs-size_21.heading_weight_500 Владимир Астахов
-
-            p.user__text.text.text_color_white Личный сайт веб разработчика
-
-            a(href=`#section-about` class=`page-header__anchor-link anchor-link btn-arrow`)
-                svg(class=`btn-arrow__icon` viewBox=svgArrowDown.viewBox): use(xlink:href=svgArrowDown.symbol)
-            
-    .ribbon.ribbon_theme_striped
-        .ribbon__col.ribbon__col_left
-            svg(class=`ribbon__triangle ribbon__triangle_side_left` viewBox=svgRibbonLeft.viewBox): use(xlink:href=svgRibbonLeft.symbol)
-        .ribbon__col.ribbon__col_right
-            svg(class=`ribbon__triangle ribbon__triangle_side_right` viewBox=svgRibbonRight.viewBox): use(xlink:href=svgRibbonRight.symbol)
-
-    section#section-about.about
-        section.section.about__info
-            .about__align-wrapper
-                h1.about__title.heading.heading_font_2.heading_transform_uppercase.heading_size_63.heading_sm-size_49.heading_xs-size_35
-                    svg(class=`about__title-bg-img` viewBox=svgStars2.viewBox): use(xlink:href=svgStars2.symbol)
-                    | Обо мне
-
-                img(class=`img img_width_100` src=require(`./../../images/about.jpg`))
-            
-                .section__content
-                    h4.section__title.heading.heading_font_2.heading_transform_uppercase.heading_size_35.heading_sm-size_30.heading_xs-size_21.heading_decor_border-spacer Кто я
-                    
-                    p.section__text.text Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-                    p.section__text.text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-
-        section.section.about__skills
-            .section__content
-                h4.section__title.heading.heading_font_2.heading_transform_uppercase.heading_size_35.heading_sm-size_30.heading_xs-size_21.heading_decor_border-spacer Чем я могу быть вам полезен
-                
-                p.section__text.text Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
-
-            +indicators-grid({
-                className: 'about__indicators',
-                groups: [
-                    {
-                        title: 'Frontend',
-                        items: {
-                            'HTML': 20,
-                            'CSS3': 40,
-                            'JavaScript & jQuery': 60
-                        }
-                    },
-                    {
-                        title: 'Backend',
-                        items: {
-                            'PHP': 80,
-                            'mySQL': 95,
-                            'Node.js & npm': 80,
-                            'Mongo.db': 50
-                        }
-                    },
-                    {
-                        title: 'WorkFlow',
-                        items: {
-                            'Git': 40,
-                            'Gulp': 5,
-                            'Bower': 77
-                        }
-                    }
-                ]
+    .page-about
+        .page-about__parallax
+            +parallax({
+                heading: 'Владимир Астахов',
+                text: 'Личный сайт веб разработчика',
+                anchorLink: '#page-body'
             })
 
-    section.section.map
-        .map__contacts
-            h4.map__title.heading.heading_font_2.heading_transform_uppercase.heading_size_35.heading_sm-size_30.heading_xs-size_35.heading_decor_border-spacer Контакты
+        .page-about__ribbon
+            +ribbon({
+                elClasses: ['ribbon_theme_striped']
+            })
 
-            ul.contacts.map__contacts-list
-                li.contacts__item
-                    a(class=`contacts__link` href=`#skype_kdn`)
-                        svg(class=`contacts__icon` viewBox=`0 0 600 600`): use(xlink:href=svgContactsSkype.symbol)
-                        span.contacts__text skype_kdn
-                li.contacts__item
-                    a(class=`contacts__link` href=`#+79312009324`)
-                        svg(class=`contacts__icon` viewBox=`0 0 45 45`): use(xlink:href=svgContactsPhone.symbol)
-                        span.contacts__text +7 931 200 93 24
-                li.contacts__item
-                    a(class=`contacts__link` href=`#astahov@gmail.com`)
-                        svg(class=`contacts__icon` viewBox=`0 0 45 45`): use(xlink:href=svgContactsEnvelope.symbol)
-                        span.contacts__text astahov@gmail.com
-                li.contacts__item
-                    span.contacts__link
-                        svg(class=`contacts__icon` viewBox=`0 0 45 45`): use(xlink:href=svgContactsMap.symbol)
-                        span.contacts__text г. Новосибирск, ул. Инская, д.4
+        section#page-body.page-about__body
+            section.page-about__info
+                include ~Components/about/c-about
 
-        .map__container
-            .map__map
+            section.page-about__techs
+                include ~Components/techs/c-techs
 
-block bottom
-    //- Menu
-    +menu([
-        { 
-            text: 'Мои работы', 
-            link: 'portfolio.html'
-        },
-        { 
-            text: 'Блог', 
-            link: 'blog.html'
-        },
-        { 
-            text: 'Обо мне', 
-            link: 'about.html',
-            active: true
-        },
-        { 
-            text: 'Авторизация', 
-            link: '/' 
-        }
-    ])
+                .page-about__indicators
+                    +indicatorsGrid({
+                        groups: [
+                            {
+                                title: 'Frontend',
+                                items: {
+                                    'HTML': 20,
+                                    'CSS3': 40,
+                                    'JavaScript & jQuery': 60
+                                }
+                            },
+                            {
+                                title: 'Backend',
+                                items: {
+                                    'PHP': 80,
+                                    'mySQL': 95,
+                                    'Node.js & npm': 80,
+                                    'Mongo.db': 50
+                                }
+                            },
+                            {
+                                title: 'WorkFlow',
+                                items: {
+                                    'Git': 40,
+                                    'Gulp': 5,
+                                    'Bower': 77
+                                }
+                            }
+                        ]
+                    })
+
+        section.page-about__bottom
+            .page-about__contacts
+                include ~Components/panel-contacts/c-panel-contacts
+
+            .page-about__map
+                .map
+
+
+block menu
+    +menu({
+        items: [
+            {
+                text: 'Мои работы',
+                link: 'works.html'
+            },
+            {
+                text: 'Блог',
+                link: 'blog.html'
+            },
+            {
+                text: 'Обо мне',
+                link: 'about.html',
+                active: true
+            },
+            {
+                text: 'Авторизация',
+                link: '/'
+            }
+        ]
+    })

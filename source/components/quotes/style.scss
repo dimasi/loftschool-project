@@ -1,0 +1,82 @@
+/* Component: quotes
+ * Usage: @import '~Components/quotes/style';
+ */
+@import '~Scss/params';
+@import '~Scss/mixins';
+
+@import '~Components/quote/style';
+
+.quotes {
+    position: relative;
+
+    &__heading-bg-img {
+        fill: #fff;
+        stroke: #fff;
+        opacity: .15;
+        position: absolute;
+        z-index: 1;
+        width: 174px;
+        left: 50%;
+        transform: translateX(-50%) rotate(25deg);
+        top: 22px;
+
+        @include media-xs {
+            width: 75px;
+            top: 20px;
+        }
+
+        @include media-sm {
+            top: 7px;
+        }
+    }
+
+    &__heading {
+        width: 510px;
+        padding: 57px 0 64px;
+        margin: 0 auto;
+        color: #fff;
+        font-size: 63px;
+        font-family: 'Sansus Webissimo', sans-serif;
+        line-height: 66px;
+        text-align: center;
+        text-transform: uppercase;
+
+        @include media-xs {
+            width: 300px;
+            padding: 30px 0;
+            font-size: 35px;
+            line-height: 42px;
+        }
+
+        @include media-sm {
+            width: 320px;
+            padding-bottom: 23px;
+            font-size: 49px;
+            line-height: 56px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        justify-content: center;
+
+        @include media-xs {
+            flex-wrap: wrap;
+            padding: 0 10px;
+        }
+    }
+
+    &__item {
+        width: 380px;
+        margin: 0 10px;
+
+        @include media-xs {
+            width: 300px;
+            margin: 0 10px 45px;
+        }
+
+        @include media-sm {
+            margin: 0 20px;
+        }
+    }
+}

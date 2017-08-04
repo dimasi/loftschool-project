@@ -1,0 +1,33 @@
+//- @pugdoc
+    name: contactForm
+    examples:
+            - |
+                include ~Components/contact-form/c-contact-form
+
+include ~Components/textfield/m-textfield
+include ~Components/textarea/m-textarea
+include ~Components/form-message/m-form-message
+
+form(action="" method="POST" class="contact-form" autocomplete="off")
+    +formMessage({})
+
+    .contact-form__field.contact-form__name
+        +textfield({
+            elClasses: ['textfield_theme_transparent'],
+            name: 'name',
+            placeholder: 'Ваше имя'
+        })
+
+    .contact-form__field.contact-form__email
+        +textfield({
+            elClasses: ['textfield_theme_transparent'],
+            name: 'email',
+            placeholder: 'Ваш email'
+        })
+
+    .contact-form__field.contact-form__message
+        +textarea({
+            elClasses: ['textarea_theme_transparent'],
+            name: 'message',
+            placeholder: 'Ваше сообщение'
+        })

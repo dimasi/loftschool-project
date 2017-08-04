@@ -1,5 +1,6 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('./autoprefixer');
+const discardDuplicates = require('postcss-discard-duplicates');
 
 module.exports = () => {
     return {
@@ -16,6 +17,7 @@ module.exports = () => {
                                 loader: 'postcss-loader',
                                 options: {
                                     plugins: [
+                                        discardDuplicates(),
                                         autoprefixer()
                                     ]
                                 }

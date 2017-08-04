@@ -1,0 +1,71 @@
+/* Component: btn
+ * Usage: @import '~Components/btn/style';
+ */
+@import '~Scss/params';
+@import '~Scss/mixins';
+
+.btn {
+    display: inline-block;
+    padding: 13px;
+    border: 0 none;
+    background-color: transparent;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: border-color 180ms ease-out, background-color 180ms ease-out;
+
+    &__icon-before {
+        margin-right: 5px;
+    }
+}
+
+// Colors
+.btn_color_blue {
+    background-color: #004cd1;
+    color: #fff;
+
+    .no-touchevents &:hover {
+        background-color: rgba(4, 62, 163, 0.85);
+    }
+}
+
+.btn_color_glass-white {
+    border: 1px solid #fff;
+    color: #fff;
+
+    .no-touchevents &:hover {
+        border-color: #083c96;
+        background-color: #083c96;
+    }
+}
+
+.btn_color_transparent {
+    color: rgba(255, 255, 255, .5);
+    transition: color 180ms ease-out;
+
+    .no-touchevents &:hover {
+        color: rgba(255, 255, 255, 1);
+    }
+}
+
+// Sizes
+.btn_size_large {
+    padding: 13px 28px;
+}
+
+.btn_size_small {
+    padding: 9px 11px;
+}
+
+// Corners
+.btn_corners_rounded {
+    border-radius: 5px;
+
+    &.btn_size_small {
+        border-radius: 4px;
+    }
+}

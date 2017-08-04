@@ -19,6 +19,12 @@
     }
 }
 
+@mixin media-sm-portrait() {
+    @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) and (orientation: portrait) {
+        @content;
+    }
+}
+
 @mixin media-sm-landscape() {
     @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) and (orientation: landscape) {
         @content;
@@ -55,9 +61,66 @@
     }
 }
 
+@mixin ipad-pro-portrait() {
+    @media only screen
+        and (min-device-width: 1024px)
+        and (max-device-width: 1366px)
+        and (orientation: portrait)
+        and (-webkit-min-device-pixel-ratio: 1.5) {
+        @content;
+    }
+}
+
+@mixin ipad-pro-landscape() {
+    @media only screen
+        and (min-device-width: 1024px)
+        and (max-device-width: 1366px)
+        and (orientation: landscape)
+        and (-webkit-min-device-pixel-ratio: 1.5) {
+        @content;
+    }
+}
+
+// Make the same margin on all sides
 @mixin synch-margin($margin) {
     top: $margin;
     right: $margin;
     bottom: $margin;
     left: $margin;
+}
+
+// Make grid layout
+@mixin grid($grid-column-count) {
+    @for $i from 1 through $grid-column-count {
+        &_#{$i} {
+            width: (100% / $grid-column-count * $i);
+        }
+    }
+}
+
+// Заголовки
+@mixin title-bordered {
+    position: relative;
+    font-family: 'Sansus Webissimo', sans-serif;
+    font-size: 35px;
+    line-height: 41px;
+    text-align: center;
+    text-transform: uppercase;
+
+    &::after {
+        content: "";
+        display: block;
+        width: 56px;
+        height: 3px;
+        margin: 15px auto 25px;
+        background-color: #474b57;
+    }
+
+    @include media-xs {
+        font-size: 21px;
+    }
+
+    @include media-sm {
+        font-size: 30px;
+    }
 }

@@ -1,0 +1,80 @@
+/* Component: nav
+ * Usage: @import '~Components/nav/style';
+ */
+@import '~Scss/params';
+@import '~Scss/mixins';
+
+.nav {
+    &__link {
+        text-decoration: none;
+    }
+}
+
+// Layout
+.nav_layout_inline {
+    .nav__list {
+        display: flex;
+    }
+
+    .nav__item {
+        flex-grow: 1;
+    }
+}
+
+// Spacers
+.nav_spacers_white {
+    .nav__item {
+        position: relative;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 2px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: -1px;
+            background-color: rgba(222, 227, 231, .5);
+        }
+
+        &:first-child {
+            &::before {
+                display: none;
+            }
+        }
+    }
+}
+
+// Nav item
+// Width
+.nav__item_width {
+    &_50 {
+        width: 50%;
+    }
+}
+
+// Styles
+// Button
+.nav__item_style_button {
+    padding: 0;
+
+    .nav__link {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border: 0 none;
+        background-color: transparent;
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+    }
+}
+
+// @media
+// xs
+@include media-xs {
+    .nav__item_xs-width_auto {
+        width: auto;
+    }
+}

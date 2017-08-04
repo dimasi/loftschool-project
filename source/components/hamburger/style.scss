@@ -1,0 +1,114 @@
+/* Component: hamburger
+ * Usage: @import '~Components/hamburger/style';
+ */
+@import '~Scss/params';
+@import '~Scss/mixins';
+
+.hamburger {
+    background-color: transparent;
+    border: 0 none;
+    padding: 0;
+    width: 40px;
+    height: 35px;
+    top: 28px;
+    right: 30px;
+    z-index: 2;
+    transition-timing-function: linear;
+    transition-duration: .15s;
+    transition-property: opacity,filter;
+    cursor: pointer;
+
+    @include media-xs {
+        width: 26px;
+        height: 23px;
+    }
+
+    &__wrapper {
+        position: relative;
+        display: inline-block;
+        width: 40px;
+        height: 35px;
+
+        @include media-xs {
+            width: 26px;
+            height: 23px;
+        }
+    }
+
+    &__inner {
+        top: 50%;
+        display: block;
+        margin-top: -2px;
+        position: absolute;
+        width: 40px;
+        height: 5px;
+        border-radius: 4px;
+        background-color: #fff;
+        transition-property: transform;
+        transition-timing-function: cubic-bezier(.19, 1, .22, 1);
+        transition-duration: .3s;
+
+        &::before,
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 40px;
+            height: 5px;
+            border-radius: 4px;
+            background-color: #fff;
+            transition-delay: .1s;
+            transition-timing-function: linear;
+            transition-duration: 0s;
+            transition-property: top,opacity;
+        }
+
+        &::before {
+            top: -15px;
+        }
+
+        &::after {
+            bottom: -15px;
+        }
+
+        @include media-xs {
+            width: 26px;
+            height: 3px;
+
+            &::before,
+            &::after {
+                width: 26px;
+                height: 3px;
+            }
+
+            &::before {
+                top: -10px;
+            }
+
+            &::after {
+                bottom: -10px;
+            }
+        }
+    }
+
+    &__icon {
+        fill: #fff;
+    }
+}
+
+.hamburger_state_cross {
+    .hamburger__inner {
+        transition-timing-function: cubic-bezier(.19, 1, .22, 1);
+        transform: rotate(765deg);
+
+        &::before {
+            top: 0;
+            opacity: 0;
+        }
+
+        &::after {
+            bottom: 0;
+            transform: rotate(90deg);
+        }
+    }
+}

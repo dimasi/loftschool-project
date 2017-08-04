@@ -1,0 +1,30 @@
+//- @pugdoc
+    name: quote
+    arguments:
+        - {array}    params.elClasses
+        - {string}   params.avatarSrc
+        - {string}   params.text
+    examples:
+            - |
+                include ~Components/quote/m-quote
+            - |
+                +quote({
+                    elClasses: [],
+                    avatarSrc: '',
+                    author: '',
+                    authorActivity: ''
+                })
+
+
+include ~Components/avatar/m-avatar
+
+mixin quote (params)
+    div(class=`quote` + (params.elClasses ? ` ${params.elClasses.join(' ')}` : ``))
+        .quote__img
+            +avatar({
+                elClasses: ['quote__img'],
+                src: params.avatarSrc
+            })
+        p.quote__text= params.text
+        span.quote__author= params.author
+        span.quote__author-detail= params.authorActivity

@@ -1,0 +1,31 @@
+/* Component: techs
+ * Usage: @import '~Components/techs/style';
+ */
+@import '~Scss/params';
+@import '~Scss/mixins';
+
+@import '~Components/text-block/style';
+
+.techs {
+    &__text {
+        @include media-xs {
+            max-width: 473px;
+            margin: 0 auto;
+        }
+
+        @include media-sm {
+            width: 473px;
+            margin: 0 auto;
+            padding-bottom: 20px;
+        }
+    }
+
+    &__text .text-block__title {
+        max-width: 300px;
+        margin: 0 auto;
+
+        @include media-sm {
+            max-width: 275px;
+        }
+    }
+}

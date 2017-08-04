@@ -1,0 +1,28 @@
+//- @pugdoc
+    name: panelWelcomeBack
+    examples:
+            - |
+                include ~Components/panel-welcome/_back
+
+extends ~Components/panel/l-panel
+
+include ~Components/btn/m-btn
+
+block beforePanel
+    - elClasses.unshift('flip-panel__panel');
+
+block heading
+    | Авторизуйтесь
+
+block content
+    include ~Components/sign-in-form/c-sign-in-form
+
+block buttons
+    +btn({
+        text: 'На главную',
+        elClasses: ['btn_color_blue', 'panel__button', 'flip-panel__back-toggler']
+    })
+    +btn({
+        text: 'Войти',
+        elClasses: ['btn_color_blue', 'panel__button', 'form-sign-in-submit']
+    })

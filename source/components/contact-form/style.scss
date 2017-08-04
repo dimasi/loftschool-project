@@ -1,0 +1,15 @@
+/* Component: combo-slider
+ * Usage: @import '~Components/combo-slider/style';
+ */
+@import "~Scss/params";
+@import "~Scss/mixins";
+
+@import '~Components/textfield/style';
+@import '~Components/textarea/style';
+@import '~Components/form-message/style';
+
+.contact-form {
+    &__field {
+        margin-bottom: 20px;
+    }
+}

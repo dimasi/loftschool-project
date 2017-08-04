@@ -1,0 +1,30 @@
+//- @pugdoc
+    name: textfield
+    arguments:
+        - {array}    params.elClasses
+        - {string}   params.type
+        - {string}   params.name
+        - {string}   params.placeholder
+        - {string}   params.addonIconBefore
+    examples:
+        - |
+            include ~Components/textfield/m-textfield
+        - |
+            +textarea({
+                elClasses: [],
+                type: '',
+                name: '',
+                placeholder: ''
+                addonIconBefore: ''
+            })
+
+mixin textfield (params)
+    div(class=`textfield` + (params.elClasses ? ` ${params.elClasses.join(' ')}` : ``))
+        if params.label
+            label.textfield__label= params.label
+        if params.addonIconBefore
+            span.textfield__addon
+                i(class=`textfield__addon-icon ${params.addonIconBefore}`)
+        span.textfield__wrapper
+            input(class="textfield__control" type=(params.type ? `${params.type}` : `text`) placeholder=(params.placeholder ? `${params.placeholder}` : ``) name=params.name)
+            span.textfield__error-message

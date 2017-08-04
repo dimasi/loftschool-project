@@ -1,0 +1,114 @@
+extends ~Layouts/base/l-base
+
+include ~Components/menu/m-menu
+include ~Components/parallax/m-parallax
+include ~Components/ribbon/m-ribbon
+include ~Components/combo-slider/m-combo-slider
+include ~Components/btn-arrow/m-btn-arrow
+
+block title
+    | Works
+
+block head
+
+block content
+    - var stars = require('Images/icons/stars2.svg');
+
+    #page-top.page-works
+        .page-works__parallax
+            +parallax({
+                heading: 'Владимир Астахов',
+                text: 'Личный сайт веб разработчика',
+                anchorLink: '#section-slider'
+            })
+
+        .page-works__ribbon
+            +ribbon({
+                elClasses: ['ribbon_theme_dark']
+            })
+
+        .page-works__wrapper
+            h4.page-works__title
+                svg(class=`page-works__title-stars` viewBox=stars.viewBox): use(xlink:href=stars.symbol)
+                span.page-works__title-text Мои работы
+
+        #section-slider.page-works__slider
+            +comboSlider({
+                items: [
+                    {
+                        link: '#slider-1',
+                        image: require('Components/combo-slider/images/slider-1.jpg'),
+                        title: 'Lorem Ipsum',
+                        techs: [
+                            'Dolor',
+                            'Sit',
+                            'Amet'
+                        ]
+                    },
+                    {
+                        link: '#slider-2',
+                        image: require('Components/combo-slider/images/slider-2.jpg'),
+                        title: 'Consectetur Adipiscing',
+                        techs: [
+                            'elit',
+                            'sed',
+                            'do',
+                            'eiusmod'
+                        ]
+                    },
+                    {
+                        link: '#slider-3',
+                        image: require('Components/combo-slider/images/slider-3.jpg'),
+                        title: 'Tempor Incididunt',
+                        techs: [
+                            'ut',
+                            'labore',
+                            'et',
+                            'dolore'
+                        ]
+                    }
+                ]
+            })
+
+
+        .page-works__blur.blur
+            .blur__bg
+                img(class="blur__img" src=require('Components/blur/images/works.jpg') alt="")
+
+            section.page-works__quotes
+                include ~Components/quotes/c-quotes
+
+            section.page-works__contact
+                .blur__panel-wrapper
+                    .blur__panel
+                    include ~Components/panel-contact/c-panel-contact
+
+            .page-works__to-top
+                +btnArrow({
+                    elClasses: ['btn-arrow_direction_to-top anchor-link'],
+                    link: '#page-top'
+                })
+
+
+block menu
+    +menu({
+        items: [
+            {
+                text: 'Мои работы',
+                link: 'works.html',
+                active: true
+            },
+            {
+                text: 'Блог',
+                link: 'blog.html'
+            },
+            {
+                text: 'Обо мне',
+                link: 'about.html'
+            },
+            {
+                text: 'Авторизация',
+                link: '/'
+            }
+        ]
+    })

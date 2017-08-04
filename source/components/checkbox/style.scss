@@ -1,0 +1,45 @@
+/* Component: checkbox
+ * Usage: @import '~Components/checkbox/style';
+ */
+@import '~Scss/params';
+@import '~Scss/mixins';
+
+.checkbox {
+    display: flex;
+
+    &__control {
+        display: none;
+    }
+
+    &__pseudo-control {
+        width: 20px;
+        height: 20px;
+        position: relative;
+        background-color: #0548be;
+        border-radius: 3px;
+
+        &::before {
+            display: none;
+            margin-left: 1px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+        }
+    }
+
+    &__label {
+        margin-left: 10px;
+        position: relative;
+        top: -1px;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    &__control:checked + .checkbox__pseudo-control {
+        &::before {
+            display: block;
+        }
+    }
+}

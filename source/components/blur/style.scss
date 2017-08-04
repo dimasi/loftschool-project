@@ -1,0 +1,67 @@
+/* Component: blur
+ * Usage: @import '~Components/blur/style';
+ */
+@import '~Scss/params';
+@import '~Scss/mixins';
+
+.blur {
+    position: relative;
+    overflow: hidden;
+
+    &__bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__img {
+        width: 2067px;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-1033.5px);
+    }
+
+    &__panel-wrapper {
+        width: 380px;
+        height: 457px;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+    }
+
+    &__panel {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        background: url(~Components/blur/images/works.jpg) no-repeat;
+        filter: blur(2px);
+    }
+}
+
+// xs
+@include media-xs {
+    .blur {
+        &__img {
+            width: 2315px;
+            transform: translateX(-1107px);
+        }
+
+        &__panel-wrapper {
+            width: 300px;
+            height: 420px;
+        }
+    }
+}
+
+// sm
+@include media-sm {
+    .blur {
+        &__panel-wrapper {
+            width: 348px;
+            height: 461px;
+        }
+    }
+}

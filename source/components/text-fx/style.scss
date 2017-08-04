@@ -1,0 +1,17 @@
+/* Component: text-fx
+ * Usage: @import '~Components/text-fx/style';
+ */
+@import '~Scss/params';
+@import '~Scss/mixins';
+
+.text-fx_chars-one-by-one {
+    .text-fx__item {
+        opacity: 0;
+    }
+}
+
+.text-fx_chars-one-by-one.text-fx_active {
+    .text-fx__item {
+        opacity: 1;
+    }
+}

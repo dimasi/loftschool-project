@@ -1,0 +1,22 @@
+//- @pugdoc
+    name: textarea
+    arguments:
+        - {string}   params.elClasses
+        - {string}   params.name
+        - {string}   params.placeholder
+    examples:
+            - |
+                include ~Components/textarea/m-textarea
+            - |
+                +textarea({
+                    elClasses: [],
+                    name: '',
+                    placeholder: ''
+                })
+
+
+mixin textarea (params)
+    div(class=`textarea` + (params.elClasses ? ` ${params.elClasses.join(' ')}` : ``))
+        span.textarea__wrapper
+            textarea(class="textarea__control" name=params.name placeholder=(params.placeholder ? `${params.placeholder}` : ``))
+            span.textarea__error-message

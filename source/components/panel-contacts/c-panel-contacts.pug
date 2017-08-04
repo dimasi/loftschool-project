@@ -1,0 +1,32 @@
+//- @pugdoc
+    name: panelContacts
+    examples:
+            - |
+                include ~Components/panel-contacts/c-panel-contacts
+
+
+.panel-contacts
+    - let svgContactsSkype = require(`./../../images/icons/skype_n.svg`);
+    - let svgContactsEnvelope = require(`./../../images/icons/envelope_n.svg`);
+    - let svgContactsPhone = require(`./../../images/icons/phone_n.svg`);
+    - let svgContactsMap = require(`./../../images/icons/map_n.svg`);
+
+    h4.panel-contacts__heading Контакты
+
+    ul.panel-contacts__list
+        li.panel-contacts__item
+            a(class=`panel-contacts__link` href=`#skype_kdn`)
+                svg(class=`panel-contacts__icon` viewBox=`0 0 600 600`): use(xlink:href=svgContactsSkype.symbol)
+                span.panel-contacts__text skype_kdn
+        li.panel-contacts__item
+            a(class=`panel-contacts__link` href=`#+79312009324`)
+                svg(class=`panel-contacts__icon` viewBox=`0 0 45 45`): use(xlink:href=svgContactsPhone.symbol)
+                span.panel-contacts__text +7 931 200 93 24
+        li.panel-contacts__item
+            a(class=`panel-contacts__link` href=`#astahov@gmail.com`)
+                svg(class=`panel-contacts__icon` viewBox=`0 0 45 45`): use(xlink:href=svgContactsEnvelope.symbol)
+                span.panel-contacts__text astahov@gmail.com
+        li.panel-contacts__item
+            span.panel-contacts__link
+                svg(class=`panel-contacts__icon` viewBox=`0 0 45 45`): use(xlink:href=svgContactsMap.symbol)
+                span.panel-contacts__text г. Новосибирск, ул. Инская, д.4

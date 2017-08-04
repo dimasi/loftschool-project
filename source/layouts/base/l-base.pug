@@ -1,0 +1,33 @@
+include ~Components/social/m-social
+include ~Components/hamburger/m-hamburger
+
+doctype html
+html
+    head
+        meta(charset=`utf-8`)
+        meta(name=`viewport`, content=`initial-scale=1.0, width=device-width`)
+        link(href=`https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&amp;subset=cyrillic` rel=`stylesheet`)
+        title
+            block title
+        block head
+    body(style=`overflow: hidden`)
+        include ~Components/preloader/c-preloader
+
+        .layout-base
+            .layout-base__top-rail
+                .layout-base__social
+                    +social({})
+
+                .layout-base__menu
+                    +hamburger({
+                        elClasses: ['menu-toggler']
+                    })
+                    block menu
+
+            .layout-base__content
+                block content
+
+            .layout-base__footer
+                include ~Components/footer/c-footer
+
+        block bottom

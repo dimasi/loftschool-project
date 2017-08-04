@@ -1,0 +1,29 @@
+//- @pugdoc
+    name: radioGroup
+    arguments:
+        - {string}   params.elClasses
+        - {string}   params.title
+        - {array}    params.radios
+    examples:
+            - |
+                include ~Components/radio-group/m-radio-group
+            - |
+                +radioGroup({
+                    elClasses: '',
+                    title: '',
+                    radios: [
+                        {...},
+                        {...}
+                    ]
+                })
+
+include ~Components/radio/m-radio
+
+mixin radioGroup (params)
+    div(class=`radio-group` + (params.elClasses ? ` ${params.elClasses.join(' ')}` : ``))
+        span.radio-group__title= params.title
+        .radio-group__wrapper
+            each radio in params.radios
+                - if (!radio.elClasses) { radio.elClasses = ['radio-group__radio'] }
+                - else {radio.elClasses.push('radio-group__radio')}
+                +radio(radio)

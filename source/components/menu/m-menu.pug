@@ -1,0 +1,23 @@
+//- @pugdoc
+    name: menu
+    description: Основное меню сайта
+    arguments:
+        - {array}    params.elClasses
+        - {array}    params.items
+    examples:
+            - |
+                include ~Components/menu/m-menu
+            - |
+                +menu({
+                    elClasses: [],
+                    items: []
+                })
+
+include ~Components/nav/m-nav
+
+mixin menu (params)
+    div(class=`menu` + (params.elClasses ? ` ${params.elClasses.join(' ')}` : ``))
+        +nav({
+            elClasses: ['menu__nav'],
+            items: params.items
+        })

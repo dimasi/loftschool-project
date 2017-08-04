@@ -1,0 +1,36 @@
+//- @pugdoc
+    name: btn
+    arguments:
+        - {array}    params.elClasses     - Дополнительные классы для кнопки
+        - {string}   params.text          - Текст кнопки
+        - {string}   params.type          - Тип кнопки (default: button)
+        - {boolean}  params.asLink        - Кнопка как ссылка
+        - {string}   params.href          - href для ссылки
+        - {string}   params.iconBefore    - Класс иконки перед текстом
+    examples:
+        - |
+            include ~Components/btn/m-btn
+        - |
+            +btn({
+                elClasses: [],
+                text: '',
+                type: '',
+                asLink: true,
+                link: '#'
+                iconBefore: ''
+            })
+
+
+mixin btn (params)
+    if params.asLink
+        a(class=`btn` + (params.elClasses ? ` ${params.elClasses.join(' ')}` : ``) href=(params.href ? `${params.href}` : `#`))
+            span.btn__wrapper
+                if params.iconBefore
+                    span(class=`btn__icon-before ${params.iconBefore}`)
+                span(class="btn__text")= params.text
+    else
+        button(class=`btn` + (params.elClasses ? ` ${params.elClasses.join(' ')}` : ``) type=(params.type ? `${params.type}` : `button`))
+            span.btn__wrapper
+                if params.iconBefore
+                    span(class=`btn__icon-before ${params.iconBefore}`)
+                span(class="btn__text")= params.text

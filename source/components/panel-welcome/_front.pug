@@ -1,0 +1,48 @@
+//- @pugdoc
+    name: panelWelcomeFront
+    examples:
+            - |
+                include ~Components/panel-welcome/_front
+
+extends ~Components/panel/l-panel
+
+include ~Components/avatar/m-avatar
+include ~Components/social/m-social
+include ~Components/btn/m-btn
+
+block beforePanel
+    - structure = ['content', 'buttons'];
+    - elClasses.unshift('flip-panel__panel')
+
+block content
+    .panel-welcome__user
+        .panel-welcome__user-avatar
+            +avatar({
+                src: require('Components/avatar/images/avatar.jpg')
+            })
+        span.panel-welcome__user-name Владимир Астахов
+        span.panel-welcome__lead-text Личный сайт веб разработчика
+        .panel-welcome__social
+            +social({
+                elClasses: ['social_color_blue']
+            })
+
+block buttons
+    +btn({
+        text: 'Мои работы',
+        elClasses: ['btn_color_blue', 'panel__button'],
+        asLink: true,
+        href: '/works.html'
+    })
+    +btn({
+        text: 'Обо мне',
+        elClasses: ['btn_color_blue', 'panel__button'],
+        asLink: true,
+        href: '/about.html'
+    })
+    +btn({
+        text: 'Блог',
+        elClasses: ['btn_color_blue', 'panel__button'],
+        asLink: true,
+        href: '/blog.html'
+    })

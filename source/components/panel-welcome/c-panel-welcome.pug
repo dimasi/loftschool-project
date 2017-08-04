@@ -1,0 +1,16 @@
+//- @pugdoc
+    name: panelWelcome
+    examples:
+            - |
+                include ~Components/panel-welcome/c-panel-welcome
+
+extends ~Components/flip-panel/l-flip-panel
+
+block beforeFlipPanel
+    - elClasses.push('panel-welcome');
+
+block front
+    include ./_front
+
+block back
+    include ./_back

@@ -1,0 +1,241 @@
+/* Component: textfield
+ * Usage: @import '~Components/textfield/style';
+ */
+@import '~Scss/params';
+@import '~Scss/mixins';
+
+.textfield {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    &__wrapper {
+        position: relative;
+        flex-grow: 1;
+        flex-shrink: 0;
+    }
+
+    &__addon {
+        display: flex;
+        flex-grow: 0;
+        flex-shrink: 0;
+        width: 45px;
+        height: 45px;
+        background-color: #f0efe9;
+    }
+
+    &__addon-icon {
+        margin: auto;
+        color: #c4cbcd;
+        font-size: 18px;
+    }
+
+    &__control {
+        width: 100%;
+        height: 45px;
+        line-height: 45px;
+        padding: 0 15px;
+        border: 0 none;
+        border-radius: 0;
+        color: #373e42;
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+
+        &:focus {
+            outline: 0 none;
+        }
+    }
+
+    &__measure {
+        padding-left: 1em;
+    }
+
+    &__label {
+        flex-grow: 1;
+        flex-shrink: 0;
+        padding-right: 10px;
+        font-weight: 400;
+    }
+
+    ::-webkit-input-placeholder {
+        color: rgba(55, 62, 66, .5);
+    }
+
+    ::-moz-placeholder {
+        color: rgba(55, 62, 66, .5);
+    }
+
+    :-moz-placeholder {
+        color: rgba(55, 62, 66, .5);
+    }
+
+    :-ms-input-placeholder {
+        color: rgba(55, 62, 66, .5);
+    }
+}
+
+// Error state
+.textfield.textfield_state_error {
+    .textfield__addon-icon {
+        color: $color-error;
+    }
+
+    .textfield__control {
+        outline: 1px solid $color-error;
+    }
+
+    .textfield__error-message {
+        padding: 10px 20px;
+        margin-top: 13px;
+        position: absolute;
+        z-index: 100;
+        top: 100%;
+        left: 0;
+        border-radius: 4px;
+        background-color: $color-error;
+        color: #fff;
+        font-weight: 500;
+
+        &::before,
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+        }
+
+        &::before {
+            width: 10px;
+            height: 10px;
+            top: -4px;
+            right: 50%;
+            margin-right: -5px;
+            background-color: $color-error;
+            transform: rotate(-45deg);
+        }
+
+        &::after {
+            content: "";
+            width: 20px;
+            height: 13px;
+            top: 0;
+            right: 50%;
+            margin-right: -10px;
+            background-color: $color-error;
+        }
+    }
+}
+
+// Correct state
+.textfield.textfield_state_correct {
+    .textfield__addon-icon {
+        color: #0548be;
+    }
+}
+
+// Theme
+.textfield_theme_transparent {
+    .textfield__control {
+        background-color: rgba(255, 255, 255, 0.06);
+        box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.6);
+        color: #fff;
+    }
+
+    ::-webkit-input-placeholder {
+        color: rgba(255, 255, 255, .5);
+    }
+
+    ::-moz-placeholder {
+        color: rgba(255, 255, 255, .5);
+    }
+
+    :-moz-placeholder {
+        color: rgba(255, 255, 255, .5);
+    }
+
+    :-ms-input-placeholder {
+        color: rgba(255, 255, 255, .5);
+    }
+}
+
+// Color
+.textfield_color {
+    &_white {
+        .textfield__control {
+            color: #fff;
+        }
+
+        ::-webkit-input-placeholder {
+            color: rgba(255, 255, 255, .5);
+        }
+
+        ::-moz-placeholder {
+            color: rgba(255, 255, 255, .5);
+        }
+
+        :-moz-placeholder {
+            color: rgba(255, 255, 255, .5);
+        }
+
+        :-ms-input-placeholder {
+            color: rgba(255, 255, 255, .5);
+        }
+    }
+}
+
+// Bg color
+.textfield_bg_white {
+    .textfield__control {
+        background-color: #fff;
+    }
+}
+
+// Size
+.textfield_size {
+    &_small {
+        .textfield__control {
+            height: 32px;
+            line-height: 32px;
+            width: 46px;
+            font-size: 14px;
+            padding: 0 10px;
+            text-align: center;
+        }
+
+        .textfield__control_corners_rounded {
+            border-radius: 4px;
+        }
+    }
+}
+
+// Rounded corners
+.textfield__control_corners_rounded {
+    border-radius: 5px;
+}
+
+// @media
+// xs
+@include media-xs {
+    .textfield {
+        &__control {
+            height: 40px;
+            padding: 0 20px;
+            font-size: 14px;
+            line-height: 40px;
+        }
+
+        &__addon {
+            width: 40px;
+            height: 40px;
+        }
+
+        &__label {
+            width: 50%;
+        }
+    }
+
+    .textfield_size_small {
+        .textfield__control {
+            padding: 0 10px;
+        }
+    }
+}

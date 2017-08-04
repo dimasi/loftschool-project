@@ -1,0 +1,48 @@
+/* Component: indicator-circle
+ * Usage: @import '~Components/indicator-circle/style';
+ */
+@import '~Scss/params';
+@import '~Scss/mixins';
+
+@each $val in (85, 60, 40) {
+    .indicator_opacity_#{$val} {
+        .indicator__progress {
+            opacity: $val / 100;
+        }
+    }
+}
+
+.indicator_type_circle {
+    width: 110px;
+    height: 110px;
+    margin: 0;
+    position: relative;
+
+    .indicator {
+        &__area {
+            fill: none;
+            stroke-width: 20;
+        }
+
+        &__progress {
+            stroke: #1056d1;
+            stroke-dasharray: .0010 282.6;
+            transition: stroke-dasharray 700ms;
+        }
+
+        &__bar {
+            stroke: #dfdcd5;
+        }
+
+        &__title {
+            width: 64px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 12.82px;
+            line-height: 15px;
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,54 @@
+/* Component: combo-slider
+ * Usage: @import '~Components/combo-slider/style';
+ */
+@import '~Scss/params';
+@import '~Scss/mixins';
+
+.copyright {
+    padding-top: 8px;
+    font-size: 0;
+    text-align: center;
+
+    @include media-xs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    &__name,
+    &__company,
+    &__year {
+        font-size: 16px;
+        font-weight: 300;
+    }
+
+    &__name {
+        @include media-xs {
+            width: 100%;
+        }
+    }
+
+    &__company {
+        &::before,
+        &::after {
+            content: "|";
+            display: inline-block;
+            padding: 0 4px;
+        }
+
+        @include media-xs {
+            &::before {
+                display: none;
+            }
+        }
+    }
+}
+
+// Color
+.copyright_color {
+    &_white {
+        color: #fff;
+    }
+}

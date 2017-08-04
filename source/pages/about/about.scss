@@ -1,0 +1,141 @@
+@import '~Scss/params';
+@import '~Scss/mixins';
+
+@import '~Scss/base';
+@import '~Layouts/base/style';
+
+@import '~Components/menu/style';
+@import '~Components/background/style';
+@import '~Components/parallax/style';
+@import '~Components/ribbon/style';
+@import '~Components/about/style';
+@import '~Components/techs/style';
+@import '~Components/indicators-grid/style';
+@import '~Components/panel-contacts/style';
+@import '~Components/map/style';
+
+.page-about {
+    position: relative;
+    overflow: hidden;
+
+    &__parallax {
+        height: 605px;
+
+        @include media-xs {
+            height: calc(100vh - 91px);
+        }
+
+        @include media-sm {
+            height: 505px;
+        }
+    }
+
+    &__body {
+        display: flex;
+        padding: 20px 0;
+        position: relative;
+        z-index: 3;
+
+        @include media-xs {
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px 0 0;
+        }
+
+        @include media-sm {
+            flex-direction: column;
+            justify-content: center;
+            padding-top: 45px;
+            padding-bottom: 0;
+        }
+    }
+
+    &__info,
+    &__techs {
+        width: 50%;
+    }
+
+    &__info {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+        padding-top: 5px;
+
+        @include media-xs {
+            width: 100%;
+            padding: 5px 10px 20px;
+        }
+
+        @include media-sm {
+            width: 100%;
+            padding-bottom: 60px;
+        }
+    }
+
+    &__techs {
+        padding: 0 10px 30px 50px;
+
+        @include media-xs {
+            width: 100%;
+            background-color: #f4f5f0;
+            padding: 15px 10px;
+        }
+
+        @include media-sm {
+            width: 100%;
+            background-color: #f4f5f0;
+            padding: 45px 10px 60px;
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        position: relative;
+        z-index: 10;
+
+        @include media-xs {
+            height: auto;
+            flex-direction: column;
+            padding-bottom: 0;
+            margin-bottom: -15px;
+        }
+    }
+
+    &__contacts {
+        width: 580px;
+        margin-top: -185px;
+        padding: 25px 20px 0;
+        background-color: rgba(255, 255, 255, .7);
+        position: relative;
+        z-index: 2;
+
+        @include media-xs {
+            position: static;
+            background-color: #fff;
+            width: 100%;
+            padding: 30px 0 15px;
+            margin-top: 0;
+        }
+
+        @include media-sm-portrait {
+            width: 348px;
+            padding-bottom: 20px;
+        }
+    }
+
+    &__map {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        @include media-xs {
+            height: 100vh;
+            position: static;
+        }
+    }
+}

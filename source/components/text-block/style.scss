@@ -1,0 +1,27 @@
+/* Component: text-block
+ * Usage: @import '~Components/text-block/style';
+ */
+@import '~Scss/params';
+@import '~Scss/mixins';
+
+.text-block {
+    &__title {
+        @include title-bordered;
+    }
+
+    &__text {
+        margin-bottom: 15px;
+        font-size: 16px;
+        line-height: 24px;
+
+        @include media-xs {
+            margin-bottom: 10px;
+            font-size: 14px;
+            line-height: 24px;
+        }
+
+        @include media-sm {
+            margin-bottom: 10px;
+        }
+    }
+}

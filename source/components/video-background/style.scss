@@ -1,0 +1,14 @@
+/* Component: video-background
+ * Usage: @import '~Components/video-background/style';
+ */
+@import '~Scss/params';
+@import '~Scss/mixins';
+
+.video-background__video {
+    @include media-sm {
+        width: 110%;
+        position: relative;
+        top: -5%;
+        left: -5%;
+    }
+}

@@ -1,0 +1,49 @@
+//- @pugdoc
+    name: combo-slider
+    description: Слайдер работ
+    arguments:
+        - {array} params.elClasses
+        - {array} params.items
+    examples:
+            - |
+                include ~Components/combo-slider/m-combo-slider
+            - |
+                +comboSlider({
+                    elClasses: [],
+                    items: []
+                })
+
+
+include ~Components/combo-slider/_item
+include ~Components/btn/m-btn
+
+mixin comboSlider (params)
+    div(class=`combo-slider` + (params.elClasses ? ` ${params.elClasses.join(' ')}` : ``))
+        ul.slider-data
+            each item in params.items
+                +comboSliderItem(item)
+
+        .combo-slider__main-slider.carousel
+
+        .combo-slider__slide-info
+            h4.combo-slider__slide-title Сайт школы онлайн образования
+            ul.combo-slider__work-techs
+                li.combo-slider__work-tech HTML
+                li.combo-slider__work-tech CSS
+                li.combo-slider__work-tech JAVASCRIPT
+            +btn({
+                elClasses: ['btn_color_blue'],
+                text: 'Посмотреть сайт',
+                asLink: true,
+                link: '#',
+                iconBefore: 'fa fa-link'
+            })
+
+        .combo-slider__nav
+            button(type="button" class="combo-slider__nav-btn combo-slider__nav-btn_slider_prev")
+                span.combo-slider__nav-icon.icomoon-icon-portf-arrow-down
+                span.combo-slider__nav-slider.carousel
+
+            button(type="button" class="combo-slider__nav-btn combo-slider__nav-btn_slider_next")
+                span.combo-slider__nav-icon.icomoon-icon-portf-arrow-up
+                span.combo-slider__nav-slider.carousel

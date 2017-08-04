@@ -1,0 +1,65 @@
+/* Component: article
+ * Usage: @import '~Components/article/style';
+ */
+@import '~Scss/params';
+@import '~Scss/mixins';
+
+.article {
+    overflow: hidden;
+
+    &__title {
+        margin: 15px 0;
+        font-size: 35px;
+        font-family: 'Sansus Webissimo', sans-serif;
+        font-weight: 400;
+        line-height: 41px;
+
+        @include media-xs {
+            font-size: 21px;
+            line-height: 28px;
+        }
+
+        @include media-sm {
+            font-size: 30px;
+            line-height: 36px;
+            margin: 0 0 15px;
+        }
+    }
+
+    &__date {
+        color: rgba(8, 60, 150, .7);
+        font-size: 16px;
+
+        @include media-xs {
+            font-size: 14px;
+        }
+
+        @include media-sm {
+            font-size: 14px;
+        }
+    }
+
+    &__content {
+        @include media-xs {
+            margin-top: 10px;
+        }
+
+        @include media-sm {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    }
+
+    &__text {
+        margin-bottom: 10px;
+    }
+
+    &__img_width_100 {
+        width: 100%;
+    }
+
+    &__img-container {
+        width: 100%;
+        overflow: auto;
+    }
+}

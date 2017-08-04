@@ -1,0 +1,31 @@
+/* Component: sign-in-form
+ * Usage: @import '~Components/sign-in-form/style';
+ */
+@import '~Scss/params';
+@import '~Scss/mixins';
+
+@import "~Components/textfield/style.scss";
+@import "~Components/checkbox/style.scss";
+@import "~Components/radio-group/style.scss";
+
+.sign-in-form {
+    display: flex;
+    flex-direction: column;
+
+    &__login {
+        margin-bottom: 17px;
+    }
+
+    &__pwd {
+        margin-bottom: 25px;
+    }
+
+    &__antibot-checkbox,
+    &__antibot-radio-group {
+        align-self: center;
+    }
+
+    &__antibot-checkbox {
+        margin-bottom: 15px;
+    }
+}

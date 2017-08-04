@@ -1,0 +1,61 @@
+/* Component: panel-contact
+ * Usage: @import '~Components/panel-contact/style';
+ */
+@import '~Scss/params';
+@import '~Scss/mixins';
+
+@import '~Components/panel/style';
+@import '~Components/btn/style';
+@import '~Components/contact-form/style';
+
+.panel-contact {
+    width: 380px;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.03);
+
+    @include media-xs {
+        width: 300px;
+    }
+
+    @include media-sm {
+        width: 348px;
+    }
+
+    &__body {
+        padding: 35px 20px 0;
+    }
+
+    &__heading {
+        position: relative;
+        color: #fff;
+        font-family: 'Sansus Webissimo', sans-serif;
+        font-size: 35px;
+        line-height: 34px;
+        text-align: center;
+        text-transform: uppercase;
+
+        @include media-xs {
+            font-size: 26px;
+            line-height: 22px;
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            width: 89px;
+            height: 3px;
+            margin: 28px auto 30px;
+            background-color: #fff;
+
+            @include media-xs {
+                margin: 17px auto 20px;
+            }
+        }
+    }
+
+    .panel__button,
+    .panel__button.btn {
+        width: 50%;
+        border-left: 0 none;
+    }
+}

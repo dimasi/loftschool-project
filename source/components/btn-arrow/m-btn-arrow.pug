@@ -1,0 +1,20 @@
+//- @pugdoc
+    name: btn-arrow
+    arguments:
+        - {string}   params.elClasses     - Дополнительные классы для кнопки
+        - {string}   params.link          - Якорная ссылка
+    examples:
+        - |
+            include ~Components/btn-arrow/m-btn-arrow
+        - |
+            +btnArrow({
+                elClasses: [],
+                link: ''
+            })
+
+
+mixin btnArrow (params)
+    - var arrow = require('Images/icons/arrow_down.svg');
+
+    a(href=params.link class=`btn-arrow` + (params.elClasses ? ` ${params.elClasses.join(' ')}` : ``))
+        svg(class=`btn-arrow__icon` viewBox=arrow.viewBox): use(xlink:href=arrow.symbol)

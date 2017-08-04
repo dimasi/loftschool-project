@@ -1,122 +1,50 @@
-extends ./../layout
+extends ~Layouts/base/l-base
 
-include ./../../mixins/menu
-include ./../../mixins/social
-include ./../../mixins/nav
+include ~Components/menu/m-menu
+include ~Components/parallax/m-parallax
+include ~Components/ribbon/m-ribbon
 
 block title
-    | Blog page
-    
+    | Blog
+
+block head
+
 block content
-    //- SVG
-    - let svgArrowDown = require(`./../../images/icons/portf_arrow_down.svg`);
-    - let svgRibbonLeft = require(`./../../images/icons/about_bg_left.svg`);
-    - let svgRibbonRight = require(`./../../images/icons/about_bg_right.svg`);
-    - let svgStars = require(`./../../images/icons/stars1.svg`);
+    .page-blog
+        .page-blog__parallax
+            +parallax({
+                elClasses: ['parallax_type_inner-pages'],
+                heading: 'Блог',
+                text: 'Статьи, которые я написал',
+                anchorLink: '#page-body'
+            })
 
-    .page__content-wrapper.page-blog
-        .page-header.page-blog__header
-            video(class=`page-header__bg-video` width=`400` height=`300` autoplay loop)
-                source(src=`${require('./../../video/media-background.mp4')}`)
+        .page-blog__ribbon
+            +ribbon({})
 
-            img(class=`page-header__bg page-blog__bg` src=require(`./../../images/night_no_bg.png`))
+        #page-body.page-blog__body
+            include ~Components/blog/c-blog
 
-            .page-header__bg-user.page-blog__bg-user
-                svg(class=`page-header__bg-user-img` viewBox=svgStars.viewBox): use(xlink:href=svgStars.symbol)
 
-            .page-header__user.page-blog__user.user
-                .user__avatar.avatar
-                    img(class=`avatar__img` src=require(`./../../images/user-avatar.jpg`))
-
-                h1.user__title.heading.heading_font_2.heading_transform_uppercase.heading_color_white.heading_xs-size_35.heading_size_63 Блог
-
-                p.user__text.text.text_color_white Статьи, которые я написал
-
-                a(href=`#section-blog` class=`page-header__anchor-link anchor-link btn-arrow`)
-                    svg(class=`btn-arrow__icon` viewBox=svgArrowDown.viewBox): use(xlink:href=svgArrowDown.symbol)
-
-        .ribbon.page-blog__ribbon
-            .ribbon__col.ribbon__col_left
-                svg(class=`ribbon__triangle ribbon__triangle_side_left` viewBox=svgRibbonLeft.viewBox): use(xlink:href=svgRibbonLeft.symbol)
-            .ribbon__col.ribbon__col_right
-                svg(class=`ribbon__triangle ribbon__triangle_side_right` viewBox=svgRibbonRight.viewBox): use(xlink:href=svgRibbonRight.symbol)
-
-        #section-blog.blog.page-blog__content
-            .blog__wrapper
-                .blog__sidebar
-                    +nav({
-                        className: 'blog__nav stick-block',
-                        items: [
-                            { 
-                                text: 'Самое важное в SASS', 
-                                link: '#blog_1',
-                                linkClass: 'anchor-link'
-                            },
-                            { 
-                                text: 'Приёмы в вёрстке, без которых не обходится ни один сайт', 
-                                link: '#blog_2',
-                                linkClass: 'anchor-link'
-                            },
-                            { 
-                                text: 'Самый необходимый набор Gulp плагинов', 
-                                link: '#blog_3',
-                                linkClass: 'anchor-link'
-                            },
-                            { 
-                                text: 'Почему я выбрал Jade', 
-                                link: '#blog_4',
-                                linkClass: 'anchor-link'
-                            }
-                        ]
-                    })
-                .blog__mainbody
-                    #blog_1.article
-                        h3.article__title Самое важное в SASS
-                        span.article__date 22 ноября 2016
-                        .article__content
-                            p.article__text.text Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.
-                            p.article__text.text Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
-                            img(src=require(`./../../images/code-snippet.png`))
-
-                    #blog_2.article
-                        h3.article__title Приёмы в вёрстке, без которых не обходится ни один сайт
-                        span.article__date 13 ноября 2016
-                        .article__content
-                            p.article__text.text Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.
-                            p.article__text.text Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
-
-                    #blog_3.article
-                        h3.article__title Самый необходимый набор Gulp плагинов
-                        span.article__date 1 сентября 2016
-                        .article__content
-                            p.article__text.text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at sapien eget purus dignissim cursus. Mauris dignissim imperdiet elementum. Curabitur condimentum eget ex ac aliquam. Aliquam in vehicula augue, sit amet ultrices nulla. Curabitur mollis placerat sem, quis tempor purus congue non. Aliquam pulvinar lorem vitae risus scelerisque, ac maximus nulla facilisis. Vivamus finibus turpis in sem pretium imperdiet nec porttitor nisl. Phasellus rhoncus neque in nisl consequat egestas.
-                            p.article__text.text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut neque diam, molestie non tempor nec, molestie quis augue. Duis vitae eros pharetra, pulvinar dolor id, ultricies dolor. Nullam luctus commodo eros, et vehicula leo semper id. Etiam fermentum turpis a vestibulum dignissim. Pellentesque pharetra, ante nec luctus luctus, justo leo cursus ligula, at malesuada nunc arcu a dolor. Mauris volutpat quam et est semper rhoncus. Nulla et ullamcorper lectus, ac ornare magna. Vestibulum sit amet ultricies urna, non venenatis dui. Aliquam tristique velit non tincidunt luctus. Suspendisse et urna eu leo cursus mollis ac sed dui. Cras nec mi tempor, lobortis turpis vel, eleifend purus. Donec a sem eget turpis commodo egestas sit amet ac dui.
-
-                    #blog_4.article
-                        h3.article__title Почему я выбрал Jade
-                        span.article__date 1 сентября 2016
-                        .article__content
-                            p.article__text.text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut neque diam, molestie non tempor nec, molestie quis augue. Duis vitae eros pharetra, pulvinar dolor id, ultricies dolor. Nullam luctus commodo eros, et vehicula leo semper id. Etiam fermentum turpis a vestibulum dignissim. Pellentesque pharetra, ante nec luctus luctus, justo leo cursus ligula, at malesuada nunc arcu a dolor. Mauris volutpat quam et est semper rhoncus. Nulla et ullamcorper lectus, ac ornare magna. Vestibulum sit amet ultricies urna, non venenatis dui. Aliquam tristique velit non tincidunt luctus. Suspendisse et urna eu leo cursus mollis ac sed dui. Cras nec mi tempor, lobortis turpis vel, eleifend purus. Donec a sem eget turpis commodo egestas sit amet ac dui.
-                            img(class=`img img_width_100` src=`http://lorempixel.com/1920/1080/abstract/`)
-
-block bottom
-    //- Menu
-    +menu([
-        { 
-            text: 'Мои работы', 
-            link: 'portfolio.html'
-        },
-        { 
-            text: 'Блог', 
-            link: 'blog.html',
-            active: true
-        },
-        { 
-            text: 'Обо мне', 
-            link: 'about.html'
-        },
-        { 
-            text: 'Авторизация', 
-            link: '/' 
-        }
-    ])
+block menu
+    +menu({
+        items: [
+            {
+                text: 'Мои работы',
+                link: 'works.html'
+            },
+            {
+                text: 'Блог',
+                link: 'blog.html',
+                active: true
+            },
+            {
+                text: 'Обо мне',
+                link: 'about.html'
+            },
+            {
+                text: 'Авторизация',
+                link: '/'
+            }
+        ]
+    })

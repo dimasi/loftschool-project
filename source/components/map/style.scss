@@ -1,0 +1,10 @@
+/* Component: map
+ * Usage: @import '~Components/map/style';
+ */
+@import '~Scss/params';
+@import '~Scss/mixins';
+
+.map {
+    height: 100%;
+    width: 100%;
+}

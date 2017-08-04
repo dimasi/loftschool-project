@@ -1,0 +1,140 @@
+/* Component: textarea
+ * Usage: @import '~Components/textarea/style';
+ */
+@import '~Scss/params';
+@import '~Scss/mixins';
+
+.textarea {
+    display: block;
+
+    &__wrapper {
+        display: block;
+        position: relative;
+    }
+
+    &__control {
+        display: block;
+        width: 100%;
+        padding: 10px 15px;
+        height: 130px;
+        resize: none;
+        border: 0 none;
+        color: rgba(55, 62, 66, .5);
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+    }
+
+    ::-webkit-input-placeholder {
+        color: rgba(55, 62, 66, .5);
+    }
+
+    ::-moz-placeholder {
+        color: rgba(55, 62, 66, .5);
+    }
+
+    :-moz-placeholder {
+        color: rgba(55, 62, 66, .5);
+    }
+
+    :-ms-input-placeholder {
+        color: rgba(55, 62, 66, .5);
+    }
+}
+
+// Error state
+.textarea.textarea_state_error {
+    .textarea__control {
+        outline: 1px solid $color-error;
+    }
+
+    .textarea__error-message {
+        padding: 10px 20px;
+        margin-top: 13px;
+        position: absolute;
+        z-index: 100;
+        top: 100%;
+        left: 0;
+        border-radius: 4px;
+        background-color: $color-error;
+        color: #fff;
+        font-weight: 500;
+
+        &::before,
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+        }
+
+        &::before {
+            width: 10px;
+            height: 10px;
+            top: -4px;
+            right: 50%;
+            margin-right: -5px;
+            background-color: $color-error;
+            transform: rotate(-45deg);
+        }
+
+        &::after {
+            content: "";
+            width: 20px;
+            height: 13px;
+            top: 0;
+            right: 50%;
+            margin-right: -10px;
+            background-color: $color-error;
+        }
+    }
+}
+
+// Theme
+.textarea_theme_transparent {
+    .textarea__control {
+        background-color: rgba(255, 255, 255, 0.06);
+        box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.6);
+        color: #fff;
+    }
+
+    ::-webkit-input-placeholder {
+        color: rgba(255, 255, 255, .5);
+    }
+
+    ::-moz-placeholder {
+        color: rgba(255, 255, 255, .5);
+    }
+
+    :-moz-placeholder {
+        color: rgba(255, 255, 255, .5);
+    }
+
+    :-ms-input-placeholder {
+        color: rgba(255, 255, 255, .5);
+    }
+}
+
+// Color
+.textarea_color {
+    &_white {
+        .textarea__control {
+            color: #fff;
+        }
+    }
+}
+
+// Rounded corners
+.textarea__control_corners_rounded {
+    border-radius: 5px;
+}
+
+// @media
+// xs
+@include media-xs {
+    .textarea {
+        &__control {
+            height: 138px;
+            font-size: 14px;
+            padding: 15px 20px;
+        }
+    }
+}

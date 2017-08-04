@@ -1,0 +1,52 @@
+//- @pugdoc
+    name: panel
+    description: Базовая панель, состоящая из заголовка, тела самой панели и кнопок.
+    В блоке before могут быть переопределены:
+        - structure         - из каких компонентов будет состоять структура панели
+        - elClasses         - дополнительные классы для блока панели
+        - headingClasses    - дополнительные классы для блока заголовка панели
+        - contentClasses    - дополнительные классы для блока контента панели
+        - buttonsClasses    - дополнительные классы для блока кнопок панели
+    examples:
+        - |
+            extends ~Modules/panel.pug
+        - |
+            block before
+                - structure = ['heading', 'content'];
+                - elClasses.push('panel_class-mod');
+
+            block heading
+                | h4 Panel heading
+
+            block content
+                | p Panel content
+        - |
+            extends ~/panel.pug
+            block heading
+                | h4 Panel heading
+
+            block content
+                | p Panel content
+
+            block buttons
+                | button My button
+
+
+- var structure = ['heading', 'content', 'buttons'];
+- var elClasses = ['panel'];
+- var headingClasses = ['panel__heading'];
+- var contentClasses = ['panel__content'];
+- var buttonsClasses = ['panel__buttons'];
+block beforePanel
+
+
+div(class=elClasses.join(' '))
+    if structure.indexOf('heading') != -1
+        h4(class=headingClasses.join(' '))
+            block heading
+    if structure.indexOf('content') != -1
+        div(class=contentClasses.join(' '))
+            block content
+    if structure.indexOf('buttons') != -1
+        div(class=buttonsClasses.join(' '))
+            block buttons

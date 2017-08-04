@@ -1,0 +1,18 @@
+//- @pugdoc
+    name: about
+    examples:
+            - |
+                include ~Components/about/c-about
+
+
+- var star = require('Images/icons/stars2.svg');
+
+.about
+    h1.about__heading
+        svg(class="about__heading-bg-img" viewBox=star.viewBox): use(xlink:href=star.symbol)
+        | Обо мне
+
+    img(class="about__img" src=require('./images/about.jpg') alt="")
+
+    .about__body
+        include ~Components/text-block/c-text-block-about

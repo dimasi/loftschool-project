@@ -1,0 +1,47 @@
+//- @pugdoc
+    name: parallax
+    arguments:
+        - {array} params.elClasses
+        - {array} params.heading
+        - {array} params.text
+    examples:
+            - |
+                include ~Components/parallax/m-parallax
+            - |
+                +parallax({
+                    elClasses: [],
+                    heading: '',
+                    text: ''
+                })
+
+include ~Components/video-background/m-video-background
+include ~Components/avatar/m-avatar
+include ~Components/btn-arrow/m-btn-arrow
+
+mixin parallax (params)
+    - var svgStars = require('Images/icons/stars1.svg');
+
+    div(class=`parallax` + (params.elClasses ? ` ${params.elClasses.join(' ')}` : ``))
+        +videoBackground({
+            elClasses: ['parallax__sky']
+        })
+
+        img(class="parallax__mountains" src=require('Components/background/images/mountains.png') alt='')
+
+        svg(class=`parallax__stars` viewBox=svgStars.viewBox): use(xlink:href=svgStars.symbol)
+
+        .parallax__panel
+            .parallax__avatar
+                +avatar({
+                    src: require('Components/avatar/images/avatar.jpg')
+                })
+
+            span.parallax__heading= params.heading
+
+            span.parallax__text= params.text
+
+            if params.anchorLink
+                +btnArrow({
+                    elClasses: ['parallax__anchor-link anchor-link'],
+                    link: params.anchorLink
+                })

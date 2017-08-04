@@ -1,7 +1,7 @@
 const path = require(`path`);
 
 const modernizrOptions = {
-    options: [
+    'options': [
         `setClasses`
     ],
     'feature-detects': [

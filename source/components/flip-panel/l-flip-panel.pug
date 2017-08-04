@@ -1,0 +1,32 @@
+//- @pugdoc
+    name: flipPanel
+    arguments:
+        - {array} elClasses
+        - {array} frontContentClasses
+        - {array} backContentClasses
+    examples:
+        - |
+            include ~Components/flip-panel/l-flip-panel
+        - |
+            before
+                - elClasses.push();
+                - frontContentClasses.push();
+                - backContentClasses.push();
+
+            front
+
+            back
+
+
+- var elClasses = ['flip-panel'];
+- var frontContentClasses = ['flip-panel__content'];
+- var backContentClasses = ['flip-panel__content'];
+block beforeFlipPanel
+
+div(class=elClasses)
+    .flip-panel__side.flip-panel__front
+        div(class=frontContentClasses)
+            block front
+    .flip-panel__side.flip-panel__back
+        div(class=backContentClasses)
+            block back

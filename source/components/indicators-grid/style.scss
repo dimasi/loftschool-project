@@ -1,0 +1,76 @@
+/* Component: indicators-grid
+ * Usage: @import '~Components/indicators-grid/style';
+ */
+@import '~Scss/params';
+@import '~Scss/mixins';
+
+@import '~Components/indicator/style';
+
+.indicators-grid {
+    display: flex;
+    flex-direction: column;
+
+    @include media-xs {
+        padding: 5px 0 10px;
+    }
+
+    @include media-sm {
+        align-items: center;
+        text-align: center;
+    }
+
+    &__title {
+        color: #474b57;
+        font-size: 28px;
+        font-weight: 500;
+        margin: 25px 0 20px;
+
+        @include media-xs {
+            font-size: 21px;
+            text-align: center;
+        }
+
+        @include media-sm {
+            font-size: 21px;
+            line-height: 28px;
+            margin: 13px 0;
+        }
+    }
+
+    &__group {
+        margin-bottom: 20px;
+
+        @include media-xs {
+            margin-bottom: 15px;
+        }
+    }
+
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+
+        @include media-xs {
+            justify-content: center;
+        }
+    }
+
+    &__item {
+        margin-left: 15px;
+
+        @include media-xs {
+            margin: 15px;
+        }
+
+        @include media-xs-landscape {
+            margin: 15px 10px;
+        }
+
+        @include media-sm {
+            margin: 0 13px;
+        }
+
+        @include media-lg {
+            margin-right: 40px;
+        }
+    }
+}

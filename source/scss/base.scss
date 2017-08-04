@@ -1,6 +1,6 @@
 @import 'params';
 @import 'mixins';
-@import 'fonts';
+@import '~Fonts/style';
 
 * {
     box-sizing: border-box;
@@ -25,5 +25,7 @@ body {
 }
 
 button {
+    margin: 0;
+    outline: 0 none;
     font-family: 'Roboto', sans-serif;
 }

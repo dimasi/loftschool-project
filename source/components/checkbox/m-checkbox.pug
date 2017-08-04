@@ -1,0 +1,23 @@
+//- @pugdoc
+    name: checkbox
+    arguments:
+        - {string} params.elClasses      - Дополнительный класс для элемента
+        - {string} params.name           - Атрибут name
+        - {string} params.text           - Текст лэйбла
+        - {boolean} params.checked       - Атрибут checked
+    examples:
+            - |
+                include ~Modules/checkbox/m-checkbox
+            - |
+                +checkbox({
+                    elClasses: '',
+                    name: '',
+                    text: '',
+                    checked: true
+                })
+
+mixin checkbox (params)
+    label(class=`checkbox` + (params.elClasses ? ` ${params.elClasses.join(' ')}` : ``))
+        input(class="checkbox__control", type="checkbox", name=params.name, checked=params.checked || false)
+        span.checkbox__pseudo-control.fa.fa-check
+        span.checkbox__label= params.text

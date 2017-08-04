@@ -1,0 +1,47 @@
+/* Component: radio-group
+ * Usage: @import '~Components/radio-group/style';
+ */
+@import '~Scss/params';
+@import '~Scss/mixins';
+
+@import '~Components/radio/style';
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+        margin-bottom: 5px;
+        font-size: 16px;
+        font-weight: 700;
+
+        @include media-xs {
+            margin-bottom: 5px;
+        }
+
+        @include media-sm {
+            margin-bottom: 5px;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+    }
+
+    &__radio {
+        margin-right: 30px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+// Align
+.radio-group_align_center {
+    text-align: center;
+
+    .radio-group__wrapper {
+        justify-content: center;
+    }
+}

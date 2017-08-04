@@ -1,0 +1,103 @@
+/* Component: background
+ * Usage: @import '~Components/background/style';
+ */
+@import '~Scss/params';
+@import '~Scss/mixins';
+
+@import '~Components/article/style';
+
+.blog {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+
+    &__sidebar {
+        width: 380px;
+        margin-right: 100px;
+
+        @include media-xs {
+            display: none;
+        }
+
+        @include media-sm {
+            display: none;
+        }
+
+        @include media-lg {
+            width: 305px;
+            margin-right: 115px;
+        }
+    }
+
+    &__body {
+        width: percentage(680 / 1200);
+        padding-bottom: 30px;
+
+        @include media-xs {
+            width: 100%;
+            padding: 0 10px 30px;
+        }
+
+        @include media-sm {
+            width: 100%;
+            padding: 0 10px 30px;
+        }
+
+        @include media-lg {
+            width: percentage(885 / 1200);
+        }
+    }
+
+    &__nav {
+        width: 380px;
+        text-align: right;
+        padding-top: 10px;
+
+        @include media-lg {
+            width: 305px;
+        }
+
+        .nav__item {
+            margin-bottom: 10px;
+        }
+
+        .nav__item_state_active {
+            .nav__link {
+                border-color: #004cd1;
+                color: #004cd1;
+            }
+        }
+
+        .nav__link {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            min-height: 42px;
+            padding-right: 17px;
+            border-right: 3px solid transparent;
+            color: #474b57;
+        }
+    }
+
+    &__item {
+        padding: 0 0 35px;
+        margin: 0 0 35px;
+        border-bottom: 5px solid rgba(55, 62, 66, 0.07);
+
+        @include media-xs {
+            padding: 0 0 25px;
+            margin: 0 0 25px;
+        }
+
+        &:last-child {
+            margin: 0;
+            border-bottom: 0 none;
+
+            @include media-xs {
+                margin: 0;
+            }
+        }
+    }
+}

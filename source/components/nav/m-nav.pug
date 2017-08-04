@@ -1,0 +1,22 @@
+//- @pugdoc
+    name: nav
+    arguments:
+        - {array}    params.elClasses
+        - {array}    params.items
+    examples:
+            - |
+                include ~Components/nav/m-nav
+            - |
+                +nav({
+                    elClasses: [],
+                    items: []
+                })
+
+
+include ~Components/nav/_item
+
+mixin nav (params)
+    nav(class=`nav` + (params.elClasses ? ` ${params.elClasses.join(' ')}` : ``))
+        ul(class="nav__list")
+            each item in params.items
+                +navItem(item)

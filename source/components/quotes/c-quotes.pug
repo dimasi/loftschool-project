@@ -1,0 +1,35 @@
+//- @pugdoc
+    name: quotes
+    examples:
+            - |
+                include ~Components/quotes/c-quotes
+
+
+include ~Components/quote/m-quote
+
+- var stars = require('Images/icons/stars3.svg');
+
+.quotes
+    .quotes__heading-bg
+        svg(class=`quotes__heading-bg-img` viewBox=stars.viewBox): use(xlink:href=stars.symbol)
+
+    .quotes__heading Что обо мне говорят
+
+    ul.quotes__list
+        li.quotes__item
+            +quote({
+                elClasses: ['quote_color_white'],
+                avatarSrc: require('Components/quotes/images/quote-user.png'),
+                text: 'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!',
+                author: 'Ковальчук Дмитрий',
+                authorActivity: '— основатель Loftschool'
+            })
+
+        li.quotes__item
+            +quote({
+                elClasses: ['quote_color_white'],
+                avatarSrc: require('Components/quotes/images/quote-user2.png'),
+                text: 'Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах!',
+                author: 'Сабанцев Владимир',
+                authorActivity: '— преподаватель'
+            })

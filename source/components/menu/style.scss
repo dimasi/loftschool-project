@@ -1,0 +1,197 @@
+/* Component: menu
+ * Usage: @import '~Components/menu/style';
+ */
+@import '~Scss/params';
+@import '~Scss/mixins';
+
+@import '~Components/nav/style';
+
+.menu {
+    pointer-events: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    &::before,
+    &::after {
+        content: '';
+        display: block;
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        background-color: rgba(24, 54, 105, .87);
+    }
+
+    &::before {
+        left: 0;
+        transform: translate3d(-100%, 0, 0);
+    }
+
+    &::after {
+        right: 0;
+        transform: translate3d(100%, 0, 0);
+    }
+
+    &__nav {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        z-index: 10;
+
+        .nav__list {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav__item {
+            margin-bottom: 90px;
+            opacity: 0;
+
+            @include media-xs {
+                margin-bottom: 50px;
+            }
+
+            @include media-sm {
+                margin-bottom: 100px;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &_state_active {
+                position: relative;
+
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 89px;
+                    height: 3px;
+                    position: absolute;
+                    top: 100%;
+                    margin-top: 30px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background-color: #fff;
+                    opacity: 0;
+                }
+
+
+                @include media-xs {
+                    &::after {
+                        margin-top: 20px;
+                    }
+                }
+            }
+        }
+
+        .nav__link {
+            color: #fff;
+            font-family: 'Sansus Webissimo', sans-serif;
+            font-size: 63px;
+            line-height: 24px;
+            text-transform: uppercase;
+
+            @include media-xs {
+                font-size: 35px;
+            }
+
+            @include media-sm {
+                font-size: 49px;
+            }
+        }
+    }
+}
+
+.menu-toggler {
+    position: absolute;
+    z-index: 1001;
+}
+
+// Анимация закрытия меню
+// @todo Вынести в JS
+.menu {
+    $delay: 0ms;
+    $duration: 180ms;
+
+    .nav__item_state_active::after {
+        transition: opacity 180ms linear $delay;
+    }
+
+    $items: 4;
+    $delay-step: 80ms;
+
+    .nav__item {
+        @for $i from 1 through $items {
+            &:nth-child(#{$i}) {
+                transition: opacity $duration linear $delay;
+            }
+        }
+    }
+
+    $delay: $delay + $duration;
+
+    &::before,
+    &::after {
+        transition: transform $duration linear $delay;
+    }
+}
+
+// Анимация открытия меню
+// @todo Вынести в JS
+.menu_state_active {
+    $delay: 0ms;
+    $duration: 180ms;
+
+    &::before,
+    &::after {
+        transition: transform $duration linear $delay;
+    }
+
+    $delay: $delay + $duration;
+    $items: 4;
+    $delay-step: 80ms;
+
+    .nav__item {
+        @for $i from 1 through $items {
+            &:nth-child(#{$i}) {
+                transition: opacity $duration linear $delay;
+            }
+
+            $delay: $delay + $delay-step;
+        }
+    }
+
+    .nav__item_state_active::after {
+        transition: opacity $duration linear $delay;
+    }
+}
+
+// Активное состояние меню
+.menu_state_active {
+    pointer-events: all;
+
+    &::before {
+        transform: translate3d(0, 0, 0);
+    }
+
+    &::after {
+        transform: translate3d(0, 0, 0);
+    }
+
+    .nav__item {
+        opacity: 1;
+    }
+
+    .nav__item_state_active::after {
+        opacity: 1;
+    }
+}

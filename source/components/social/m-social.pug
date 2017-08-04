@@ -1,0 +1,28 @@
+//- @pugdoc
+    name: social
+    arguments:
+        - {string}      params.elClasses
+    examples:
+        - |
+            include ~Components/social/m-social
+        - |
+            +ribbon({
+                elClasses: ''
+            })
+
+mixin social (params)
+    //- SVG
+    - var vkSvg = require('Images/icons/vk.svg');
+    - var vkGitHub = require('Images/icons/github.svg');
+    - var vkIn = require('Images/icons/in.svg');
+
+    ul(class=`social` + (params.elClasses ? ` ${params.elClasses.join(' ')}` : ``))
+        li.social__item
+            a(class="social__link" href="#vk")
+                svg(class="social__icon social__icon_vk" viewBox=vkSvg.viewBox): use(xlink:href=vkSvg.symbol)
+        li.social__item
+            a(class="social__link" href="#vk")
+                svg(class="social__icon social__icon_github" viewBox=vkGitHub.viewBox): use(xlink:href=vkGitHub.symbol)
+        li.social__item
+            a(class="social__link" href="#vk")
+                svg(class="social__icon social__icon_in" viewBox=vkIn.viewBox): use(xlink:href=vkIn.symbol)

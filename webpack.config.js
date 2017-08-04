@@ -26,7 +26,7 @@ global.$ = {
         source: path.join(__dirname, 'source'),
         build: path.join(__dirname, 'build')
     }
-}
+};
 
 const common = merge([
     {
@@ -56,8 +56,8 @@ const common = merge([
     pages([
         'index', 
         'about',
-        'blog', 
-        'portfolio'
+        'blog',
+        `works`
     ]),
     pug(),
     lintJS(),

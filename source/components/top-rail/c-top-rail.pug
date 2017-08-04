@@ -1,0 +1,17 @@
+//- @pugdoc
+    name: top-rail
+    examples:
+            - |
+                include ~Components/top-rail/c-top-rail
+
+
+include ~Components/social/m-social
+
+//- Верхняя рельса на внутренних страницах (Соц. сети, Меню)
+.top-rail
+    .top-rail__social
+        +social({
+            elClasses: 'social_color_white'
+        })
+
+    .top-rail__menu

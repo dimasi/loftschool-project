@@ -1,0 +1,32 @@
+/* Component: btn-arrow
+ * Usage: @import '~Components/btn-arrow/style';
+ */
+@import '~Scss/params';
+@import '~Scss/mixins';
+
+.btn-arrow {
+    display: block;
+    width: 44px;
+    background-color: transparent;
+    border: 0 none;
+
+    @include media-xs {
+        width: 27px;
+    }
+
+    @include media-sm {
+        width: 27px;
+    }
+
+    &__icon {
+        display: block;
+        fill: rgba(255, 255, 255, .7);
+    }
+}
+
+// Перевернутая стрелка
+.btn-arrow_direction_to-top {
+    .btn-arrow__icon {
+        transform: scale(-1);
+    }
+}

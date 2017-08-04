@@ -1,0 +1,14 @@
+//- @pugdoc
+    name: videoBackground
+    arguments:
+        - {array} params.elClasses
+    examples:
+            - |
+                include ~Components/video-background/m-video-background
+            - |
+                +videoBackground({
+                    elClasses: []
+                })
+
+mixin videoBackground (params)
+    div(class=`video-background` + (params.elClasses ? ` ${params.elClasses.join(' ')}` : ``))

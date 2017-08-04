@@ -1,0 +1,55 @@
+/* Component: layout/base
+ * Usage: @import '~Components/layout/base/style';
+ */
+@import '~Scss/params';
+@import '~Scss/mixins';
+
+@import '~Components/preloader/style';
+@import '~Components/social/style';
+@import "~Components/hamburger/style.scss";
+@import '~Components/menu/style';
+@import '~Components/footer/style';
+
+.layout-base {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    position: relative;
+
+    &__top-rail {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 20px;
+        position: absolute;
+        z-index: 100;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+
+        @include media-xs {
+            padding: 9px;
+        }
+    }
+
+    &__top-rail .hamburger {
+        right: 20px;
+        top: 20px;
+    }
+
+    &__social,
+    &__menu {
+        pointer-events: all;
+    }
+
+    &__content {
+        background-color: #0a0f33;
+        flex: 1 0 auto;
+    }
+
+    &__footer {
+        position: relative;
+        z-index: 20;
+    }
+}

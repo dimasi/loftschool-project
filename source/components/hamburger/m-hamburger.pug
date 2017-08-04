@@ -1,0 +1,16 @@
+//- @pugdoc
+    name: hamburger
+    arguments:
+        - {string} params.elClasses
+    examples:
+            - |
+                include ~Modules/hamburger/m-hamburger
+            - |
+                +hamburger({
+                    elClasses: []
+                })
+
+mixin hamburger (params)
+    button(type=`button` class=`hamburger` + (params.elClasses ? ` ${params.elClasses.join(' ')}` : ``))
+        span.hamburger__wrapper
+            span.hamburger__inner

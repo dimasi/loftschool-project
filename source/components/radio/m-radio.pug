@@ -1,0 +1,23 @@
+//- @pugdoc
+    name: radio
+    arguments:
+        - {string}   params.elClasses
+        - {string}   params.name
+        - {string}   params.value
+        - {string}   params.text
+    examples:
+            - |
+                include ~Components/radio/m-radio
+            - |
+                +checkbox({
+                    elClasses: '',
+                    name: '',
+                    value: '',
+                    text: ''
+                })
+
+mixin radio (params)
+    label(class=`radio` + (params.elClasses ? ` ${params.elClasses.join(' ')}` : ``))
+        input(class="radio__control", type="radio", name=params.name, value=params.value, checked=params.checked || false)
+        span.radio__pseudo-control
+        span.radio__label= params.text

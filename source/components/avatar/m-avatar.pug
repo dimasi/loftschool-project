@@ -1,0 +1,18 @@
+//- @pugdoc
+    name: avatar
+    arguments:
+        - {string}      params.elClasses     - Дополнительный класс для элемента
+        - {array}       params.src           - Путь до изображения
+    examples:
+        - |
+            include ~Components/avatar/m-avatar
+        - |
+            +avatar({
+                elClasses: [],
+                src: ''
+            })
+
+
+mixin avatar (params)
+    span(class=`avatar` + (params.elClasses ? ` ${params.elClasses.join(' ')}` : ``))
+        img(class="avatar__img" src=params.src alt="")

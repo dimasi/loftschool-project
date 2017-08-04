@@ -1,0 +1,31 @@
+//- @pugdoc
+    name: panelContact
+    examples:
+            - |
+                include ~Components/panel-contact/c-panel-contact
+
+
+extends ~Components/panel/l-panel
+
+include ~Components/btn/m-btn
+
+block beforePanel
+    - structure = ['content', 'buttons'];
+    - elClasses.unshift('panel-contact');
+    - contentClasses.unshift('panel-contact__body');
+
+block content
+    h4.panel-contact__heading Связаться со мной
+
+    include ~Components/contact-form/c-contact-form
+
+block buttons
+    +btn({
+        text: 'Отправить',
+        elClasses: ['btn_color_blue', 'panel__button', 'contact-form-submit']
+    })
+
+    +btn({
+        text: 'Очистить',
+        elClasses: ['btn_color_transparent', 'panel__button', 'contact-form-reset']
+    })

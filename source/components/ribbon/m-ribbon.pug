@@ -1,0 +1,22 @@
+//- @pugdoc
+    name: ribbon
+    arguments:
+        - {string}   params.elClasses
+    examples:
+            - |
+                include ~Components/ribbon/m-ribbon
+            - |
+                +ribbon({
+                    elClasses: ''
+                })
+
+
+mixin ribbon (params)
+    - var svgRibbonLeft = require('Images/icons/about_bg_left.svg');
+    - var svgRibbonRight = require('Images/icons/about_bg_right.svg');
+
+    div(class=`ribbon` + (params.elClasses ? ` ${params.elClasses.join(' ')}` : ``))
+        .ribbon__col.ribbon__col_left
+            svg(class=`ribbon__triangle ribbon__triangle_side_left` viewBox=svgRibbonLeft.viewBox): use(xlink:href=svgRibbonLeft.symbol)
+        .ribbon__col.ribbon__col_right
+            svg(class=`ribbon__triangle ribbon__triangle_side_right` viewBox=svgRibbonRight.viewBox): use(xlink:href=svgRibbonRight.symbol)

@@ -1,0 +1,22 @@
+//- @pugdoc
+    name: formMessage
+    arguments:
+        - {array} params.elClasses
+    examples:
+            - |
+                include ~Components/form-message/m-form-message
+            - |
+                +formMessage({
+                    elClasses: []
+                })
+
+include ~Components/btn/m-btn
+
+mixin formMessage (params)
+    div(class=`form-message` + (params.elClasses ? ` ${params.elClasses.join(' ')}` : ``))
+        .form-message__body
+            span.form-message__text
+            +btn({
+                text: 'Закрыть',
+                elClasses: ['btn_color_blue', 'btn_size_small', 'btn_corners_rounded', 'form-message__close']
+            })

@@ -1,0 +1,14 @@
+//- @pugdoc
+    name: background
+    examples:
+            - |
+                include ~Components/background/c-background
+
+include ~Components/video-background/m-video-background
+
+.background
+    +videoBackground({
+        elClasses: ['background__sky']
+    })
+    .background__mountains
+        img(class="background__mountains-image" src=require('Components/background/images/mountains.png') alt="")

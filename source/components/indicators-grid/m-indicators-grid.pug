@@ -1,0 +1,38 @@
+//- @pugdoc
+    name: indicatorsGrid
+    arguments:
+        - {string}       params.className
+        - {array}        params.groups
+        - {string}       params.groups[n].title
+        - {object}       params.groups[n].items
+    examples:
+    - |
+        include ~Components/indicators-grid/m-indicators-grid
+    - |
+        +indicatorsGrid({
+            elClasses: [],
+            groups: [
+                {
+                    title: '',
+                    items: {
+                        'HTML': 50
+                    }
+                }
+            ]
+        })
+
+
+include ~Components/indicator/m-indicator-circle
+
+mixin indicatorsGrid (params)
+    ul(class=`indicators-grid` + (params.className ? ` ${params.className.join(' ')}` : ``))
+        each group in params.groups
+            li.indicators-grid__group
+                h4.indicators-grid__title= group.title
+                ul.indicators-grid__items
+                    each value, title in group.items
+                        li.indicators-grid__item
+                            +indicatorCircle({
+                                text: title,
+                                value: value
+                            })

@@ -1,0 +1,53 @@
+//- @pugdoc
+    name: signInForm
+    examples:
+            - |
+                include ~Components/sign-in-form/c-sign-in-form
+
+include ~Components/textfield/m-textfield
+include ~Components/checkbox/m-checkbox
+include ~Components/form-message/m-form-message
+include ~Components/radio-group/m-radio-group
+
+form(action="/" method="POST" class="sign-in-form" autocomplete="off")
+    +formMessage({})
+
+    .sign-in-form__login
+        +textfield({
+            name: 'login',
+            placeholder: 'Логин',
+            addonIconBefore: 'fa fa-user'
+        })
+
+    .sign-in-form__pwd
+        +textfield({
+            name: 'pwd',
+            type: 'password',
+            placeholder: 'Пароль',
+            addonIconBefore: 'fa fa-key'
+        })
+
+    .sign-in-form__antibot-checkbox
+        +checkbox({
+            name: 'antibot-1',
+            text: 'Я человек'
+        })
+
+    .sign-in-form__antibot-radio-group
+        +radioGroup({
+            elClasses: ['radio-group_align_center'],
+            title: 'Вы точно не робот?',
+            radios: [
+                {
+                    text: 'Да',
+                    name: 'antibot-2',
+                    value: 1
+                },
+                {
+                    text: 'Не уверен',
+                    name: 'antibot-2',
+                    value: 0,
+                    checked: true
+                }
+            ]
+        })

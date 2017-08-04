@@ -1,0 +1,27 @@
+//- @pugdoc
+    name: indicatorCircle
+    arguments:
+        - {string}      params.text
+        - {string}      params.value
+    examples:
+        - |
+            include ~Components/indicator/m-indicator-circle
+        - |
+            +indicatorCircle({
+                text: '',
+                value: 50
+            })
+
+mixin indicatorCircle (params)
+    - var max = 282.6, progress = params.value * max / 100
+
+    - var extraClass = `indicator_opacity_40`;
+    - if (params.value > 25) extraClass = `indicator_opacity_60`;
+    - if (params.value > 50) extraClass = `indicator_opacity_85`;
+    - if (params.value > 75) extraClass = ``;
+
+    figure(class=`indicator indicator_type_circle` data-progress=`${progress}`)
+        .indicator__title= params.text
+        svg(width="100%" height="100%" viewBox="0 0 110 110" class="indicator__area")
+            circle(r="45" cx="50%" cy="50%" fill="none" class="indicator__bar")
+            circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class="indicator__progress" style=`stroke-dasharray: .0010 282.6;`)

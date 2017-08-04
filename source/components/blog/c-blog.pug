@@ -1,0 +1,49 @@
+//- @pugdoc
+    name: blog
+    examples:
+            - |
+                include ~Components/blog/c-blog
+
+include ~Components/nav/m-nav
+
+.blog
+    .blog__sidebar
+        .blog__nav
+            +nav({
+                elClasses: [],
+                items: [
+                    {
+                        text: 'Самое важное в SASS',
+                        link: '#blog_1',
+                        linkClasses: ['anchor-link']
+                    },
+                    {
+                        text: 'Приёмы в вёрстке, без которых не обходится ни один сайт',
+                        link: '#blog_2',
+                        linkClasses: ['anchor-link']
+                    },
+                    {
+                        text: 'Самый необходимый набор Gulp плагинов',
+                        link: '#blog_3',
+                        linkClasses: ['anchor-link']
+                    },
+                    {
+                        text: 'Почему я выбрал Jade',
+                        link: '#blog_4',
+                        linkClasses: ['anchor-link']
+                    }
+                ]
+            })
+
+    .blog__body
+        #blog_1.blog__item
+            include ~Components/article/c-article-blog-1
+
+        #blog_2.blog__item
+            include ~Components/article/c-article-blog-2
+
+        #blog_3.blog__item
+            include ~Components/article/c-article-blog-3
+
+        #blog_4.blog__item
+            include ~Components/article/c-article-blog-4

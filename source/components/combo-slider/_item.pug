@@ -1,0 +1,26 @@
+//- @pugdoc
+    name: comboSliderItem
+    arguments:
+        - {string}      params.link
+        - {string}      params.image
+        - {string}      params.title
+        - {array}       params.techs
+    examples:
+        - |
+            include ~Components/combo-slider/_item
+        - |
+            +comboSliderItem({
+                link: '',
+                image: '',
+                title: '',
+                techs: []
+            })
+
+
+mixin comboSliderItem (params)
+    li.slider-data__item(data-link=params.link)
+        img(src=params.image class=`slider-data__img`)
+        h4.slider-data__title= params.title
+        ul.slider-data__techs
+            each tech in params.techs
+                li.slider-data__tech= tech

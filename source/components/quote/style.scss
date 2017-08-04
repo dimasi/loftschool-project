@@ -1,0 +1,58 @@
+/* Component: quote
+ * Usage: @import '~Components/quote/style';
+ */
+@import '~Scss/params';
+@import '~Scss/mixins';
+
+.quote {
+    font-style: italic;
+    font-size: 16px;
+    line-height: 24px;
+
+    &__img {
+        width: 77px;
+        height: 77px;
+        margin: 0 auto 17px;
+
+        @include media-xs {
+            margin-bottom: 15px;
+        }
+    }
+
+    &__text {
+        margin-bottom: 18px;
+        position: relative;
+
+        @include media-sm {
+            font-size: 14px;
+        }
+
+        &::before {
+            content: "";
+            display: block;
+            width: 75px;
+            height: 61px;
+            position: absolute;
+            left: 0;
+            top: -25px;
+            background-image: url(~Components/quote/images/quote.png);
+        }
+    }
+
+    &__author,
+    &__author-detail {
+        display: block;
+        text-align: center;
+    }
+
+    &__author {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+    }
+}
+
+// Colors
+.quote_color_white {
+    color: #fff;
+}
