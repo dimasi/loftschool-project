@@ -119,6 +119,8 @@
 
     &__blur {
         padding-bottom: 190px;
+        position: relative;
+        z-index: 3;
 
         @include media-xs {
             padding-bottom: 0;
