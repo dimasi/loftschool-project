@@ -7,11 +7,11 @@
 .btn {
     display: inline-block;
     padding: 13px;
-    border: 0 none;
+    border: 1px solid transparent;
     background-color: transparent;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 400;
     line-height: normal;
     text-align: center;
     text-decoration: none;
@@ -30,6 +30,20 @@
 
     .no-touchevents &:hover {
         background-color: rgba(4, 62, 163, 0.85);
+    }
+}
+
+.btn_color_default {
+    border-color: #474b57;
+    background-color: transparent;
+    color: #474b57;
+
+    .btn__text {
+        color: #474b57;
+    }
+
+    .no-touchevents &:hover {
+        background-color: rgba(0, 0, 0, 0.035);
     }
 }
 

@@ -5,7 +5,8 @@
         - {string}   params.text          - Текст кнопки
         - {string}   params.type          - Тип кнопки (default: button)
         - {boolean}  params.asLink        - Кнопка как ссылка
-        - {string}   params.href          - href для ссылки
+        - {string}   params.link          - href для ссылки
+        - {string}   params.linkTarget    - target для ссылки
         - {string}   params.iconBefore    - Класс иконки перед текстом
     examples:
         - |
@@ -17,13 +18,14 @@
                 type: '',
                 asLink: true,
                 link: '#'
+                linkTarget: ''
                 iconBefore: ''
             })
 
 
 mixin btn (params)
     if params.asLink
-        a(class=`btn` + (params.elClasses ? ` ${params.elClasses.join(' ')}` : ``) href=(params.href ? `${params.href}` : `#`))
+        a(class=`btn` + (params.elClasses ? ` ${params.elClasses.join(' ')}` : ``) href=(params.href ? `${params.href}` : `#`) target=params.linkTarget||false)
             span.btn__wrapper
                 if params.iconBefore
                     span(class=`btn__icon-before ${params.iconBefore}`)
