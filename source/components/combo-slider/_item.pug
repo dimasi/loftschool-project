@@ -2,6 +2,7 @@
     name: comboSliderItem
     arguments:
         - {string}      params.link
+        - {string}      params.githubLink
         - {string}      params.image
         - {string}      params.title
         - {array}       params.techs
@@ -11,6 +12,7 @@
         - |
             +comboSliderItem({
                 link: '',
+                githubLink: '',
                 image: '',
                 title: '',
                 techs: []
@@ -18,7 +20,7 @@
 
 
 mixin comboSliderItem (params)
-    li.slider-data__item(data-link=params.link)
+    li.slider-data__item(data-link=params.link data-github-link=params.githubLink || false)
         img(src=params.image class=`slider-data__img`)
         h4.slider-data__title= params.title
         ul.slider-data__techs

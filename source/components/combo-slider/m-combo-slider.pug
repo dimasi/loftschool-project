@@ -31,13 +31,22 @@ mixin comboSlider (params)
                 li.combo-slider__work-tech HTML
                 li.combo-slider__work-tech CSS
                 li.combo-slider__work-tech JAVASCRIPT
-            +btn({
-                elClasses: ['btn_color_blue'],
-                text: 'Посмотреть сайт',
-                asLink: true,
-                link: '#',
-                iconBefore: 'fa fa-link'
-            })
+            .combo-slider__btn-wrapper
+                +btn({
+                    elClasses: ['combo-slider__slide-link', 'btn_color_blue'],
+                    text: 'Посмотреть сайт',
+                    asLink: true,
+                    link: '#',
+                    iconBefore: 'fa fa-link'
+                })
+                +btn({
+                    elClasses: ['combo-slider__slide-github-link', 'btn_color_default'],
+                    text: 'GitHub',
+                    asLink: true,
+                    link: '#',
+                    linkTarget: '_blank',
+                    iconBefore: 'fa fa-github'
+                })
 
         .combo-slider__nav
             button(type="button" class="combo-slider__nav-btn combo-slider__nav-btn_slider_prev")
