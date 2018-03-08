@@ -41,5 +41,6 @@ module.exports = {
     "globals": {
         "$": true,
         "jQuery": true,
+        "MAPS_KEY": true
     }
 };

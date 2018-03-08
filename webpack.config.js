@@ -20,6 +20,8 @@ const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const modernizr = require('./webpack/modernizr');
 const resolveAliases = require('./webpack/resolve.aliases');
 
+const config = require('./config');
+
 global.$ = {
     PATHS: {
         root: __dirname,
@@ -28,50 +30,53 @@ global.$ = {
     }
 };
 
-const common = merge([
-    {
-        entry: {}, // -> pages();
-        output: {
-            path: $.PATHS.build,
-            publicPath: '/',
-            filename: './js/[name].js'
+
+module.exports = (env = process.env.NODE_ENV) => {
+    const common = merge([
+        {
+            entry: {}, // -> pages();
+            output: {
+                path: $.PATHS.build,
+                publicPath: '/',
+                filename: './js/[name].js'
+            },
+            plugins: [
+                new BrowserSyncPlugin({
+                    host: 'localhost',
+                    port: 3000,
+                    proxy: 'http://localhost:8080/'
+                }, {
+                    reload: false
+                }),
+                new webpack.ProvidePlugin({
+                    $: 'jquery',
+                    jQuery: 'jquery',
+                    Modernizr: 'modernizr'
+                }),
+                new webpack.NoEmitOnErrorsPlugin(),
+                new webpack.DefinePlugin(
+                    env === 'production' ? config.prod : config.dev
+                )
+            ]
         },
-        plugins: [
-            new BrowserSyncPlugin({
-                host: 'localhost',
-                port: 3000,
-                proxy: 'http://localhost:8080/'
-            }, {
-                reload: false
-            }),
-            new webpack.ProvidePlugin({
-                $: 'jquery',
-                jQuery: 'jquery',
-                Modernizr: 'modernizr'
-            }),
-            new webpack.NoEmitOnErrorsPlugin()
-        ]
-    },
-    
-    pages([
-        'index', 
-        'about',
-        'blog',
-        `works`
-    ]),
-    pug(),
-    lintJS(),
-    babel(),
-    lintCSS(),
-    fonts(),
-    copyImages(),
-    copyVideo(),
-    modernizr(),
-    resolveAliases()
-]);
+        
+        pages([
+            'index', 
+            'about',
+            'blog',
+            `works`
+        ]),
+        pug(),
+        lintJS(),
+        babel(),
+        lintCSS(),
+        fonts(),
+        copyImages(),
+        copyVideo(),
+        modernizr(),
+        resolveAliases()
+    ]);
 
-
-module.exports = (env) => {
     if (env === 'production') {
         return merge([
             common,
@@ -83,6 +88,7 @@ module.exports = (env) => {
             clean()
         ]);
     }
+    
     if (env === 'development') {
         return merge([
             common,
