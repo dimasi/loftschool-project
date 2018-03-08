@@ -1,5 +1,5 @@
 let loadGoogleMapsApi = require(`load-google-maps-api-2`);
-loadGoogleMapsApi.key = `AIzaSyCbvw7Kset1Cx4fTl3EQZkL0VFdlSpJnaY`;
+loadGoogleMapsApi.key = `AIzaSyClgOLd5p4xx0IfP6jStWejwJdHjAsG_tw`;
 
 /**
  * @module map
